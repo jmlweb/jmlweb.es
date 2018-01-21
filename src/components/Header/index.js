@@ -22,16 +22,16 @@ const StyledLink = styled(Link) `
   text-decoration: none;
 `;
 
-const Header = () => (
+const Header = ({ title }) => (
   <StyledHeader>
     <StyledWrapper>
       <StyledHeading>
         <StyledLink to="/">
-          José Manuel Lucas / Frontend Developer
+          {title}
         </StyledLink>
       </StyledHeading>
     </StyledWrapper>
   </StyledHeader>
-)
+);
 
 export default Header

@@ -5,16 +5,16 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import './index.css'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data }) => (
   <div>
     <Helmet
-      title="José Manuel Lucas / Frontend Developer"
+      title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'José Manuel Lucas / Frontend Developer' },
+        { name: 'description', content: data.site.siteMetadata.title },
         { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },
       ]}
     />
-    <Header />
+    <Header title={data.site.siteMetadata.title} />
     <div
       style={{
         margin: '0 auto',
@@ -26,7 +26,17 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
-)
+);
+
+export const query = graphql`
+  query title {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
