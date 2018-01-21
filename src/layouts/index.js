@@ -1,9 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PT from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Header from '../components/Header'
-import './index.css'
+import theme from '../themes/default';
+
+import Header from '../components/Header';
+import './index.css';
+
+console.log(theme);
 
 const TemplateWrapper = ({ children, data }) => (
   <div>
@@ -39,7 +43,7 @@ export const query = graphql`
 `;
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PT.func.isRequired,
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
