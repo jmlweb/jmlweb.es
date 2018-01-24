@@ -1,37 +1,31 @@
-import React from 'react'
+import React from 'react';
+import PT from 'prop-types';
 import styled from 'styled-components';
-import Link from 'gatsby-link'
+import Link from 'gatsby-link';
+
+import Logo from '../Logo';
 
 const StyledHeader = styled.div`
-  background: rebeccapurple;
-  margin-bottom: 1.45rem;
+  background: ${props => props.theme.colors.primary};
+  padding: ${props => `${props.theme.spacing.u2}`};
 `;
 
-const StyledWrapper = styled.div`
-  margin: 0 auto;
-  maxWidth: 960px;
-  padding: 1.45rem 1.0875rem;
-`;
+const StyledWrapper = styled.div``;
 
-const StyledHeading = styled.h1`
-  margin: 0;
-`;
-
-const StyledLink = styled(Link) `
-  color: white;
-  text-decoration: none;
-`;
+const StyledLink = styled(Link)``;
 
 const Header = ({ title }) => (
   <StyledHeader>
     <StyledWrapper>
-      <StyledHeading>
-        <StyledLink to="/">
-          {title}
-        </StyledLink>
-      </StyledHeading>
+      <StyledLink to="/" title={title}>
+        <Logo />
+      </StyledLink>
     </StyledWrapper>
   </StyledHeader>
 );
 
-export default Header
+Header.propTypes = {
+  title: PT.string.isRequired,
+};
+
+export default Header;

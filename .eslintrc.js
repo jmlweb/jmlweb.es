@@ -11,6 +11,7 @@ module.exports = {
   extends: 'airbnb',
   rules: {
     'import/no-extraneous-dependencies': 'off',
+    'no-unused-expressions': 'off',
     'react/jsx-filename-extension': 'off',
     'import/extensions': [
       'error',

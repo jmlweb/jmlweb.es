@@ -1,35 +1,14 @@
 import React from 'react';
 import PT from 'prop-types';
-import Helmet from 'react-helmet';
-
-import theme from '../themes/default';
 
 import Header from '../components/Header';
-import './index.css';
-
-console.log(theme);
+import MainWrapper from './mainWrapper';
 
 const TemplateWrapper = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.title },
-        { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },
-      ]}
-    />
+  <MainWrapper data={data}>
     <Header title={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
+    {children()}
+  </MainWrapper>
 );
 
 export const query = graphql`
@@ -44,6 +23,13 @@ export const query = graphql`
 
 TemplateWrapper.propTypes = {
   children: PT.func.isRequired,
+  data: PT.shape({
+    site: PT.shape({
+      siteMetadata: PT.shape({
+        title: PT.string,
+      }),
+    }),
+  }).isRequired,
 };
 
 export default TemplateWrapper;
