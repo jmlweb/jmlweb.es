@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => (
       <Article title="I'm working on my new website">
         <Giphy src="https://giphy.com/embed/5Zesu5VPNGJlm" title="Wait a bit more, please" />
         <StyledMessage>
-          Meanwhile, you can visit my social links, or{' '}
+          Meanwhile, you can visit my social links or{' '}
           <a href="https://twitter.com/jmlweb">leave me a message</a>
         </StyledMessage>
       </Article>

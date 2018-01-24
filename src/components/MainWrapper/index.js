@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
 
-import theme from '../theme';
+import theme from '../../theme';
 
 const StyledWrapper = styled.div`
   background: #fff;
@@ -47,9 +47,11 @@ const MainWrapper = ({ data, children }) => {
       <StyledWrapper>
         <Helmet
           title={data.site.siteMetadata.title}
+          htmlAttributes={{ lang: 'en', amp: true }}
           meta={[
             { name: 'description', content: data.site.siteMetadata.title },
             { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },
+            { name: 'theme-color', content: theme.colors.primary },
           ]}
         />
         {children}

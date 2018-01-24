@@ -2,7 +2,7 @@ import React from 'react';
 import PT from 'prop-types';
 
 import Header from '../components/Header';
-import MainWrapper from './mainWrapper';
+import MainWrapper from '../components/MainWrapper';
 
 const TemplateWrapper = ({ children, data }) => (
   <MainWrapper data={data}>
