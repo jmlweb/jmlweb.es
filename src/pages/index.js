@@ -2,10 +2,10 @@ import React from 'react';
 import PT from 'prop-types';
 import styled from 'styled-components';
 
-import Intro from '../components/Intro';
-import SocialLinks from '../components/SocialLinks';
 import Article from '../components/Article';
 import Giphy from '../components/Giphy';
+import Intro from '../components/Intro';
+import SocialLinks from '../components/SocialLinks';
 
 const StyledWrapper = styled.div``;
 

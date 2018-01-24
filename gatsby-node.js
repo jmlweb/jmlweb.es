@@ -21,7 +21,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors);
         }
         const projectTemplate = path.resolve('./src/templates/project.js');
-        console.log(result);
         if (result && result.data && result.data.allContentfulProject) {
           map(result.data.allContentfulProject.edges, (edge) => {
             createPage({
