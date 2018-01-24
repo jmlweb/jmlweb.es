@@ -21,15 +21,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors);
         }
         const projectTemplate = path.resolve('./src/templates/project.js');
-        map(result.data.allContentfulProject.edges, (edge) => {
-          createPage({
-            path: `/projects/${edge.node.id}`,
-            component: slash(projectTemplate),
-            context: {
-              id: edge.node.id,
-            },
+        console.log(result);
+        if (result && result.data && result.data.allContentfulProject) {
+          map(result.data.allContentfulProject.edges, (edge) => {
+            createPage({
+              path: `/projects/${edge.node.id}`,
+              component: slash(projectTemplate),
+              context: {
+                id: edge.node.id,
+              },
+            });
           });
-        });
+        }
       })
       .then(() => {
         resolve();

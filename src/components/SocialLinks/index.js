@@ -16,6 +16,15 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const StyledLinksGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media (min-width: 480px) {
+    width: 50%;
+  }
+`;
+
 const StyledLink = styled.a.attrs({
   rel: 'nofollow noopener noreferrer',
   target: '_blank',
@@ -30,10 +39,12 @@ const StyledLink = styled.a.attrs({
 
 const SocialLinks = () => (
   <StyledWrapper>
-    <StyledLink href="https://github.com/jmlweb">Github</StyledLink>
-    <StyledLink href="https://www.linkedin.com/in/josemanuellucas/">Linkedin</StyledLink>
-    <StyledLink href="https://twitter.com/jmlweb/">Twitter</StyledLink>
-    <StyledLink href="https://dribbble.com/jmlweb">DRIBBBLE</StyledLink>
+    <StyledLinksGroup>
+      <StyledLink href="https://github.com/jmlweb">Github</StyledLink>
+      <StyledLink href="https://www.linkedin.com/in/josemanuellucas/">Linkedin</StyledLink>
+      <StyledLink href="https://twitter.com/jmlweb/">Twitter</StyledLink>
+      <StyledLink href="https://dribbble.com/jmlweb">DRIBBBLE</StyledLink>
+    </StyledLinksGroup>
   </StyledWrapper>
 );
 
