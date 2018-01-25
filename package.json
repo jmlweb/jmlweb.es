@@ -21,7 +21,8 @@
     "slash": "^1.0.0",
     "styled-components": "^2.4.0",
     "styled-map": "^2.0.1",
-    "typeface-libre-franklin": "^0.0.44"
+    "typeface-libre-franklin": "^0.0.44",
+    "typeface-roboto": "^0.0.54"
   },
   "keywords": [
     "gatsby"

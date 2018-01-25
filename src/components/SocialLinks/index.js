@@ -30,6 +30,7 @@ const StyledLink = styled.a.attrs({
   target: '_blank',
 })`
   color: #fff;
+  font-family: ${props => props.theme.font.familyAlt};
   text-decoration: none;
   text-transform: uppercase;
   @media (min-width: 480px) {
