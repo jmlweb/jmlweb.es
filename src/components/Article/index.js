@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const StyledWrapper = styled.div``;
 
 const StyledHeading = styled.h2`
-  font-family: ${props => props.theme.font.familyAlt};
   -webkit-font-smoothing: antialiased;
 `;
 

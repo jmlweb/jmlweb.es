@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
-  background: ${props => props.theme.colors.dark};
+  background: ${props => props.theme.colors.secondary};
   display: flex;
   justify-content: space-between;
   mix-blend-mode: multiply;
   padding: ${props => `${props.theme.spacing.u1} ${props.theme.spacing.u2}`};
-  @media (min-width: 480px) {
+  @media (min-width: 600px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
 
 const StyledLinksGroup = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  @media (min-width: 480px) {
+  @media (min-width: 600px) {
     width: 50%;
   }
 `;
@@ -30,11 +30,14 @@ const StyledLink = styled.a.attrs({
   target: '_blank',
 })`
   color: #fff;
-  font-family: ${props => props.theme.font.familyAlt};
+  font-weight: 700;
+  -webkit-font-smoothing: subpixel-antialiasing;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   text-transform: uppercase;
-  @media (min-width: 480px) {
-    margin-left: ${props => props.theme.spacing.u2};
+  margin-left: ${props => props.theme.spacing.u2};
+  &:first-child {
+    margin-left: 0;
   }
 `;
 

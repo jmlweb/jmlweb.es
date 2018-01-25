@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "jmlweb.es",
+  "description": "Personal Website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "José Manuel Lucas <josemanuel@jmlweb.es>",
   "dependencies": {
     "gatsby": "^1.9.158",
     "gatsby-image": "^1.0.34",
@@ -20,13 +20,9 @@
     "react-helmet": "^5.2.0",
     "slash": "^1.0.0",
     "styled-components": "^2.4.0",
-    "styled-map": "^2.0.1",
-    "typeface-libre-franklin": "^0.0.44",
-    "typeface-roboto": "^0.0.54"
+    "styled-map": "^2.0.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {

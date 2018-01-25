@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
 
 const MainWrapper = ({ data, children }) => {
   injectGlobal`
-    ${normalize()};
+    ${normalize()}
     html {
       box-sizing: border-box;
       * {
@@ -28,6 +28,13 @@ const MainWrapper = ({ data, children }) => {
     }
     body {
       background: ${theme.colors.outerBg};
+      font-size: ${theme.font.sizes.content.sm};
+      @media(min-width: 480px) {
+        font-size: ${theme.font.sizes.content.md};
+      }
+      @media(min-width: 780px) {
+        font-size: ${theme.font.sizes.content.lg};
+      }
     }
     body, input, select, textarea {
       color: ${theme.colors.text};
