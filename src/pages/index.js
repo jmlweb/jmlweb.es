@@ -3,7 +3,6 @@ import PT from 'prop-types';
 import styled from 'styled-components';
 
 import Article from '../components/Article';
-import Giphy from '../components/Giphy';
 import Intro from '../components/Intro';
 import SocialLinks from '../components/SocialLinks';
 
@@ -26,11 +25,18 @@ const IndexPage = ({ data }) => (
       <SocialLinks />
     </StyledTop>
     <StyledContent>
-      <Article title="I'm working on my new website">
-        <Giphy src="https://giphy.com/embed/5Zesu5VPNGJlm" title="Wait a bit more, please" />
+      <Article title="Estoy trabajando en mi nuevo sitio web">
         <StyledMessage>
-          Meanwhile, you can visit my social links or{' '}
-          <a href="https://twitter.com/jmlweb">leave me a message</a>
+          Puedes seguir el desarrollo en{' '}
+          <a rel="nofollow noopener noreferrer" href="https://github.com/jmlweb/jmlweb.es">
+            Github
+          </a>.
+        </StyledMessage>
+        <StyledMessage>
+          Mientras termino, puedes visitar mis redes sociales y{' '}
+          <a rel="nofollow noopener noreferrer" href="https://twitter.com/jmlweb">
+            dejarme un mensaje.
+          </a>
         </StyledMessage>
       </Article>
     </StyledContent>

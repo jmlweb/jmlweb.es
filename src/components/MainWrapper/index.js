@@ -54,7 +54,7 @@ const MainWrapper = ({ data, children }) => {
       <StyledWrapper>
         <Helmet
           title={data.site.siteMetadata.title}
-          htmlAttributes={{ lang: 'en', amp: true }}
+          htmlAttributes={{ lang: 'es', amp: true }}
           meta={[
             { name: 'description', content: data.site.siteMetadata.title },
             { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },

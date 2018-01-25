@@ -29,8 +29,8 @@ const StyledFakeHeading = StyledHeading.withComponent('p');
 const Text = () => (
   <StyledWrapper>
     <div>
-      <StyledHeading>I'm José Manuel Lucas</StyledHeading>
-      <StyledFakeHeading>I like to break & fix things</StyledFakeHeading>
+      <StyledHeading>Soy José Manuel Lucas</StyledHeading>
+      <StyledFakeHeading>Rompo y arreglo cosas</StyledFakeHeading>
     </div>
   </StyledWrapper>
 );
