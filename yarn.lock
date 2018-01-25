@@ -460,7 +460,7 @@ axios@^0.16.1:
     follow-redirects "^1.2.3"
     is-buffer "^1.1.5"
 
-"axios@github:contentful/axios#fix/https-via-http-proxy":
+axios@contentful/axios#fix/https-via-http-proxy:
   version "0.17.1"
   resolved "https://codeload.github.com/contentful/axios/tar.gz/4b06f4a63db3ac16c99f7c61b584ef0e6d11f1af"
   dependencies:
@@ -4047,6 +4047,13 @@ gatsby-module-loader@^1.0.9:
   dependencies:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
+
+gatsby-plugin-manifest@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.13.tgz#49581830298e2c9fda92ae317048d1eb21a50981"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
 
 gatsby-plugin-offline@^1.0.13:
   version "1.0.13"
