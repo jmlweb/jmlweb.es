@@ -59,6 +59,7 @@ const MainWrapper = ({ data, children }) => {
             { name: 'description', content: data.site.siteMetadata.title },
             { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },
             { name: 'theme-color', content: theme.colors.primary },
+            { name: 'google-site-verification', content: 'C_zrk0we724IL2r6BSTEf2U9ZVaIIYVsFR16eHuk-Nk' },
           ]}
         />
         {children}

@@ -22,7 +22,9 @@
     "styled-components": "^2.4.0",
     "styled-map": "^2.0.1"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
