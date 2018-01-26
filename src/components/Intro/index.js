@@ -18,7 +18,7 @@ const StyledWrapper = styled.div`
 const StyledPhoto = styled.div`
   overflow: hidden;
   border-radius: 50%;
-  width: calc(100vw - 240px - 2rem);
+  width: calc(100vw - 210px - 2rem);
   @media (min-width: 480px) {
     border-radius: 0;
     width: 50%;
