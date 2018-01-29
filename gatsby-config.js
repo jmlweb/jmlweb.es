@@ -9,7 +9,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -31,5 +30,31 @@ module.exports = {
         name: 'img',
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'José Manuel Lucas',
+        short_name: 'jmlweb',
+        lang: 'es-ES',
+        start_url: '/',
+        background_color: '#e4e3f5',
+        theme_color: '#362bdb',
+        display: 'minimal-ui',
+        orientation: 'portrait-primary',
+        icons: [
+          {
+            src: '/favicons/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/favicons/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 };

@@ -3,6 +3,7 @@ import PT from 'prop-types';
 import Helmet from 'react-helmet';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
+import favicon from './favicon.ico';
 
 import theme from '../../theme';
 
@@ -59,7 +60,14 @@ const MainWrapper = ({ data, children }) => {
             { name: 'description', content: data.site.siteMetadata.title },
             { name: 'keywords', content: 'José Manuel Lucas, Frontend, Development' },
             { name: 'theme-color', content: theme.colors.primary },
-            { name: 'google-site-verification', content: 'C_zrk0we724IL2r6BSTEf2U9ZVaIIYVsFR16eHuk-Nk' },
+            {
+              name: 'google-site-verification',
+              content: 'C_zrk0we724IL2r6BSTEf2U9ZVaIIYVsFR16eHuk-Nk',
+            },
+          ]}
+          link={[
+            { rel: 'shortcut icon', href: favicon },
+            { rel: 'icon', href: favicon, type: 'image/x-icon' },
           ]}
         />
         {children}
