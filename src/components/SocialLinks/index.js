@@ -36,6 +36,9 @@ const StyledLink = styled.a.attrs({
   text-decoration: none;
   text-transform: uppercase;
   margin-left: ${props => props.theme.spacing.u2};
+  &:hover {
+    text-decoration: line-through;
+  }
   &:first-child {
     margin-left: 0;
   }
