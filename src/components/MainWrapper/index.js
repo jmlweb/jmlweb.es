@@ -10,10 +10,11 @@ import theme from '../../theme';
 const StyledWrapper = styled.div`
   background: #fff;
   border-bottom: 4px solid ${props => props.theme.colors.primary};
+  box-shadow: 0 0 6px ${theme.colors.primaryShadow};
   min-height: 100vh;
-  max-width: 768px;
+  max-width: ${props => props.theme.sizes.max};
   margin: 0 auto;
-  @media (min-width: 480px) {
+  @media (${props => props.theme.breakpoints.sm}) {
     min-height: 0;
   }
 `;
@@ -30,10 +31,10 @@ const MainWrapper = ({ data, children }) => {
     body {
       background: ${theme.colors.outerBg};
       font-size: ${theme.font.sizes.content.sm};
-      @media(min-width: 480px) {
+      @media (${theme.breakpoints.sm}) {
         font-size: ${theme.font.sizes.content.md};
       }
-      @media(min-width: 780px) {
+      @media(${theme.breakpoints.lg}) {
         font-size: ${theme.font.sizes.content.lg};
       }
     }

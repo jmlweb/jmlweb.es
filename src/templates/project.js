@@ -8,15 +8,15 @@ const ProjectTemplate = ({ data }) => {
       {description && <p>{description.description}</p>}
       <p>{url}</p>
     </div>
-  )
+  );
 };
 
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
   query projectQuery($id: String!) {
-    contentfulProject(id: {eq: $id}) {
-      title,
+    contentfulProject(id: { eq: $id }) {
+      title
       description {
         description
       }

@@ -1,11 +1,18 @@
-const lightPrimary = '#e4e3f5';
+import { rgba, tint } from 'polished';
+
+const primary = '#362bdb';
+const primaryLight = '#e4e3f5';
+const primaryUltraLight = tint(0.3, primaryLight);
 
 export default Object.freeze({
-  primary: '#362bdb',
-  secondary: '#f17105',
-  lightPrimary,
+  primary,
+  primaryLight,
+  primaryUltraLight,
+  primaryShadow: rgba(primary, 0.2),
+  secondary: '#32375B',
+  mediumText: '#78688E',
   text: '#60677f',
   lightText: '#a49d97',
   dark: '#4a4a4a',
-  outerBg: lightPrimary,
+  outerBg: rgba(primaryLight, 0.2),
 });

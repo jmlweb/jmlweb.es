@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-const Projects = ({ data }) => (
+const Articles = ({ data }) => (
   <div>
     <ul>
       {data &&
-        data.allContentfulProject.edges.map(edge => (
-          <li>
-            <Link to={`/project/${edge.node.id}`}>{edge.node.title}</Link>
+        data.allContentfulArticle.edges.map(edge => (
+          <li key={edge.node.id}>
+            <Link to={`/article/${edge.node.id}`}>{edge.node.title}</Link>
           </li>
         ))}
     </ul>
@@ -16,10 +16,11 @@ const Projects = ({ data }) => (
 );
 
 export const query = graphql`
-  query projects {
-    allContentfulProject {
+  query articles {
+    allContentfulArticle {
       edges {
         node {
+          id
           title
         }
       }
@@ -27,4 +28,4 @@ export const query = graphql`
   }
 `;
 
-export default Projects;
+export default Articles;

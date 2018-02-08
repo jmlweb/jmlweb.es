@@ -10,10 +10,14 @@ const StyledWrapper = styled.div``;
 
 const StyledTop = styled.div`
   position: relative;
+  @media (${props => props.theme.breakpoints.xl}) {
+    display: flex;
+    border-bottom: 4px solid ${props => props.theme.colors.primary};
+  }
 `;
 
 const StyledContent = styled.div`
-  margin: ${props => `${props.theme.spacing.u4} ${props.theme.spacing.u2}`};
+  margin: ${props => `${props.theme.spacing.p4} ${props.theme.spacing.p2}`};
 `;
 
 const StyledMessage = styled.p``;
@@ -52,7 +56,7 @@ IndexPage.propTypes = {
 export const query = graphql`
   query photo {
     photo: imageSharp(id: { regex: "/jmlweb.jpg/" }) {
-      sizes(maxWidth: 384) {
+      sizes(maxWidth: 600) {
         ...GatsbyImageSharpSizes
       }
     }

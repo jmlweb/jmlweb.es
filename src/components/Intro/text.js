@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
-  @media (min-width: 480px) {
+  text-align: ${props => (props.reverse ? 'left' : 'right')};
+  @media (${props => props.theme.breakpoints.sm}) {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -10,17 +11,20 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledHeading = styled.h1`
-  color: ${props => props.theme.colors.lightText};
+  color: ${props => props.theme.colors.mediumText};
   margin: 0;
   font-size: ${props => props.theme.font.sizes.intro.sm};
   font-style: italic;
   font-weight: 400;
   line-height: 1.3;
-  @media (min-width: 480px) {
+  @media (${props => props.theme.breakpoints.xs}) {
     font-size: ${props => props.theme.font.sizes.intro.md};
   }
-  @media (min-width: 660px) {
+  @media (${props => props.theme.breakpoints.md}) {
     font-size: ${props => props.theme.font.sizes.intro.lg};
+  }
+  @media (${props => props.theme.breakpoints.xl}) {
+    text-align: center;
   }
 `;
 
