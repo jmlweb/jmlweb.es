@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import slugify from 'slugify';
+
+import generateSlug from '../../utils/generateSlug';
 
 const Articles = ({ data }) => (
   <div>
@@ -7,7 +10,7 @@ const Articles = ({ data }) => (
       {data &&
         data.allContentfulArticle.edges.map(edge => (
           <li key={edge.node.id}>
-            <Link to={`/article/${edge.node.id}`}>{edge.node.title}</Link>
+            <Link to={`/articulo/${generateSlug(edge.node.title)}`}>{edge.node.title}</Link>
           </li>
         ))}
     </ul>

@@ -12,7 +12,5 @@ export default Object.freeze({
   secondary: '#32375B',
   mediumText: '#78688E',
   text: '#60677f',
-  lightText: '#a49d97',
-  dark: '#4a4a4a',
   outerBg: rgba(primaryLight, 0.2),
 });

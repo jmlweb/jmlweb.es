@@ -1,3 +1,5 @@
+import { rem } from 'polished';
+
 export default {
-  max: '1800px',
+  max: rem(1800),
 };

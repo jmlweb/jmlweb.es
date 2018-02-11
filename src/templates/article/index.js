@@ -1,17 +1,33 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import PT from 'prop-types';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 
+const StyledWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
+
 const ArticleTemplate = ({ data }) => {
-  const { title, description, images } = data.contentfulArticle;
+  const {
+    title, description, entry, images,
+  } = data.contentfulArticle;
   return (
-    <div>
+    <StyledWrapper>
       <Helmet
         title={title}
         script={[{ src: '//cdn.embedly.com/widgets/platform.js', async: true }]}
       />
       <h1>{title}</h1>
       {images && images.map(image => <Img key={image.sizes.src} sizes={image.sizes} alt="" />)}
+      {entry && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: entry.childMarkdownRemark.html,
+          }}
+        />
+      )}
       {description && (
         <div
           dangerouslySetInnerHTML={{
@@ -19,8 +35,21 @@ const ArticleTemplate = ({ data }) => {
           }}
         />
       )}
-    </div>
+    </StyledWrapper>
   );
+};
+
+ArticleTemplate.propTypes = {
+  data: PT.shape({
+    contentfulArticle: PT.shape({
+      title: PT.string,
+      description: PT.object,
+      entry: PT.object,
+      images: PT.arrayOf(PT.shape({
+        sizes: PT.object,
+      })),
+    }),
+  }).isRequired,
 };
 
 export default ArticleTemplate;
@@ -36,6 +65,11 @@ export const pageQuery = graphql`
           src
           srcSet
           sizes
+        }
+      }
+      entry {
+        childMarkdownRemark {
+          html
         }
       }
       description {

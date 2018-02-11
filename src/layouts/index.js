@@ -2,13 +2,13 @@ import React from 'react';
 import PT from 'prop-types';
 
 import Header from '../components/Header';
-import MainWrapper from '../components/MainWrapper';
+import Main from '../components/Main';
 
 const TemplateWrapper = ({ children, data }) => (
-  <MainWrapper data={data}>
+  <Main data={data}>
     <Header title={data.site.siteMetadata.title} />
     {children()}
-  </MainWrapper>
+  </Main>
 );
 
 export const query = graphql`

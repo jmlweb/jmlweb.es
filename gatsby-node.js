@@ -1,7 +1,10 @@
 const Promise = require('bluebird');
 const path = require('path');
 const slash = require('slash');
-const map = require('lodash.map');
+const webpackLodashPlugin = require('lodash-webpack-plugin');
+const _ = require('lodash');
+
+const generateSlug = require('./src/utils/generateSlug');
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -23,9 +26,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
         const projectTemplate = path.resolve('./src/templates/project.js');
         if (result && result.data && result.data.allContentfulProject) {
-          map(result.data.allContentfulProject.edges, (edge) => {
+          _.map(result.data.allContentfulProject.edges, (edge) => {
             createPage({
-              path: `/project/${edge.node.id}`,
+              path: `/project/${edge.node.title}`,
               component: slash(projectTemplate),
               context: {
                 id: edge.node.id,
@@ -41,6 +44,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   id
+                  title
                 }
               }
             }
@@ -49,11 +53,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           if (result.errors) {
             reject(result.errors);
           }
-          const articleTemplate = path.resolve('./src/templates/article.js');
+          const articleTemplate = path.resolve('./src/templates/article/index.js');
           if (result && result.data && result.data.allContentfulArticle) {
-            map(result.data.allContentfulArticle.edges, (edge) => {
+            _.map(result.data.allContentfulArticle.edges, (edge) => {
               createPage({
-                path: `/article/${edge.node.id}`,
+                path: `/articulo/${generateSlug(edge.node.title)}`,
                 component: slash(articleTemplate),
                 context: {
                   id: edge.node.id,
@@ -65,4 +69,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         });
       });
   });
+};
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-javascript') {
+    config.plugin('Lodash', webpackLodashPlugin, null);
+  }
 };

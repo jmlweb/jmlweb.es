@@ -6,7 +6,7 @@ const StyledSVG = styled.svg`
   display: block;
   width: 60px;
   height: 60px;
-  @media (${props => props.theme.breakpoints.sm}) {
+  @media (${({ theme }) => theme.breakpoints.xs}) {
     width: 70px;
     height: 70px;
   }
@@ -17,16 +17,16 @@ const Logo = ({ color }) => (
     <g id="Canvas" transform="translate(-861 -322)">
       <g id="Group">
         <g id="Fill 1">
-          <use xlinkHref="#path0_fill" transform="translate(898.059 363.962)" fill="#FFFFFF" />
+          <use xlinkHref="#path0_fill" transform="translate(898.059 363.962)" fill={color} />
         </g>
         <g id="Fill 2">
-          <use xlinkHref="#path1_fill" transform="translate(874.235 324.185)" fill="#FFFFFF" />
+          <use xlinkHref="#path1_fill" transform="translate(874.235 324.185)" fill={color} />
         </g>
         <g id="Fill 4">
-          <use xlinkHref="#path2_fill" transform="translate(902.912 324.185)" fill="#FFFFFF" />
+          <use xlinkHref="#path2_fill" transform="translate(902.912 324.185)" fill={color} />
         </g>
         <g id="Fill 7">
-          <use xlinkHref="#path3_fill" transform="translate(861 322)" fill="#FFFFFF" />
+          <use xlinkHref="#path3_fill" transform="translate(861 322)" fill={color} />
         </g>
       </g>
     </g>

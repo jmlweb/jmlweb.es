@@ -5,13 +5,14 @@ export default {
   family: '"Mission Gothic", sans-serif',
   familyAlt: '"Mission Gothic", sans-serif',
   sizes: {
+    headings: {},
     intro: {
       sm: rem(20),
       md: rem(22),
       lg: rem(28),
     },
     content: {
-      sm: rem(16),
+      sm: rem(17),
       md: rem(18),
       lg: rem(19),
     },

@@ -1,9 +1,11 @@
+import { rem } from 'polished';
+
 export default {
-  xs: 'min-width: 390px',
-  sm: 'min-width: 480px',
-  md: 'min-width: 660px',
-  lg: 'min-width: 780px',
-  xl: 'min-width: 900px',
-  xxl: 'min-width: 1100px',
-  xxxl: 'min-width: 1300px',
+  xxs: `min-width: ${rem(390)}`,
+  xs: `min-width: ${rem(480)}`,
+  sm: `min-width: ${rem(660)}`,
+  md: `min-width: ${rem(780)}`,
+  lg: `min-width: ${rem(900)}`,
+  xl: `min-width: ${rem(1100)}`,
+  xxl: `min-width: ${rem(1300)}`,
 };

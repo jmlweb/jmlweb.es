@@ -2,7 +2,10 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://jmlweb.es',
     title: 'José Manuel Lucas / Frontend Developer',
+    keywords: 'José Manuel Lucas, Frontend, Development',
+    googleVerification: 'C_zrk0we724IL2r6BSTEf2U9ZVaIIYVsFR16eHuk-Nk',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,6 +21,12 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-54381071-6',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#ffffff',
       },
     },
     {
@@ -37,6 +46,10 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-remark-external-links',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

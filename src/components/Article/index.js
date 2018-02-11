@@ -1,17 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
+import PT from 'prop-types';
 
-const StyledWrapper = styled.div``;
+import Wrapper from './components/Wrapper';
+import Heading from './components/Heading';
+import ReadMore from './components/ReadMore';
+import Content from './components/Content';
 
-const StyledHeading = styled.h2`
-  -webkit-font-smoothing: antialiased;
-`;
-
-const Article = ({ title, children }) => (
-  <StyledWrapper>
-    <StyledHeading>{title}</StyledHeading>
-    {children}
-  </StyledWrapper>
+const Article = ({ id, title, children }) => (
+  <Wrapper>
+    <Heading id={id} title={title} />
+    <Content>
+      <div
+        key="content"
+        dangerouslySetInnerHTML={{
+          __html: children,
+        }}
+      />
+    </Content>
+    <ReadMore title={title} />
+  </Wrapper>
 );
+
+Article.propTypes = {
+  id: PT.string.isRequired,
+  title: PT.string.isRequired,
+  children: PT.node.isRequired,
+};
 
 export default Article;
