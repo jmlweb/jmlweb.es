@@ -21,7 +21,7 @@ const StyledPersonalData = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};
-  padding: ${({ theme }) => theme.spacing.p2};
+  padding: ${({ theme }) => theme.spacing(2)};
   @media (${({ theme }) => theme.breakpoints.md}) {
     padding: 0;
   }

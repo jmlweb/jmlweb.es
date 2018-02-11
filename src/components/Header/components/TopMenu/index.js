@@ -12,7 +12,7 @@ const StyledLink = styled(Link).attrs({
   color: #fff;
   display: inline-block;
   font-weight: 700;
-  padding: ${({ theme }) => theme.spacing.p1};
+  padding: ${({ theme }) => theme.spacing(1)};
   text-transform: uppercase;
   &.active,
   &:hover {
@@ -23,18 +23,18 @@ const StyledLink = styled(Link).attrs({
     color: ${({ theme }) => theme.colors.primaryLight};
   }
   &:last-child {
-    margin-right: ${({ theme }) => theme.spacing.n1};
+    margin-right: ${({ theme }) => theme.spacing(-1)};
   }
   @media (${({ theme }) => theme.breakpoints.lg}) {
-    padding: ${props => `${props.theme.spacing.p1} ${props.theme.spacing.p2}`};
+    padding: ${props => `${props.theme.spacing(1)} ${props.theme.spacing(2)}`};
     &:last-child {
-      margin-right: ${({ theme }) => theme.spacing.n2};
+      margin-right: ${({ theme }) => theme.spacing(-2)};
     }
   }
   @media (${({ theme }) => theme.breakpoints.xl}) {
-    padding: ${props => `${props.theme.spacing.p1} ${props.theme.spacing.p3}`};
+    padding: ${props => `${props.theme.spacing(1)} ${props.theme.spacing(3)}`};
     &:last-child {
-      margin-right: ${({ theme }) => theme.spacing.n3};
+      margin-right: ${({ theme }) => theme.spacing(-3)};
     }
   }
 `;

@@ -12,17 +12,51 @@ export default theme => (WrappedComponent) => {
   }
   body {
     background: ${theme.colors.outerBg};
-    font-size: ${theme.font.sizes.content.sm};
-    @media (${theme.breakpoints.xs}) {
-      font-size: ${theme.font.sizes.content.md};
+  }
+  body,
+  p,
+  li,
+  dd,
+  input,
+  select,
+  textarea {
+    font-size: ${theme.fontSizes(0)};
+    @media(${theme.breakpoints.sm}) {
+      font-size: ${theme.fontSizes(1)};
     }
-    @media(${theme.breakpoints.md}) {
-      font-size: ${theme.font.sizes.content.lg};
+    @media(${theme.breakpoints.xl}) {
+      font-size: ${theme.fontSizes(2)};
+    }
+    @media(${theme.breakpoints.xxl}) {
+      font-size: ${theme.fontSizes(3)};
     }
   }
-  body, input, select, textarea {
+  body,
+  p,
+  li,
+  dd {
+    line-height: 1.4;
+    @media (${theme.breakpoints.lg}) {
+      line-height: 1.5;
+    }
+    @media (${theme.breakpoints.xl}) {
+      line-height: 1.55;
+    }
+  }
+  p,
+  li,
+  dd {
+    margin-top: ${theme.spacing(1)};
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  body,
+  input,
+  select,
+  textarea {
     color: ${theme.colors.text};
-    font-family: ${theme.font.family};
+    font-family: ${theme.fontFamily.default};
     -webkit-font-smoothing: antialiased;
   }
   a {
@@ -31,9 +65,6 @@ export default theme => (WrappedComponent) => {
     &:hover {
       color: ${theme.colors.secondary};
     }
-  }
-  p {
-    line-height: 1.4;
   }
 `;
   return WrappedComponent;

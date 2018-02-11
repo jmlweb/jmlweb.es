@@ -1,8 +1,8 @@
 import React from 'react';
+import PT from 'prop-types';
 import Link from 'gatsby-link';
-import slugify from 'slugify';
 
-import generateSlug from '../../utils/generateSlug';
+import generateSlug from '../utils/generateSlug';
 
 const Articles = ({ data }) => (
   <div>
@@ -17,6 +17,19 @@ const Articles = ({ data }) => (
     <Link to="/">Go back to the homepage</Link>
   </div>
 );
+
+Articles.propTypes = {
+  data: PT.shape({
+    allContentfulArticle: PT.shape({
+      edges: PT.arrayOf(PT.shape({
+        node: PT.shape({
+          id: PT.string,
+          title: PT.string,
+        }),
+      })),
+    }),
+  }).isRequired,
+};
 
 export const query = graphql`
   query articles {

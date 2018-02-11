@@ -30,14 +30,17 @@ const StyledWrapper = styled(Link)`
 const StyledLink = styled.span`
   background: #fff;
   display: inline-block;
-  font-size: ${({ theme }) => theme.font.sizes.content.sm};
+  font-size: ${({ theme }) => theme.fontSizes(1)};
   font-weight: 700;
-  padding: ${({ theme }) => theme.spacing.p1};
+  padding: ${({ theme }) => theme.spacing(1)};
   position: relative;
   text-transform: uppercase;
   z-index: 1;
   @media (${({ theme }) => theme.breakpoints.lg}) {
-    font-size: ${({ theme }) => theme.font.sizes.content.md};
+    font-size: ${({ theme }) => theme.fontSizes(2)};
+  }
+  @media (${({ theme }) => theme.breakpoints.xl}) {
+    font-size: ${({ theme }) => theme.fontSizes(3)};
   }
 `;
 

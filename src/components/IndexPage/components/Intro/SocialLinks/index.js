@@ -6,7 +6,7 @@ const StyledWrapper = styled.div`
   background: ${({ theme }) => rgba(theme.colors.secondary, 0.7)};
   display: flex;
   justify-content: space-between;
-  padding: ${({ theme }) => `${theme.spacing.p1} ${theme.spacing.p2}`};
+  padding: ${({ theme }) => `${theme.spacing(1)} ${theme.spacing(2)}`};
   @media (${({ theme }) => theme.breakpoints.sm}) {
     position: absolute;
     bottom: 0;
@@ -45,7 +45,7 @@ const StyledLink = styled.a.attrs({
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   text-transform: uppercase;
-  margin-left: ${({ theme }) => theme.spacing.p2};
+  margin-left: ${({ theme }) => theme.spacing(2)};
   &:hover {
     text-decoration: line-through;
     color: #fff;
@@ -57,7 +57,7 @@ const StyledLink = styled.a.attrs({
     display: block;
     text-align: center;
     margin-left: 0;
-    padding: ${({ theme }) => theme.spacing.p2};
+    padding: ${({ theme }) => theme.spacing(2)};
   }
 `;
 

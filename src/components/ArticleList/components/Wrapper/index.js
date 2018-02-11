@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  margin: ${({ theme }) => `${theme.spacing.p3} ${theme.spacing.p2}`};
+  margin: ${({ theme }) => `${theme.spacing(3)} ${theme.spacing(2)}`};
   @media (${({ theme }) => theme.breakpoints.sm}) {
-    margin: ${({ theme }) => theme.spacing.p3};
+    margin: ${({ theme }) => theme.spacing(3)};
   }
   @media (${({ theme }) => theme.breakpoints.md}) {
     display: flex;
   }
   @media (${({ theme }) => theme.breakpoints.lg}) {
-    margin: ${({ theme }) => `${theme.spacing.p3} ${theme.spacing.p4}`};
+    margin: ${({ theme }) => `${theme.spacing(3)} ${theme.spacing(4)}`};
   }
   @media (${({ theme }) => theme.breakpoints.xl}) {
-    margin: ${({ theme }) => theme.spacing.p4};
+    margin: ${({ theme }) => theme.spacing(4)};
   }
   @media (${({ theme }) => theme.breakpoints.xxl}) {
-    margin: ${({ theme }) => `${theme.spacing.p4} ${theme.spacing.p6}`};
+    margin: ${({ theme }) => `${theme.spacing(4)} ${theme.spacing(6)}`};
   }
 `;

@@ -1,19 +1,17 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  line-height: 1.4;
-  font-size: ${({ theme }) => theme.font.sizes.content.sm};
-  @media (${({ theme }) => theme.breakpoints.xl}) {
-    font-size: ${({ theme }) => theme.font.sizes.content.md};
-    line-height: 1.5;
-  }
-  & p {
-    margin-top: ${({ theme }) => theme.spacing.p1};
-    &:first-child {
-      margin-top: 0;
-    }
-  }
   & h3 {
+    font-size: ${({ theme }) => theme.fontSizes(2)};
     margin-bottom: 0;
+    @media (${({ theme }) => theme.breakpoints.lg}) {
+      font-size: ${({ theme }) => theme.fontSizes(3)};
+    }
+    @media (${({ theme }) => theme.breakpoints.xl}) {
+      font-size: ${({ theme }) => theme.fontSizes(4)};
+    }
+    @media (${({ theme }) => theme.breakpoints.xxl}) {
+      font-size: ${({ theme }) => theme.fontSizes(5)};
+    }
   }
 `;
