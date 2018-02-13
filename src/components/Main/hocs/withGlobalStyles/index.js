@@ -60,6 +60,9 @@ export default theme => (WrappedComponent) => {
     font-family: ${theme.fontFamily.default};
     -webkit-font-smoothing: antialiased;
   }
+  h3 {
+    margin: 0;
+  }
   a {
     color: ${theme.colors.primary};
     text-decoration: none;
@@ -67,6 +70,13 @@ export default theme => (WrappedComponent) => {
       text-decoration: line-through;
       color: ${theme.colors.dark};
     }
+  }
+  code {
+    font-family: monaco, Consolas, Lucida Console, monospace;
+    font-size: 0.8em;
+    padding: 4px 6px;
+    background: ${theme.colors.lighter};
+    border: 1px solid ${theme.colors.light};
   }
 `;
   return WrappedComponent;

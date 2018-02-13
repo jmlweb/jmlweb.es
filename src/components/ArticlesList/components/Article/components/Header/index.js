@@ -59,7 +59,10 @@ const StyledHeading = styled.h2`
     })};
   }
   `;
-const StyledLink = StyledRow.withComponent(Link).extend`
+
+const StrippedLink = ({ mini, ...rest }) => <Link {...rest} />;
+
+const StyledLink = StyledRow.withComponent(StrippedLink).extend`
     display: block;
     padding-top: ${props => props.theme.spacing(2)};
     padding-bottom: ${props => props.theme.spacing(2)};
