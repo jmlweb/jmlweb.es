@@ -12,29 +12,28 @@ const StyledLink = styled(Link).attrs({
   color: #fff;
   display: inline-block;
   font-weight: 700;
-  padding: ${({ theme }) => theme.spacing(1)};
+  padding: ${props => props.theme.spacing(1)};
   text-transform: uppercase;
   &.active,
   &:hover {
     color: #fff;
-    text-decoration: line-through;
   }
   &.active {
-    color: ${({ theme }) => theme.colors.primaryLight};
+    color: ${props => props.theme.colors.primaryLight};
   }
   &:last-child {
-    margin-right: ${({ theme }) => theme.spacing(-1)};
+    margin-right: ${props => props.theme.spacing(-1)};
   }
-  @media (${({ theme }) => theme.breakpoints.lg}) {
+  @media (${props => props.theme.breakpoints.lg}) {
     padding: ${props => `${props.theme.spacing(1)} ${props.theme.spacing(2)}`};
     &:last-child {
-      margin-right: ${({ theme }) => theme.spacing(-2)};
+      margin-right: ${props => props.theme.spacing(-2)};
     }
   }
-  @media (${({ theme }) => theme.breakpoints.xl}) {
+  @media (${props => props.theme.breakpoints.xl}) {
     padding: ${props => `${props.theme.spacing(1)} ${props.theme.spacing(3)}`};
     &:last-child {
-      margin-right: ${({ theme }) => theme.spacing(-3)};
+      margin-right: ${props => props.theme.spacing(-3)};
     }
   }
 `;

@@ -12,6 +12,7 @@ export default theme => (WrappedComponent) => {
   }
   body {
     background: ${theme.colors.outerBg};
+    color: ${theme.colors.gray};
   }
   body,
   p,
@@ -20,15 +21,15 @@ export default theme => (WrappedComponent) => {
   input,
   select,
   textarea {
-    font-size: ${theme.fontSizes(0)};
+    font-size: ${theme.fontSize(0)};
     @media(${theme.breakpoints.sm}) {
-      font-size: ${theme.fontSizes(1)};
+      font-size: ${theme.fontSize(1)};
     }
     @media(${theme.breakpoints.xl}) {
-      font-size: ${theme.fontSizes(2)};
+      font-size: ${theme.fontSize(2)};
     }
     @media(${theme.breakpoints.xxl}) {
-      font-size: ${theme.fontSizes(3)};
+      font-size: ${theme.fontSize(3)};
     }
   }
   body,
@@ -63,7 +64,8 @@ export default theme => (WrappedComponent) => {
     color: ${theme.colors.primary};
     text-decoration: none;
     &:hover {
-      color: ${theme.colors.secondary};
+      text-decoration: line-through;
+      color: ${theme.colors.dark};
     }
   }
 `;

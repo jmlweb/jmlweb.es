@@ -2,17 +2,17 @@ import React from 'react';
 import PT from 'prop-types';
 
 import LinkedLogo from './components/LinkedLogo';
-import Main from './components/Main';
-import TopMenu from './components/TopMenu';
 import Wrapper from './components/Wrapper';
+import TopMenu from './components/TopMenu';
+import Row from './components/Row';
 
 const Header = ({ title }) => (
-  <Main>
-    <Wrapper>
+  <Wrapper>
+    <Row>
       <LinkedLogo title={title} />
       <TopMenu />
-    </Wrapper>
-  </Main>
+    </Row>
+  </Wrapper>
 );
 
 Header.propTypes = {

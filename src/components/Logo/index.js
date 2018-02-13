@@ -1,12 +1,22 @@
 import React from 'react';
 import PT from 'prop-types';
 import styled from 'styled-components';
+import { timingFunctions } from 'polished';
 
 const StyledSVG = styled.svg`
   display: block;
-  width: 60px;
-  height: 60px;
-  @media (${({ theme }) => theme.breakpoints.xs}) {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ${timingFunctions('easeOutQuad')};
+  @media (${props => props.theme.breakpoints.xs}) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (${props => props.theme.breakpoints.md}) {
+    width: 60px;
+    height: 60px;
+  }
+  @media (${props => props.theme.breakpoints.lg}) {
     width: 70px;
     height: 70px;
   }

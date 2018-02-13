@@ -1,8 +1,7 @@
 const Promise = require('bluebird');
 const path = require('path');
 const slash = require('slash');
-const webpackLodashPlugin = require('lodash-webpack-plugin');
-const _ = require('lodash');
+const map = require('lodash.map');
 
 const generateSlug = require('./src/utils/generateSlug');
 
@@ -26,7 +25,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
         const projectTemplate = path.resolve('./src/templates/project.js');
         if (result && result.data && result.data.allContentfulProject) {
-          _.map(result.data.allContentfulProject.edges, (edge) => {
+          map(result.data.allContentfulProject.edges, (edge) => {
             createPage({
               path: `/project/${edge.node.title}`,
               component: slash(projectTemplate),
@@ -55,7 +54,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
           const articleTemplate = path.resolve('./src/templates/article/index.js');
           if (result && result.data && result.data.allContentfulArticle) {
-            _.map(result.data.allContentfulArticle.edges, (edge) => {
+            map(result.data.allContentfulArticle.edges, (edge) => {
               createPage({
                 path: `/articulo/${generateSlug(edge.node.title)}`,
                 component: slash(articleTemplate),
@@ -69,10 +68,4 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         });
       });
   });
-};
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-javascript') {
-    config.plugin('Lodash', webpackLodashPlugin, null);
-  }
 };
