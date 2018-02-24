@@ -40,9 +40,9 @@ const StyledLink = styled(Link).attrs({
 
 const TopMenu = () => (
   <StyledWrapper>
-    <StyledLink to="/articulos">Artículos</StyledLink>
+    {/* <StyledLink to="/articulos">Artículos</StyledLink>
     <StyledLink to="/proyectos">Proyectos</StyledLink>
-    <StyledLink to="/quiensoy">Quién soy</StyledLink>
+    <StyledLink to="/quiensoy">Quién soy</StyledLink> */}
   </StyledWrapper>
 );
 
