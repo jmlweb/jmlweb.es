@@ -4,7 +4,7 @@ import buildScale from '../utils/buildScale';
 
 export const PX_BASE = '16px';
 const BASE = '1rem';
-const VARIATIONS_NUMBER = 9;
+const VARIATIONS_NUMBER = 20;
 const SCALE = 'minorSecond';
 
 const convertEmToRem = value => `${stripUnit(value)}rem`;

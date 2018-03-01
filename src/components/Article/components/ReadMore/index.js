@@ -3,7 +3,7 @@ import PT from 'prop-types';
 import Link from 'gatsby-link';
 import { timingFunctions, rgba } from 'polished';
 
-import StyledRow from '../../../../../StyledRow';
+import StyledRow from '../../../StyledRow';
 
 const StyledButton = StyledRow.withComponent(Link).extend`
   color: ${props => props.theme.colors.primary};
@@ -20,7 +20,7 @@ const StyledButton = StyledRow.withComponent(Link).extend`
   }
 `;
 
-const ReadMore = ({ url }) => <StyledButton to={url}>Leer más</StyledButton>;
+const ReadMore = ({ url }) => <StyledButton to={`${url}#descripcion`}>Leer más</StyledButton>;
 
 ReadMore.propTypes = {
   url: PT.string.isRequired,

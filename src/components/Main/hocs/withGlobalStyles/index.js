@@ -45,6 +45,8 @@ export default theme => (WrappedComponent) => {
     }
   }
   p,
+  ol,
+  ul,
   li,
   dd {
     margin-top: ${theme.spacing(1)};
@@ -60,8 +62,9 @@ export default theme => (WrappedComponent) => {
     font-family: ${theme.fontFamily.default};
     -webkit-font-smoothing: antialiased;
   }
-  h3 {
+  h2, h3 {
     margin: 0;
+    color: ${theme.colors.lightGray};
   }
   a {
     color: ${theme.colors.primary};

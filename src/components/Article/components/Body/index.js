@@ -1,7 +1,7 @@
 import React from 'react';
 import PT from 'prop-types';
 
-import StyledRow from '../../../../../StyledRow';
+import StyledRow from '../../../StyledRow';
 
 const StyledWrapper = StyledRow.extend`
   margin-top: ${props => (props.mini ? 0 : props.theme.spacing(2))};
@@ -10,6 +10,11 @@ const StyledWrapper = StyledRow.extend`
     &,
     & p {
       font-size: ${props => (props.mini ? props.theme.fontSize(1) : props.theme.fontSize(2))};
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
   @media (${props => props.theme.breakpoints.xxl}) {
@@ -20,16 +25,10 @@ const StyledWrapper = StyledRow.extend`
   }
 `;
 
-const Body = ({ mini, children }) => (
-  <StyledWrapper
-    mini={mini}
-    dangerouslySetInnerHTML={{
-      __html: children,
-    }}
-  />
-);
+const Body = ({ mini, children }) => <StyledWrapper mini={mini}>{children}</StyledWrapper>;
 
 Body.propTypes = {
+  mini: PT.bool.isRequired,
   children: PT.node.isRequired,
 };
 

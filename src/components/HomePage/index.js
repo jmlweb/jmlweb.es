@@ -8,22 +8,19 @@ import Articles from './components/Articles';
 
 const StyledWrapper = styled.div``;
 
-const IndexPage = ({ data }) => {
-  console.log(data);
-  return (
-    <StyledWrapper>
-      <Intro image={data.image} />
-      <Articles data={data.homeArticles.edges} />
-      {/* <ArticleList
+const IndexPage = ({ data }) => (
+  <StyledWrapper>
+    <Intro image={data.image} />
+    <Articles data={data.homeArticles.edges} />
+    {/* <ArticleList
       items={data.allContentfulArticle.edges.map(({ node }) => ({
         id: node.id,
         title: node.title,
         content: node.entry.childMarkdownRemark.html,
       }))}
     /> */}
-    </StyledWrapper>
-  );
-};
+  </StyledWrapper>
+);
 
 IndexPage.propTypes = {
   data: PT.shape({

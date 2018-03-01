@@ -1,7 +1,7 @@
 import { rgba } from 'polished';
 
 const colors = Object.freeze({
-  dark: '#333758',
+  dark: '#959abd',
   gray: '#55575e',
   light: '#eae9f6',
   lighter: '#f6f6fc',

@@ -2,7 +2,7 @@ import React from 'react';
 import PT from 'prop-types';
 
 import Wrapper from './components/Wrapper';
-import Article from './components/Article';
+import Article from '../Article';
 
 const ArticlesList = ({ data, mini }) => (
   <Wrapper mini={mini}>
