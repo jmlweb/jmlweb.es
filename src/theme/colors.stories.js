@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { readableColor, opacify } from 'polished';
 import { storiesOf } from '@storybook/react';
 import colors from './colors';
@@ -9,6 +8,8 @@ import Text from '../components/Text';
 const StyledColor = FlexGrid.extend`
   width: 160px;
   height: 160px;
+  border-radius: 50%;
+  border: 2px solid #000;
 `;
 
 const StyledLabel = Text.extend`
