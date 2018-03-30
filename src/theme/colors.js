@@ -1,33 +1,55 @@
-import { rgba } from 'polished';
+import { rgba, shade, tint } from 'polished';
 
-const colors = Object.freeze({
-  dark: '#959abd',
-  gray: '#55575e',
-  light: '#eae9f6',
-  lighter: '#f6f6fc',
-  lightGray: '#73768e',
-  outer: '#F8F8FD',
+const levels = 10;
+
+const primary = '#362BDB';
+const black = '#000';
+
+const transformUnits = {
+  digital: {
+    fromZero: value => value / levels,
+    toZero: value => 1 - value / levels,
+  },
+};
+
+const createTransformRows = transformFunc =>
+  Array.from({ length: levels }).map((v, k) => transformFunc(k));
+
+const flipIfNeeded = isNeeded => (...params) => (isNeeded ? params.reverse() : params);
+
+const createTransform = (
+  func,
+  unitFunc = transformUnits.digital.toZero,
+  flipped = false,
+) => color => createTransformRows(value => func(...flipIfNeeded(flipped)(unitFunc(value), color)));
+
+const createAlphas = createTransform(rgba, transformUnits.digital.fromZero, true);
+const createShades = createTransform(shade);
+const createTints = createTransform(tint);
+
+export const mainColors = Object.freeze({
   primary: '#362BDB',
   white: '#fff',
+  black: '#000',
+  gray: ['#333', '#55575e', '#73768e', '#959abd', '#eae9f6', '#f6f6fc', '#f8f8fd'],
 });
 
-export default Object.freeze({
-  ...colors,
-  alphaBorder: rgba(colors.lightGray, 0.2),
-  shadow: rgba(colors.dark, 0.3),
+export const alphaColors = Object.freeze({
+  primaryAlpha: createAlphas(primary),
+  blackAlpha: createAlphas(black),
 });
 
-// const primary = '#362bdb';
-// const primaryLight = '#e4e3f5';
-// const primaryUltraLight = tint(0.3, primaryLight);
+export const shadeColors = Object.freeze({
+  primaryShade: createShades(primary),
+});
 
-// export default Object.freeze({
-//   primary,
-//   primaryLight,
-//   primaryUltraLight,
-//   primaryShadow: rgba(primary, 0.2),
-//   secondary: '#32375B',
-//   mediumText: '#78688E',
-//   text: '#60677f',
-//   outerBg: rgba(primaryLight, 0.2),
-// });
+export const tintColors = Object.freeze({
+  primaryTint: createTints(primary),
+});
+
+export default {
+  ...mainColors,
+  ...alphaColors,
+  ...shadeColors,
+  ...tintColors,
+};

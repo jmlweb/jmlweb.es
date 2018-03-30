@@ -37,4 +37,4 @@ export const query = graphql`
   }
 `;
 
-export default from '../components/HomePage';
+export default from '../templates/Home';

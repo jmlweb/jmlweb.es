@@ -52,7 +52,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           if (result.errors) {
             reject(result.errors);
           }
-          const articleTemplate = path.resolve('./src/templates/article/index.js');
+          const articleTemplate = path.resolve('./src/templates/Article/index.js');
           if (result && result.data && result.data.allContentfulArticle) {
             map(result.data.allContentfulArticle.edges, (edge) => {
               createPage({

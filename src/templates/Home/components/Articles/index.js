@@ -1,8 +1,8 @@
 import React from 'react';
 import PT from 'prop-types';
 
-import ContentWithSidebar from '../../../ContentWithSidebar';
-import ArticlesList from '../../../ArticlesList';
+import ContentWithSidebar from '../../../../components/ContentWithSidebar';
+import ArticlesList from '../../../../components/ArticlesList';
 
 const Articles = ({ data }) => {
   const [featuredArticle, ...normalArticles] = data;
