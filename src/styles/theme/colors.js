@@ -1,6 +1,6 @@
 import { rgba, shade, tint } from 'polished';
 
-const levels = 10;
+const levels = 5;
 
 const primary = '#362BDB';
 const black = '#000';

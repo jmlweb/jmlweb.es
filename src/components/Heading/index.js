@@ -2,26 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 
+import { sharedStyles } from '../../styles';
+
 const StyledHeading = Text.extend`
-  margin: 0;
-  ${props => props.fontSize <= 1 && 'text-transform: uppercase'};
-  line-height: ${props => 1.3 - (props.fontSize - 6) * 0.05};
-  margin-bottom: ${props => props.theme.spacing(4)};
+  ${props => sharedStyles.headings(props.level)};
 `;
 
-const Heading = ({ level, children }) => (
-  <StyledHeading is={`h${level}`} fontSize={6 - level}>
+const Heading = ({ level, tag, children }) => (
+  <StyledHeading is={tag || `h${level}`} level={level}>
     {children}
   </StyledHeading>
 );
 
 Heading.defaultProps = {
   level: 1,
+  tag: undefined,
 };
 
 Heading.propTypes = {
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   children: PropTypes.node.isRequired,
+  tag: PropTypes.string,
 };
 
 export default Heading;

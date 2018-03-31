@@ -1,15 +1,18 @@
 import breakpoints from './breakpoints';
 import colors from './colors';
 import fontFamily from './fontFamily';
-import fontSize from './fontSize';
+import fontSize, { fontSizeBp } from './fontSize';
+import fontWeights from './fontWeights';
 import sizes from './sizes';
-import spacing from './spacing';
+import space from './space';
 
 export default {
   breakpoints,
   colors,
   fontFamily,
   fontSize,
+  fontSizeBp,
+  fontWeights,
   sizes,
-  spacing,
+  space,
 };

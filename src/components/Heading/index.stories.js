@@ -7,8 +7,8 @@ import Heading from './';
 
 const fakeText = faker.lorem.words(20);
 
-const getHeading = (level, children) => (
-  <Heading key={level} level={level}>
+const getHeading = (level, children, tag) => (
+  <Heading key={level} level={level} tag={tag}>
     {`Heading level ${level}: ${children}`}
   </Heading>
 );
@@ -22,4 +22,8 @@ storiesOf('Components/Heading', module)
     </div>
   ))
   .add('playground', () =>
-    getHeading(number('level', 1), text('children', fakeText)));
+    getHeading(
+      number('level', 1),
+      text('children', fakeText),
+      text('tag', undefined),
+    ));

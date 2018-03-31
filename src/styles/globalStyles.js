@@ -1,8 +1,9 @@
 import { injectGlobal } from 'styled-components';
 import { normalize } from 'polished';
+import theme from './theme';
+import sharedStyles from './sharedStyles';
 
-export default (theme) => {
-  injectGlobal`
+injectGlobal`
   ${normalize()}
   html {
     box-sizing: border-box;
@@ -49,7 +50,7 @@ export default (theme) => {
   ul,
   li,
   dd {
-    margin-top: ${theme.spacing(1)};
+    margin-top: ${theme.space[1]};
     &:first-child {
       margin-top: 0;
     }
@@ -62,10 +63,23 @@ export default (theme) => {
     font-family: ${theme.fontFamily.default};
     -webkit-font-smoothing: antialiased;
   }
-  h2,
+  h1 {
+    ${sharedStyles.headings(1)};
+  }
+  h2 {
+    ${sharedStyles.headings(2)};
+  }
   h3 {
-    margin: 0;
-    color: ${theme.colors.lightGray};
+    ${sharedStyles.headings(3)};
+  }
+  h4 {
+    ${sharedStyles.headings(4)};
+  }
+  h5 {
+    ${sharedStyles.headings(5)};
+  }
+  h6 {
+    ${sharedStyles.headings(6)};
   }
   a {
     color: ${theme.colors.primary};
@@ -75,6 +89,12 @@ export default (theme) => {
       color: ${theme.colors.dark};
     }
   }
+  em, i {
+    font-style: italic;
+  }
+  strong, b {
+    font-weight: 700;
+  }
   code {
     font-family: monaco, Consolas, Lucida Console, monospace;
     font-size: 0.8em;
@@ -83,4 +103,3 @@ export default (theme) => {
     border: 1px solid ${theme.colors.light};
   }
 `;
-};

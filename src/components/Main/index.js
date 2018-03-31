@@ -4,10 +4,8 @@ import { ThemeProvider } from 'styled-components';
 
 import Metadata from './components/Metadata';
 import Wrapper from './components/Wrapper';
-import createGlobalStyles from './createGlobalStyles';
-import theme from '../../theme';
-
-createGlobalStyles(theme);
+import '../../styles/globalStyles';
+import theme from '../../styles/theme';
 
 const Main = ({ data, children }) => (
   <ThemeProvider theme={theme}>

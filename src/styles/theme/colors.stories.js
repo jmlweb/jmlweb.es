@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { readableColor, opacify } from 'polished';
 import { storiesOf } from '@storybook/react';
 import colors from './colors';
-import FlexGrid from '../components/FlexGrid';
-import Box from '../components/Box';
-import Text from '../components/Text';
+import FlexGrid from '../../components/FlexGrid';
+import Box from '../../components/Box';
+import Text from '../../components/Text';
 
 const {
   primary,
