@@ -38,6 +38,7 @@
     "styled-system": "^2.2.1"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^3.4.0",
     "@storybook/react": "^3.3.15",
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.1",
@@ -46,6 +47,7 @@
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "faker": "^4.1.0",
     "prettier": "^1.11.1"
   }
 }

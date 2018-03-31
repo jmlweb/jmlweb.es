@@ -1,25 +1,13 @@
 import React from 'react';
 import PT from 'prop-types';
-import { ThemeProvider, injectGlobal } from 'styled-components';
-import { normalize } from 'polished';
+import { ThemeProvider } from 'styled-components';
 
 import Metadata from './components/Metadata';
 import Wrapper from './components/Wrapper';
+import createGlobalStyles from './createGlobalStyles';
 import theme from '../../theme';
 
-injectGlobal`
-  ${normalize()}
-  html {
-    box-sizing: border-box;
-    * {
-      box-sizing: inherit;
-    }
-  }
-  body {
-    background: ${theme.colors.outerBg};
-    color: ${theme.colors.gray};
-  }
-`;
+createGlobalStyles(theme);
 
 const Main = ({ data, children }) => (
   <ThemeProvider theme={theme}>

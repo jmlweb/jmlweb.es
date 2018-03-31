@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import { fontSize, color, space } from 'styled-system';
+import { color, space } from 'styled-system';
 import tag from 'clean-tag';
 
-export default styled(tag.span)`
-  display: ${props => props.display || 'inline-block'};
-  ${fontSize};
+import withFontSize from '../../hoc/withFontSize';
+
+const Text = styled(tag.span)`
+  ${props => props.display && `display: ${props.display}`};
   ${color};
   ${space};
 `;
+
+export default withFontSize(Text);
