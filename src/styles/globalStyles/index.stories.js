@@ -29,7 +29,14 @@ storiesOf('Theme/GlobalStyles', module)
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
-        <li>{faker.lorem.sentence()}</li>
+        <ul>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+        </ul>
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
       </ul>
@@ -37,6 +44,14 @@ storiesOf('Theme/GlobalStyles', module)
       <ol>
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
+        <ol>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+          <li>{faker.lorem.sentence()}</li>
+        </ol>
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
         <li>{faker.lorem.sentence()}</li>
