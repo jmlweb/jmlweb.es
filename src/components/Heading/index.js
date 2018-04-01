@@ -1,11 +1,17 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 
 import { sharedStyles } from '../../styles';
 
-const StyledHeading = Text.extend`
+const CleanedText = ({ level, ...props }) => <Text {...props} />;
+
+CleanedText.propTypes = {
+  level: PropTypes.number.isRequired,
+};
+
+const StyledHeading = styled(CleanedText)`
   ${props => sharedStyles.headings(props.level)};
 `;
 

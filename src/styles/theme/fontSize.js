@@ -7,9 +7,9 @@ export const PX_BASE = '16px';
 const NEG_VARIATIONS_NUMBER = 1;
 const POS_VARIATIONS_NUMBER = 3;
 const BASES = {
-  SM: '1rem',
-  MD: '1rem',
-  LG: '1.15rem',
+  SM: '16px',
+  MD: '16px',
+  LG: '18px',
 };
 const SCALES = {
   SM: 'minorThird',
@@ -17,11 +17,11 @@ const SCALES = {
   LG: 'perfectFourth',
 };
 
-const convertEmToRem = value => `${stripUnit(value)}rem`;
+const convertToPx = value => `${Math.round(stripUnit(value))}px`;
 
 const createFontSizesArr = bp => ({
   [bp]: buildScale(NEG_VARIATIONS_NUMBER, POS_VARIATIONS_NUMBER)(curr =>
-    convertEmToRem(modularScale(curr, BASES[bp], SCALES[bp]))),
+    convertToPx(modularScale(curr, BASES[bp], SCALES[bp]))),
 });
 
 export const fontSizes = ['SM', 'MD', 'LG'].reduce(
