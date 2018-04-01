@@ -12,6 +12,7 @@ faker.locale = 'es';
 storiesOf('Theme/Font', module).add('fontFamily', () => (
   <div>
     <Box mb={4}>
+      <h1>Font Family</h1>
       <Text>{fontFamily.default}</Text>{' '}
       <Text fontWeight="bold">{fontFamily.default}</Text>
     </Box>
