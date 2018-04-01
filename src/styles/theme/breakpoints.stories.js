@@ -1,5 +1,4 @@
 import React from 'react';
-import { stripUnit } from 'polished';
 import { storiesOf } from '@storybook/react';
 
 import Box from '../../components/Box';
@@ -19,8 +18,6 @@ const StyledBreakpoint = Box.extend`
   }
 `;
 
-const convertToPx = value => `${Number(stripUnit(value)) * 16}px`;
-
 storiesOf('Theme/Breakpoints', module).add('all', () =>
   Object.keys(breakpointsObj).map(breakpointKey => (
     <StyledBreakpoint
@@ -28,8 +25,8 @@ storiesOf('Theme/Breakpoints', module).add('all', () =>
       bg="primary"
       mb={5}
       key={breakpointKey}
-      size={convertToPx(breakpointsObj[breakpointKey])}
+      size={breakpointsObj[breakpointKey]}
     >
-      {breakpointKey}: {breakpointsObj[breakpointKey]}/{convertToPx(breakpointsObj[breakpointKey])}
+      {breakpointKey}: {breakpointsObj[breakpointKey]}
     </StyledBreakpoint>
   )));

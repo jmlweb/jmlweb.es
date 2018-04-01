@@ -58,9 +58,20 @@ storiesOf('Theme/GlobalStyles', module)
       <h1>{faker.lorem.sentence()}</h1>
       <pre>
         <code>
-          &lt;!-- html comment --&gt; &lt;ul&gt; &lt;li&gt;This is a code
-          example&lt;/li&gt; &lt;li&gt;Just one list&lt;/li&gt; &lt;li&gt;Enough
-          for now&lt;/li&gt; &lt;/ul&gt;
+          {`
+          a:link {
+            color: gray;
+          }
+          a:visited {
+            color: green;
+          }
+          a:hover {
+            color: rebeccapurple;
+          }
+          a:active {
+            color: teal;
+          }
+          `}
         </code>
       </pre>
       <h2>{faker.lorem.sentences()}</h2>
@@ -77,7 +88,15 @@ storiesOf('Theme/GlobalStyles', module)
       </p>
       <hr />
       <h3>{faker.lorem.sentence()}</h3>
+      <p>
+        {faker.lorem.sentences()} {faker.lorem.sentences()}{' '}
+      </p>
+      <h4>{faker.lorem.sentence()}</h4>
+      <p>
+        {faker.lorem.sentences()} {faker.lorem.sentences()}{' '}
+      </p>
       <table>
+        <caption>Table Caption</caption>
         <thead>
           <tr>
             <th>Header content 1</th>
@@ -93,29 +112,12 @@ storiesOf('Theme/GlobalStyles', module)
             <td>Body content 3</td>
             <td>Body content 4</td>
           </tr>
-        </tbody>
-        <tfoot>
           <tr>
-            <td>Footer content 1</td>
-            <td>Footer content 2</td>
-            <td>Footer content 3</td>
-            <td>Footer content 4</td>
+            <td>Body content 1</td>
+            <td>Body content 2</td>
+            <td>Body content 3</td>
+            <td>Body content 4</td>
           </tr>
-        </tfoot>
-      </table>
-      <p>
-        {faker.lorem.sentences()} {faker.lorem.sentences()}{' '}
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Header content 1</th>
-            <th>Header content 2</th>
-            <th>Header content 3</th>
-            <th>Header content 4</th>
-          </tr>
-        </thead>
-        <tbody>
           <tr>
             <td>Body content 1</td>
             <td>Body content 2</td>

@@ -1,9 +1,0 @@
-import buildScale from '../utils/buildScale';
-
-const VARIATIONS_NUMBER = 20;
-
-const SPACE_UNIT = 8;
-
-const spacing = buildScale(VARIATIONS_NUMBER)(curr => `${curr * SPACE_UNIT}px`);
-
-export default size => spacing[size];

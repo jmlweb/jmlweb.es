@@ -1,7 +1,6 @@
 import React from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import { stripUnit } from 'polished';
 import faker from 'faker';
 
 import fontSize, { fontSizes } from './fontSize';
@@ -29,7 +28,8 @@ const getMq = ({ theme, bp }) => {
   return css`
     ${mqWidths.prev !== undefined &&
       `
-      @media(max-width: ${mqWidths.current}) {
+      display: none;
+      @media(max-width: ${mqWidths.prev}) {
         display: none;
       }
     `};
@@ -41,14 +41,16 @@ const getMq = ({ theme, bp }) => {
     `};
     ${mqWidths.next !== undefined &&
       `
-      @media(max-width: ${mqWidths.next}) {
+      @media(min-width: ${mqWidths.next}) {
         display: none;
       }
     `};
   `;
 };
 
-const StyledBox = Box.extend`
+const CleanedBox = ({ bp, ...props }) => <Box {...props} />;
+
+const StyledBox = styled(CleanedBox)`
   ${props => getMq(props)};
 `;
 
@@ -56,9 +58,8 @@ storiesOf('Theme/Font', module).add('fontSize', () =>
   sizesArr.map(size =>
     ['SM', 'MD', 'LG'].map(bp => (
       <StyledBox mb={4} key={`${bp}-${size}`} bp={bp}>
-        <Text fontSize={size} is="h2">
-          {bp}: fontSize({size}) / {fontSize(size, bp)} /{' '}
-          {`${Number(stripUnit(fontSize(size, bp))) * 16}px`}
+        <Text fontSize={size} is="p" fontWeight="bold">
+          {bp}: fontSize({size}) / {fontSize(size, bp)}
         </Text>
         <Text fontSize={size}>{faker.lorem.sentences()}</Text>
       </StyledBox>
