@@ -1,9 +1,8 @@
 import { injectGlobal } from 'styled-components';
 import { normalize } from 'polished';
-import theme from './theme';
-import sharedStyles from './sharedStyles';
 
-injectGlobal`
+export default ({ theme, sharedStyles }) => {
+  injectGlobal`
   ${normalize()}
   html {
     box-sizing: border-box;
@@ -22,37 +21,17 @@ injectGlobal`
   input,
   select,
   textarea {
-    font-size: ${theme.fontSize(0)};
-    @media (${theme.breakpoints.sm}) {
-      font-size: ${theme.fontSize(1)};
-    }
-    @media (${theme.breakpoints.xl}) {
-      font-size: ${theme.fontSize(2)};
-    }
-    @media (${theme.breakpoints.xxl}) {
-      font-size: ${theme.fontSize(3)};
-    }
-  }
-  body,
-  p,
-  li,
-  dd {
-    line-height: 1.4;
-    @media (${theme.breakpoints.lg}) {
-      line-height: 1.5;
-    }
-    @media (${theme.breakpoints.xl}) {
-      line-height: 1.55;
-    }
+    ${sharedStyles.defaultTypo({ theme })};
   }
   p,
   ol,
   ul,
   li,
   dd {
-    margin-top: ${theme.space[1]};
-    &:first-child {
-      margin-top: 0;
+    margin-top: 0;
+    margin-bottom: ${theme.space[1]};
+    &:last-child {
+      margin-bottom: 0;
     }
   }
   body,
@@ -103,3 +82,4 @@ injectGlobal`
     border: 1px solid ${theme.colors.light};
   }
 `;
+};

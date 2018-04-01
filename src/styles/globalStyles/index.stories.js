@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import faker from 'faker';
 
-import Box from '../components/Box';
+import Box from '../../components/Box';
 
 const StyledWrapper = Box.extend`
   max-width: 900px;
@@ -14,8 +14,10 @@ storiesOf('Theme/GlobalStyles', module)
     <StyledWrapper>
       <h1>{faker.lorem.sentence()}</h1>
       <p>
-        {faker.lorem.sentences()} {faker.lorem.sentences()}{' '}
-        {faker.lorem.sentences()}
+        {faker.lorem.sentences()} {faker.lorem.sentences()}
+      </p>
+      <p>
+        {faker.lorem.sentences()} {faker.lorem.sentences()}
       </p>
       <h2>{faker.lorem.sentence()}</h2>
       <p>

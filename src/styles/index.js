@@ -1,2 +1,9 @@
-export { default as theme } from './theme';
-export { default as sharedStyles } from './sharedStyles';
+import theme from './theme';
+import sharedStyles from './sharedStyles';
+import createGlobalStyles from './globalStyles';
+import createGetFontSizeMq from './utils/getFontSizeMq';
+
+export { theme };
+export { sharedStyles };
+export const globalStyles = () => createGlobalStyles({ theme, sharedStyles });
+export const getFontSizeMq = createGetFontSizeMq(theme);

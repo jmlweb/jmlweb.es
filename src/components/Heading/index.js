@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 
@@ -25,4 +26,4 @@ Heading.propTypes = {
   tag: PropTypes.string,
 };
 
-export default Heading;
+export default withTheme(Heading);

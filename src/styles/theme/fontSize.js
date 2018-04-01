@@ -7,14 +7,14 @@ export const PX_BASE = '16px';
 const NEG_VARIATIONS_NUMBER = 1;
 const POS_VARIATIONS_NUMBER = 3;
 const BASES = {
-  sm: '0.9rem',
-  md: '1rem',
-  lg: '1.15rem',
+  SM: '1rem',
+  MD: '1rem',
+  LG: '1.15rem',
 };
 const SCALES = {
-  sm: 'majorThird',
-  md: 'perfectFourth',
-  lg: 'perfectFourth',
+  SM: 'minorThird',
+  MD: 'perfectFourth',
+  LG: 'perfectFourth',
 };
 
 const convertEmToRem = value => `${stripUnit(value)}rem`;
@@ -24,15 +24,15 @@ const createFontSizesArr = bp => ({
     convertEmToRem(modularScale(curr, BASES[bp], SCALES[bp]))),
 });
 
-export const fontSizes = ['sm', 'md', 'lg'].reduce(
+export const fontSizes = ['SM', 'MD', 'LG'].reduce(
   (acc, curr) => ({ ...acc, ...createFontSizesArr(curr) }),
   {},
 );
 
 export const fontSizeBp = {
-  sm: 0,
-  md: breakpointsObj.MD,
-  lg: breakpointsObj.XXL,
+  SM: 0,
+  MD: breakpointsObj.MD,
+  LG: breakpointsObj.XXL,
 };
 
-export default (size, bp = 'md') => fontSizes[bp][size];
+export default (size, bp = 'MD') => fontSizes[bp][size];
