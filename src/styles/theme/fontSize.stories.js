@@ -55,12 +55,15 @@ const StyledBox = styled(CleanedBox)`
 `;
 
 storiesOf('Theme/Font', module).add('fontSize', () =>
-  sizesArr.map(size =>
+  sizesArr.reverse().map(size =>
     ['SM', 'MD', 'LG'].map(bp => (
       <StyledBox mb={4} key={`${bp}-${size}`} bp={bp}>
         <Text fontSize={size} is="p" fontWeight="bold">
-          {bp}: fontSize({size}) / {fontSize(size, bp)}
+          {bp}: fontSize({size}) / {fontSize(size, bp)}{' '}
+          {size > 1 && <Text fontSize={-1}>(only with font-weight: bold)</Text>}
         </Text>
-        <Text fontSize={size}>{faker.lorem.sentences()}</Text>
+        <Text fontWeight={size > 1 ? 'bold' : 'normal'} fontSize={size}>
+          {faker.lorem.sentences()}
+        </Text>
       </StyledBox>
     ))));

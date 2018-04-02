@@ -12,7 +12,7 @@ faker.locale = 'es';
 storiesOf('Theme/Font', module).add('fontWeights', () => (
   <div>
     {Object.keys(fontWeights).map(fontWeightKey => (
-      <Box mb={4}>
+      <Box key={fontWeightKey} mb={4}>
         <Text fontWeight={fontWeightKey}>{fontWeightKey.toUpperCase()}: </Text>
         <Text fontWeight={fontWeightKey}>
           {Array.from({ length: 3 }).map(() => `${faker.lorem.sentences()}, `)}

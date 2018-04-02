@@ -93,7 +93,7 @@ storiesOf('Theme/GlobalStyles', module)
       <p>
         Debitis ut delectus <strong>quibusdam</strong> voluptatem nesciunt.
         Nesciunt ex accusantium <em>exercitationem consequatur</em>. In placeat
-        a nesciunt facilis.
+        a nesciunt facilis. <code>const i = Math.max(4, getArr().length);</code>
       </p>
       <p>
         Magnam cum voluptas.{' '}

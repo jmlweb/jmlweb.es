@@ -8,13 +8,13 @@ const NEG_VARIATIONS_NUMBER = 1;
 const POS_VARIATIONS_NUMBER = 3;
 const BASES = {
   SM: '16px',
-  MD: '16px',
-  LG: '18px',
+  MD: '18px',
+  LG: '19px',
 };
 const SCALES = {
-  SM: 'minorThird',
-  MD: 'perfectFourth',
-  LG: 'perfectFourth',
+  SM: 'majorSecond',
+  MD: 'majorSecond',
+  LG: 'majorThird',
 };
 
 const convertToPx = value => `${Math.round(stripUnit(value))}px`;

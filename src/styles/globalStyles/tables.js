@@ -4,27 +4,21 @@ export default ({ theme, sharedStyles }) => css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-    margin-top: ${theme.space[3]};
-    margin-bottom: ${theme.space[3]};
+    margin-top: ${theme.space[4]};
+    margin-bottom: ${theme.space[4]};
   }
   caption {
     font-size: ${theme.fontSize(-1, 'SM')};
   }
   th,
   td {
-    padding-left: ${theme.space[3]};
-    padding-right: ${theme.space[3]};
-    ${sharedStyles.defaultTypo({ theme })};
+    padding: ${theme.space[2]} ${theme.space[3]};
+    ${sharedStyles.defaultTypo()};
   }
   th {
     text-transform: uppercase;
     text-align: left;
-    padding-top: ${theme.space[2]};
-    padding-bottom: ${theme.space[2]};
-  }
-  td {
-    padding-top: ${theme.space[1]};
-    padding-bottom: ${theme.space[1]};
+    white-space: nowrap;
   }
   thead {
     tr {

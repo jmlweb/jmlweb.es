@@ -22,15 +22,23 @@ export default ({ theme, sharedStyles }) => {
   p,
   li,
   dd {
-    ${sharedStyles.defaultTypo({ theme })};
+    ${sharedStyles.defaultTypo()};
   }
+  dl,
   p,
   ol,
-  ul,
+  ul {
+    margin-top: 0;
+    margin-bottom: ${theme.space[3]};
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   li,
+  dt,
   dd {
     margin-top: 0;
-    margin-bottom: ${theme.space[2]};
+    margin-bottom: ${theme.space[1]};
     &:last-child {
       margin-bottom: 0;
     }
@@ -52,7 +60,7 @@ export default ({ theme, sharedStyles }) => {
   ${headings({ sharedStyles })};
   ul,
   ol {
-    padding-left: 26px;
+    padding-left: 36px;
   }
   ol {
     list-style-type: decimal-leading-zero;
@@ -78,11 +86,13 @@ export default ({ theme, sharedStyles }) => {
     }
   }
   code {
-    display: block;
     font-family: monaco, Consolas, Lucida Console, monospace;
     font-size: 0.8em;
     padding: 4px 6px;
     background: ${theme.colors.gray[6]};
+  }
+  pre code {
+    display: block;
     border: 1px solid ${theme.colors.gray[3]};
   }
   ${tables({ theme, sharedStyles })};

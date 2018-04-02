@@ -1,9 +1,10 @@
 import theme from './theme';
-import sharedStyles from './sharedStyles';
+import createSharedStyles from './sharedStyles';
 import createGlobalStyles from './globalStyles';
 import createGetFontSizeMq from './utils/getFontSizeMq';
 
 export { theme };
-export { sharedStyles };
+export const sharedStyles = createSharedStyles({ theme });
 export const globalStyles = () => createGlobalStyles({ theme, sharedStyles });
 export const getFontSizeMq = createGetFontSizeMq(theme);
+export * from './hoc';

@@ -20,12 +20,26 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
+const StyledBox = Box.extend`
+  background: #fff;
+  max-width: 800px;
+`;
+
 addDecorator((story, info) => {
   const isNeeded =
     !info ||
-    (info.kind !== 'Theme/Colors' && info.kind !== 'Theme/Breakpoints');
+    !info.kind ||
+    !['Theme/Colors', 'Theme/Breakpoints', 'Components/Card'].includes(
+      info.kind,
+    );
   const wrapIfNeeded = storyInstance =>
-    isNeeded ? <Box p={[2, 2, 3, 4]}>{storyInstance}</Box> : storyInstance;
+    isNeeded ? (
+      <StyledBox p={[2, 2, 3, 4]} mx="auto">
+        {storyInstance}
+      </StyledBox>
+    ) : (
+      storyInstance
+    );
   return <Main data={data}>{wrapIfNeeded(story())}</Main>;
 });
 
