@@ -1,41 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import GatsbyLink from 'gatsby-link';
+import styled, { withTheme } from 'styled-components';
 
 import Box from '../Box';
-import Heading from '../Heading';
+import CardTitle from './CardTitle';
+import CardSocial from './CardSocial';
+import CardContent from './CardContent';
+import CardImage from './CardImage';
+
+import { withDefaultAttr } from '../../styles/hoc';
+
+const withDefaultPx = withDefaultAttr('contentPx');
+
+const EnhancedCardTitle = withDefaultPx(CardTitle);
+const EnhancedCardSocial = withDefaultPx(CardSocial);
+const EnhancedCardContent = withDefaultPx(CardContent);
 
 const StyledWrapper = styled(Box).attrs({
-  bg: 'gray.5',
-  p: 2,
+  bg: 'white',
 })`
   max-width: ${props => props.theme.sizes.contentMax};
 `;
 
-const ExternalLink = ({ to, children }) => <a href={to}>{children}</a>;
-
-const Card = ({ title, link, is }) => {
-  const Link = link.slice(0, 4) === 'http' ? ExternalLink : GatsbyLink;
-  const wrapWithLink = content =>
-    (link ? <Link to={link}>{content}</Link> : content);
-  return (
-    <StyledWrapper is={is}>
-      <Box is="header">
-        {title && <Heading level={1}>{wrapWithLink(title)}</Heading>}
-      </Box>
-    </StyledWrapper>
-  );
-};
+const Card = ({
+  title, to, is, permalink, image, children,
+}) => (
+  <StyledWrapper is={is}>
+    <Box is="header">
+      <EnhancedCardTitle title={title} to={to} />
+      {image && <CardImage to={to} src={image} />}
+      {children && <EnhancedCardContent>{children}</EnhancedCardContent>}
+      <EnhancedCardSocial title={title} permalink={permalink} />
+    </Box>
+  </StyledWrapper>
+);
 
 Card.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   is: PropTypes.string,
+  to: PropTypes.string,
+  permalink: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Card.defaultProps = {
-  title: undefined,
   is: 'article',
+  to: undefined,
+  image: undefined,
+  children: undefined,
 };
 
-export default Card;
+export default withTheme(Card);

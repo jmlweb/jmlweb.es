@@ -1,5 +1,6 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
+import { MemoryRouter } from 'react-router';
 
 import Main from '../src/components/Main';
 import Box from '../src/components/Box';
@@ -25,6 +26,10 @@ const StyledBox = Box.extend`
   max-width: 800px;
 `;
 
+global.window.___loader = {
+  enqueue: () => {},
+};
+
 addDecorator((story, info) => {
   const isNeeded =
     !info ||
@@ -40,7 +45,11 @@ addDecorator((story, info) => {
     ) : (
       storyInstance
     );
-  return <Main data={data}>{wrapIfNeeded(story())}</Main>;
+  return (
+    <MemoryRouter initialEntries={['/']}>
+      <Main data={data}>{wrapIfNeeded(story())}</Main>
+    </MemoryRouter>
+  );
 });
 
 configure(loadStories, module);

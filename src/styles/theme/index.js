@@ -1,3 +1,4 @@
+import attrs from './attrs';
 import breakpoints from './breakpoints';
 import colors from './colors';
 import fontFamily from './fontFamily';
@@ -7,6 +8,7 @@ import sizes from './sizes';
 import space from './space';
 
 export default {
+  attrs,
   breakpoints,
   colors,
   fontFamily,

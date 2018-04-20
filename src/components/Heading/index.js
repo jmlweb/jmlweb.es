@@ -15,8 +15,10 @@ const StyledHeading = styled(CleanedText)`
   ${props => sharedStyles.headings(props.level)};
 `;
 
-const Heading = ({ level, tag, children }) => (
-  <StyledHeading is={tag || `h${level}`} level={level}>
+const Heading = ({
+  level, tag, children, ...props
+}) => (
+  <StyledHeading is={tag || `h${level}`} level={level} {...props}>
     {children}
   </StyledHeading>
 );

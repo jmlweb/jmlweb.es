@@ -1,15 +1,38 @@
 import styled from 'styled-components';
-import { color, fontWeight, space, lineHeight } from 'styled-system';
+import {
+  color,
+  display,
+  fontWeight,
+  space,
+  lineHeight,
+  propTypes,
+} from 'styled-system';
 import tag from 'clean-tag';
+import Link from 'gatsby-link';
+import cleanElement from 'clean-element';
 
 import { withFontSize } from '../../styles';
 
 const Text = styled(tag.span)`
-  ${props => props.display && `display: ${props.display}`};
+  ${display};
   ${color};
   ${space};
   ${fontWeight};
   ${lineHeight};
 `;
 
-export default withFontSize(Text);
+const EnhancedText = withFontSize(Text);
+
+export default EnhancedText;
+
+const CleanLink = cleanElement(Link);
+
+CleanLink.propTypes = {
+  ...propTypes.display,
+  ...propTypes.space,
+  ...propTypes.color,
+  ...propTypes.fontWeight,
+  ...propTypes.lineHeight,
+};
+
+export const TextLink = Text.withComponent(CleanLink);
