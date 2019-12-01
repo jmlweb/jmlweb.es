@@ -6,21 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/talks`,
-        name: 'talks',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/posts`,
-        name: 'posts',
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,7 +30,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          require('postcss-hexrgba'),
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/talks`,
+        name: 'talks',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: 'posts',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: { classPrefix: 'language-' },
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

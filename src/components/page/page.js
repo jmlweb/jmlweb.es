@@ -8,7 +8,7 @@ import styles from './page.module.css';
 const Page = ({ title, children }) => (
   <Layout>
     <SEO title={title} />
-    <h1 class={styles.title}>{title}</h1>
+    <h1 className={styles.title}>{title}</h1>
     {children}
   </Layout>
 );

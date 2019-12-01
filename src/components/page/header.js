@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { Wrapper } from '../wrapper';
+import { Logo } from '../logo';
 import styles from './header.module.css';
 
 const Header = ({ siteTitle }) => (
@@ -10,7 +11,7 @@ const Header = ({ siteTitle }) => (
     <Wrapper className={styles.wrapper}>
       <h1 className={styles.title}>
         <Link to="/" className={styles.link}>
-          {siteTitle}
+          <Logo /> {siteTitle}
         </Link>
       </h1>
       <nav className={styles.nav}>

@@ -21,3 +21,8 @@
 nav .link {
   margin-left: 15px;
 }
+
+h1 .link {
+  display: flex;
+  align-items: center;
+}
