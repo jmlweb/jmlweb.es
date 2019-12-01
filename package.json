@@ -1,56 +1,53 @@
 {
-  "name": "jmlweb.es",
-  "description": "Personal Website",
-  "version": "2.0.0",
-  "author": "José Manuel Lucas <josemanuel@jmlweb.es>",
-  "scripts": {
-    "start": "yarn develop",
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -c .storybook"
-  },
-  "keywords": [
-    "gatsby",
-    "jmlweb",
-    "jmlweb.es",
-    "react",
-    "styled-components",
-    "storybook",
-    "styled-system"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">8.0.0",
-    "yarn": "^1.2.1"
-  },
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "clean-tag": "^1.0.4",
-    "gatsby": "^1.9.243",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-react-helmet": "^2.0.8",
-    "gatsby-plugin-styled-components": "^2.0.11",
-    "polished": "^1.9.2",
-    "react-helmet": "^5.2.0",
-    "styled-components": "^3.2.5",
-    "styled-map": "^2.0.1",
-    "styled-system": "^2.2.1"
+    "bluebird": "^3.7.2",
+    "classnames": "^2.2.6",
+    "gatsby": "^2.18.4",
+    "gatsby-image": "^2.2.34",
+    "gatsby-plugin-manifest": "^2.2.30",
+    "gatsby-plugin-offline": "^3.0.24",
+    "gatsby-plugin-postcss": "^2.1.16",
+    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sharp": "^2.3.4",
+    "gatsby-source-filesystem": "^2.1.39",
+    "gatsby-transformer-remark": "^2.6.38",
+    "gatsby-transformer-sharp": "^2.3.6",
+    "lodash": "^4.17.15",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "^3.4.0",
-    "@storybook/addon-viewport": "^3.4.0",
-    "@storybook/react": "^3.3.15",
-    "babel-eslint": "^8.2.2",
-    "clean-element": "^1.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "faker": "^4.1.0",
-    "prettier": "^1.11.1",
-    "react-router": "^4.2.0"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-react-app": "^5.0.2",
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

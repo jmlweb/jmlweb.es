@@ -1,0 +1,13 @@
+@import url('https://use.typekit.net/ocs7ygv.css');
+
+body {
+  font-feature-settings: 'smcp';
+  font-family: var(--font-default);
+  background-image: linear-gradient(var(--color-white), var(--color-ground));
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}

@@ -1,0 +1,14 @@
+:root {
+  /* TYPOGRAPHY */
+  --font-default: acumin-pro, serif;
+  --font-alternate: abril-fatface, serif;
+
+  /* COLORS */
+  --color-white: #fff;
+  --color-ground: #edf3fd;
+  --color-primary: #ff4400;
+  --color-text-darkest: #121212;
+
+  /* SIZES */
+  --size-max-width: 1120px;
+}

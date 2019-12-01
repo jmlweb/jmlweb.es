@@ -1,0 +1,23 @@
+.header {
+  margin-bottom: 1.45rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.link {
+  color: var(--color-text-darkest);
+  text-decoration: none;
+}
+
+nav .link {
+  margin-left: 15px;
+}
