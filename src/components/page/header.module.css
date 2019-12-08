@@ -1,5 +1,6 @@
 .header {
-  margin-bottom: 1.45rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .wrapper {
@@ -10,12 +11,26 @@
 
 .title {
   margin: 0;
-  font-size: 20px;
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+
+.titleText {
+  margin-left: 0.7rem;
 }
 
 .link {
-  color: var(--color-text-darkest);
+  color: rgba(#4a4453, 0.7);
   text-decoration: none;
+}
+
+.linkActive {
+  color: var(--color-brand);
+}
+
+.nav {
+  font-size: 2rem;
+  margin-bottom: -4px;
 }
 
 nav .link {

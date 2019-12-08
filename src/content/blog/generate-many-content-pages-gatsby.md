@@ -1,13 +1,21 @@
 ---
-title: 'Creating a multicontent site with Gatsby'
+title: 'Creating a multicontent site with Gatsby based on Markdown'
 date: '2019-11-28'
 ---
 
-[Gatsby](https://www.gatsbyjs.org/) is a static site generator based on React with a lot of popularity nowadays. In fact, the React documentation is built using this technology, along with the sites of many other big names (like me 😂).
+[Gatsby](https://www.gatsbyjs.org/) is a static site generator based on [React](https://reactjs.org/) with a lot of popularity nowadays. In fact, that page is built using this technology, along with the sites of many other big names (like me 😂).
 
-As you can see, this website includes some dynamic content (blog, talks and projects), using markdown files as store.
+One of its strongest points is the ability to be "linked" to many different sources:
 
-The content is separated by folders, using this structure:
+- Wordpress API
+- Contentful
+- Markdown files
+
+In my case, I wanted to keep things really simple, so my choice was to keep the content inside markdown files, but divided by section (blog, talks and projects). That way, I can use different templates for each type of content.
+
+Let's implement a similar architecture.
+
+## Files hierarchy
 
 ```
 -src
@@ -27,9 +35,9 @@ The content is separated by folders, using this structure:
 
 ## Configuration
 
-To read the files we need to add `gatsby-source-filesystem` plugin, and modify `gatsby-config.js` to let Gatsby know about our new types. For each one, we include the `path`, and the `name`.
+To read the data, we need to add [gatsby-source-filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/) plugin and modify `gatsby-config.js` to let Gatsby know about our new types. For each one, we include the `path` and the `name`.
 
-To generate the content, we'll use `gatsby-transformer-remark`.
+To generate the content, we'll use [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark).
 
 ```js
 module.exports = {
@@ -58,7 +66,7 @@ module.exports = {
 
 ## Templates
 
-Then, we need to add basic templates for each type of content:
+We need to add basic templates for each type of content to properly build the pages:
 
 ```
 -src
@@ -70,7 +78,7 @@ Then, we need to add basic templates for each type of content:
 --------talk.js
 ```
 
-It's important to keep things simple, we just want to know if things are going well:
+Let's keep things simple for the moment:
 
 ```jsx
 import React from 'react';
@@ -102,7 +110,9 @@ export const query = graphql`
 
 ## Pages generation
 
-Now, we need to update `gatsby-node.js`. To maintain our file clean, we are going to create a folder called `gatsby`, with two files inside: `create-pages.js` and `on-create-node.js`.
+Now, we need to update `gatsby-node.js`, to read for the separated content files in the proper directories.
+
+To maintain our file clean, we are going to create a folder called `gatsby`, with two files inside: `create-pages.js` and `on-create-node.js`.
 
 ```
 -gatsby
@@ -111,14 +121,14 @@ Now, we need to update `gatsby-node.js`. To maintain our file clean, we are goin
 -gatsby-node.js
 ```
 
-**gatsby-node.js**
+### gatsby-node.js
 
 ```js
 exports.onCreateNode = require('./gatsby/on-create-node');
 exports.createPages = require('./gatsby/create-pages');
 ```
 
-**on-create-node.js**
+### on-create-node.js
 
 ```js
 const { createFilePath } = require(`gatsby-source-filesystem`);
@@ -140,7 +150,7 @@ module.exports = ({ node, getNode, actions }) => {
 };
 ```
 
-**create-pages.js**
+### create-pages.js
 
 ```js
 // create-pages.js

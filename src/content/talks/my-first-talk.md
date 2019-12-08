@@ -1,6 +1,7 @@
 ---
 title: 'React Alicante'
 date: '2017-08-10'
+url: 'http://reactalicante.es'
 ---
 
 This is my first talk.

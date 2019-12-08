@@ -1,35 +1,56 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { Image, Page } from '../components';
+import { Home } from '../screens';
 
 const IndexPage = ({ data }) => (
-  <Page title="Home">
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Link key={node.id} to={node.fields.slug}>
-        {node.frontmatter.title}
-      </Link>
-    ))}
-  </Page>
+  <Home
+    blogPosts={data.postsRemark.edges}
+    talksPosts={data.talksRemark.edges}
+    projectsPosts={data.projectsRemark.edges}
+  />
 );
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt
+  fragment RemarkCollection on MarkdownRemarkConnection {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          url
         }
+        fields {
+          slug
+          collection
+        }
+        excerpt
       }
+    }
+  }
+
+  query remarkByCollection {
+    postsRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { collection: { eq: "blog" } } }
+      limit: 12
+    ) {
+      ...RemarkCollection
+    }
+    talksRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { collection: { eq: "talks" } } }
+      limit: 12
+    ) {
+      ...RemarkCollection
+    }
+    projectsRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { collection: { eq: "projects" } } }
+      limit: 12
+    ) {
+      ...RemarkCollection
     }
   }
 `;

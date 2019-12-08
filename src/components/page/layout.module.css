@@ -1,5 +1,13 @@
 .wrapper {
-  max-width: var(--size-max-width);
-  margin: 0 auto;
-  padding: 0px 1.0875rem 1.45rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(#fbfcff, var(--color-ground));
+  border-top: 2px solid #c2d1da;
+}
+
+.footer {
+  padding: 8px 0;
+  margin-top: auto;
 }

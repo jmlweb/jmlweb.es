@@ -1,11 +1,18 @@
 const COLLECTIONS = [
   {
-    name: 'posts',
-    templateName: 'post',
+    name: 'blog',
+    postsPerPage: 2,
+    hasPostPage: true,
   },
   {
     name: 'talks',
-    templateName: 'talk',
+    postsPerPage: 6,
+    hasPostPage: false,
+  },
+  {
+    name: 'projects',
+    postsPerPage: 20,
+    hasPostPage: false,
   },
 ];
 
@@ -14,23 +21,50 @@ const filterEdges = name => edges =>
 
 const buildPagesCollectionGenerator = ({ edges, createPage }) => ({
   name,
-  templateName,
+  postsPerPage,
+  hasPostPage,
 }) => {
   const filteredEdges = filterEdges(name)(edges);
-  filteredEdges.forEach((edge, index) => {
-    const { slug } = edge.node.fields;
-    const previous = index === edges.length - 1 ? null : edges[index + 1].node;
-    const next = index === 0 ? null : edges[index - 1].node;
+
+  /**
+   * CREATE INDIVIDUAL ITEMS
+   */
+  if (hasPostPage) {
+    filteredEdges.forEach((edge, index) => {
+      const { slug } = edge.node.fields;
+      const previous =
+        index === edges.length - 1 ? null : edges[index + 1].node;
+      const next = index === 0 ? null : edges[index - 1].node;
+      createPage({
+        path: slug,
+        component: require.resolve(`../src/templates/${name}-post.js`),
+        context: { slug, previous, next },
+      });
+    });
+  }
+
+  /**
+   * CREATE ITEMS LISTS
+   */
+  const numPages = Math.ceil(filteredEdges.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, idx) => {
+    const currentPage = idx + 1;
     createPage({
-      path: slug,
-      component: require.resolve(`../src/templates/${templateName}.js`),
-      context: { slug, previous, next },
+      path: idx === 0 ? `/${name}` : `/${name}/${currentPage}`,
+      component: require.resolve(`../src/templates/${name}-list.js`),
+      context: {
+        limit: postsPerPage,
+        skip: idx * postsPerPage,
+        numPages,
+        currentPage,
+      },
     });
   });
 };
 
 module.exports = async function({ actions, graphql }) {
   const { createPage } = actions;
+
   const { data } = await graphql(`
     query {
       allMarkdownRemark(
@@ -58,4 +92,8 @@ module.exports = async function({ actions, graphql }) {
   });
 
   COLLECTIONS.forEach(pagesCollectionGenerator);
+
+  /**
+   * CREATE LISTS
+   */
 };

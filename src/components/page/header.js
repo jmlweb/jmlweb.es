@@ -11,20 +11,36 @@ const Header = ({ siteTitle }) => (
     <Wrapper className={styles.wrapper}>
       <h1 className={styles.title}>
         <Link to="/" className={styles.link}>
-          <Logo /> {siteTitle}
+          <Logo />
         </Link>
       </h1>
       <nav className={styles.nav}>
-        <Link className={styles.link} to="/blog">
+        <Link
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/blog"
+        >
           Blog
         </Link>
-        <Link className={styles.link} to="/talks">
+        <Link
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/talks"
+        >
           Talks
         </Link>
-        <Link className={styles.link} to="/projects">
+        <Link
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/projects"
+        >
           Projects
         </Link>
-        <Link className={styles.link} to="/info">
+        <Link
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/info"
+        >
           Info
         </Link>
       </nav>

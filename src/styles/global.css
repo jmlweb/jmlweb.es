@@ -1,13 +1,82 @@
 @import url('https://use.typekit.net/ocs7ygv.css');
 
+html {
+  font-size: 10px;
+}
+
 body {
   font-feature-settings: 'smcp';
   font-family: var(--font-default);
-  background-image: linear-gradient(var(--color-white), var(--color-ground));
-  min-height: 100vh;
+  line-height: 1.52;
+  font-size: 1.7rem;
+  color: var(--color-text-normal);
+  @media (min-width: var(--bp-typo-lg)) {
+    font-size: 1.9rem;
+  }
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link-normal);
+  display: inline-block;
+  transition: color 0.3s;
   text-decoration: none;
+  &:hover {
+    color: var(--color-link-alternate);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.1;
+  font-weight: 700;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 3.2rem;
+  color: var(--color-text-darkest);
+  margin-top: 3rem;
+  @media (min-width: var(--bp-typo-lg)) {
+    font-size: 4.8rem;
+  }
+}
+
+h2 {
+  font-size: 2.6rem;
+  color: var(--color-text-darker);
+  margin-top: 2.8rem;
+  @media (min-width: var(--bp-typo-lg)) {
+    font-size: 4.2rem;
+  }
+}
+
+h3 {
+  font-size: 2.1rem;
+  margin-top: 2.6rem;
+  color: var(--color-text-light);
+  @media (min-width: var(--bp-typo-lg)) {
+    font-size: 2.8rem;
+  }
+}
+
+p {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
 }

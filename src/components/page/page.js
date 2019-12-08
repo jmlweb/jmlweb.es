@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 import Layout from './layout';
 import SEO from './seo';
-import styles from './page.module.css';
 
 const Page = ({ title, children }) => (
   <Layout>
     <SEO title={title} />
-    <h1 className={styles.title}>{title}</h1>
     {children}
   </Layout>
 );

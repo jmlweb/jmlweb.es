@@ -60,7 +60,7 @@ const Logo = ({ color, size }) => (
 );
 
 Logo.defaultProps = {
-  color: '#000000',
+  color: '#F26F3F',
   size: '45px',
 };
 

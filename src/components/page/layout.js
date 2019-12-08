@@ -25,17 +25,19 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <div className={style.wrapper}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Wrapper>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <main>
+        <Wrapper>
+          {children}
+        </Wrapper>
+      </main>
+      <footer className={style.footer}>
+        <Wrapper>
+        {new Date().getFullYear()}, José Manuel Lucas
+        </Wrapper>
         </footer>
-      </Wrapper>
-    </>
+    </div>
   );
 };
 

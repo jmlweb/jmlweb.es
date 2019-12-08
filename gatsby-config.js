@@ -39,15 +39,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/talks`,
-        name: 'talks',
+        path: `${__dirname}/src/content/blog`,
+        name: 'blog',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/posts`,
-        name: 'posts',
+        path: `${__dirname}/src/content/projects`,
+        name: 'projects',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/talks`,
+        name: 'talks',
       },
     },
     {
@@ -58,6 +65,7 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: { classPrefix: 'language-' },
           },
+          'gatsby-remark-external-links',
         ],
       },
     },

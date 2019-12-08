@@ -1,18 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from '../components';
+
+import { BlogPost } from '../screens';
+
 export default ({ data }) => {
   const post = data.markdownRemark;
-  return (
-    <Layout>
-      <div>
-        <div>TALK TYPE</div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
-    </Layout>
-  );
+  return <BlogPost post={post} />;
 };
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
