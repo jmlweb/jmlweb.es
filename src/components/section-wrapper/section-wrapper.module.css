@@ -1,0 +1,9 @@
+.wrapper {
+  margin-top: 32px;
+  @media (--tablet) {
+    margin-top: 44px;
+  }
+  @media (--desktop) {
+    margin-top: 56px;
+  }
+}

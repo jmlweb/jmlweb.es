@@ -1,0 +1,166 @@
+.title {
+  padding: 2.8rem 0 2rem;
+}
+
+.list {
+  display: grid;
+  grid-gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  @media (--tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.conference {
+  margin-top: 4px;
+}
+
+.date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0;
+  @media (--tablet) {
+    font-size: 14px;
+  }
+  @media (--desktop) {
+    font-size: 15px;
+  }
+}
+
+.tableWrapper {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.table {
+  border: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  border-bottom: 4px solid #3b00aa;
+  @media (--tablet) {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    /* table-layout: fixed; */
+  }
+}
+
+.thead {
+  border: none;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  @media (--tablet) {
+    clip: none;
+    height: inherit;
+    margin: inherit;
+    overflow: inherit;
+    padding: inherit;
+    position: inherit;
+    width: inherit;
+    & .tr {
+      background: #3b00aa;
+      color: #fff;
+    }
+  }
+}
+
+.tr {
+  border-top: 4px solid #3b00aa;
+  display: block;
+  @media (--tablet) {
+    /* border: 1px solid rgba(0, 0, 0, 0.05); */
+    padding: 24px;
+    display: table-row;
+  }
+}
+
+.th,
+.td {
+  text-align: left;
+  padding: 1.2rem;
+  @media (--tablet) {
+    padding: 2rem 1.2rem;
+  }
+  @media (--desktop) {
+    padding: 2.2rem 1.2rem;
+  }
+}
+
+.th {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.td {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  text-align: right;
+  overflow: hidden;
+  &.tdTitle {
+    color: var(--color-text-dark);
+    & > h3 {
+      font-family: var(--font-default);
+    }
+  }
+  @media (--tablet) {
+    border-bottom: inherit;
+    display: table-cell;
+    font-size: inherit;
+    text-align: inherit;
+    &.tdDate {
+      width: 100px;
+      font-size: 13px;
+      margin: 0;
+      @media (--tablet) {
+        font-size: 14px;
+      }
+      @media (--desktop) {
+        font-size: 15px;
+      }
+    }
+    &.tdTitle {
+      width: 380px;
+    }
+  }
+  &::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.4rem;
+    @media (--tablet) {
+      display: none;
+    }
+  }
+  &:last-child {
+    border-bottom: 0;
+    @media (--tablet) {
+      border-bottom: inherit;
+    }
+  }
+  & > a {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.tableTitle {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}

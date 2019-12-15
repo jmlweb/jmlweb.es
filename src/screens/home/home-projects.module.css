@@ -1,0 +1,27 @@
+.project {
+  background-color: rgba(#f4eeff, 0.48);
+  padding: 16px;
+  border-radius: 6px;
+  @media (--tablet) {
+    padding: 20px;
+  }
+  @media (--desktop) {
+    padding: 24px;
+  }
+}
+
+.title {
+  margin: 0;
+  & > a {
+    color: var(--color-text-dark);
+  }
+}
+
+.list {
+  display: grid;
+  grid-gap: 16px;
+  align-items: flex-start;
+  @media (--tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

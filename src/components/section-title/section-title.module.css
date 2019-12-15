@@ -1,0 +1,18 @@
+.title {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-light);
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif;
+  }
+  @media (--tablet) {
+    font-size: 13px;
+    margin: 0 0 8px;
+  }
+  @media (--desktop) {
+    font-size: 14px;
+    margin: 0 0 12px;
+  }
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  background: linear-gradient(-45deg, var(--color-primary), #1fe8c3);
+  padding: 3px;
+}
+
+.itemCard {
+  padding: 16px;
+  position: relative;
+  background: #fff;
+
+  @media (--tablet) {
+    padding: 20px;
+  }
+  @media (--desktop) {
+    padding: 36px 24px;
+  }
+  /* &.talk {
+    background-color: rgba(#f4eeff, 0.48);
+  }
+  &.project {
+    background-color: rgba(#f4eeff, 0.48);
+  } */
+}
+
+.title {
+  margin: 0;
+  & > a {
+    color: var(--color-text-dark);
+  }
+}

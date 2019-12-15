@@ -1,25 +1,34 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import classNames from 'classnames';
+
+import {
+  Container,
+  ItemCard,
+  SectionTitle,
+  SectionWrapper,
+} from '../../components';
+
+import styles from './home-projects.module.css';
 
 const HomeProjects = ({ posts }) => (
-  <section>
-    <h2>Projects</h2>
-    {posts.map(({ node }) => (
-      <article key={node.id}>
-        <h3>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.title}
-          </a>
-        </h3>
-        <p>{node.excerpt}</p>
-        <p>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.url}
-          </a>
-        </p>
-      </article>
-    ))}
-  </section>
+  <SectionWrapper>
+    <Container>
+      <SectionTitle>Featured projects</SectionTitle>
+      <div className={styles.list}>
+        {posts.map(({ node }) => (
+          <ItemCard
+            key={node.id}
+            type="project"
+            title={node.frontmatter.title}
+            url={node.frontmatter.url}
+            footerText={node.frontmatter.url}
+          >
+            <p>{node.excerpt}</p>
+          </ItemCard>
+        ))}
+      </div>
+    </Container>
+  </SectionWrapper>
 );
 
 export default HomeProjects;

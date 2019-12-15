@@ -1,28 +1,25 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import { Page, Pagination } from '../../components';
+import { Container, Page, Pagination, PostResume } from '../../components';
+import styles from './blog-list.module.css';
 
 const BlogList = ({ posts, currentPage, numPages }) => (
   <Page title="Blog">
-    <h1>Blog</h1>
-    {posts.map(({ node }) => (
-      <article key={node.fields.slug}>
-        <h2>
-          <Link to={node.fields.slug}>
-            {node.frontmatter.title || node.fields.slug}
-          </Link>
-        </h2>
-        <p>{node.excerpt}</p>
-        <p>
-          <Link to={node.fields.slug}>Read</Link>
-        </p>
-      </article>
-    ))}
-    <Pagination prefix="blog" currentPage={currentPage} numPages={numPages} />
-    <div>
-      <Link to="/">Go back to the homepage</Link>
-    </div>
+    <Container>
+      <h1 className={styles.title}>Blog & recommended</h1>
+      <div>
+        {posts.map(({ node }) => (
+          <PostResume
+            key={node.fields.slug}
+            url={node.fields.slug}
+            title={node.frontmatter.title || node.fields.slug}
+            excerpt={node.excerpt}
+            tags={node.frontmatter.tags}
+          />
+        ))}
+      </div>
+      <Pagination prefix="blog" currentPage={currentPage} numPages={numPages} />
+    </Container>
   </Page>
 );
 

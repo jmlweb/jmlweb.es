@@ -1,0 +1,26 @@
+.wrapper {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --padding: 20px;
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  @media (--tablet) {
+    --padding: 28px;
+  }
+  @media (--desktop) {
+    --padding: 32px;
+  }
+}
+
+.logoLink {
+  display: inline-block;
+  margin-bottom: -4px;
+  @media (--tablet) {
+    margin-bottom: -6px;
+  }
+}

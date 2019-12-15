@@ -9,9 +9,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { Wrapper } from '../wrapper';
-import Header from './header';
-import style from './layout.module.css';
+import { Header } from '../header';
+import { Footer } from '../footer';
+import styles from './layout.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,18 +25,12 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>
-        <Wrapper>
-          {children}
-        </Wrapper>
-      </main>
-      <footer className={style.footer}>
-        <Wrapper>
-        {new Date().getFullYear()}, José Manuel Lucas
-        </Wrapper>
-        </footer>
+      <main>{children}</main>
+      <div className={styles.footerPusher}>
+        <Footer />
+      </div>
     </div>
   );
 };

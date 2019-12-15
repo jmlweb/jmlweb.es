@@ -66,6 +66,7 @@ module.exports = {
             options: { classPrefix: 'language-' },
           },
           'gatsby-remark-external-links',
+          'gatsby-remark-responsive-iframe',
         ],
       },
     },

@@ -1,9 +1,10 @@
 ---
-title: 'Creating a multicontent site with Gatsby based on Markdown'
+title: 'Creating a multi-content site with Gatsby based on Markdown'
 date: '2019-11-28'
+tags: ['gatsby', 'markdown', 'tutorial']
 ---
 
-[Gatsby](https://www.gatsbyjs.org/) is a static site generator based on [React](https://reactjs.org/) with a lot of popularity nowadays. In fact, that page is built using this technology, along with the sites of many other big names (like me 😂).
+[Gatsby](https://www.gatsbyjs.org/) is a static site generator based on [React](https://reactjs.org/) with a lot of popularity nowadays. Gaysby powers that page, along with the sites of many other big names (like me 😂).
 
 One of its strongest points is the ability to be "linked" to many different sources:
 
@@ -11,7 +12,7 @@ One of its strongest points is the ability to be "linked" to many different sour
 - Contentful
 - Markdown files
 
-In my case, I wanted to keep things really simple, so my choice was to keep the content inside markdown files, but divided by section (blog, talks and projects). That way, I can use different templates for each type of content.
+In my case, I wanted to keep things simple, so my choice was to keep the content inside markdown files, but divided by section (blog, talks, and projects). That way, I can use different templates for each type of content.
 
 Let's implement a similar architecture.
 

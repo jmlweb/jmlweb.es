@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import classNames from 'classnames';
+
+import styles from './pagination.module.css';
 
 const Pagination = ({ prefix = '', currentPage, numPages }) => {
+  if (numPages < 2) {
+    return null;
+  }
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const prevPage =
@@ -9,47 +15,36 @@ const Pagination = ({ prefix = '', currentPage, numPages }) => {
   const nextPage = `/${prefix}/${currentPage + 1}`;
 
   return (
-    <ul
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        listStyle: 'none',
-        padding: 0,
-      }}
-    >
-      {!isFirst && (
+    <div className={styles.wrapper}>
+      {!isFirst ? (
         <Link to={prevPage} rel="prev">
-          ← Previous Page
+          ← Prev Page
         </Link>
+      ) : (
+        <span>← Prev Page</span>
       )}
-      {Array.from({ length: numPages }, (_, i) => (
-        <li
-          key={`pagination-number${i + 1}`}
-          style={{
-            margin: 0,
-          }}
-        >
-          <Link
-            to={`/${prefix}/${i === 0 ? '' : i + 1}`}
-            style={{
-              padding: '10px',
-              textDecoration: 'none',
-              color: i + 1 === currentPage ? '#ffffff' : '',
-              background: i + 1 === currentPage ? '#007acc' : '',
-            }}
-          >
-            {i + 1}
-          </Link>
-        </li>
-      ))}
-      {!isLast && (
+      <ul className={styles.pages}>
+        {Array.from({ length: numPages }, (_, i) => (
+          <li key={`pagination-number${i + 1}`}>
+            <Link
+              to={`/${prefix}/${i === 0 ? '' : i + 1}`}
+              className={classNames(styles.link, {
+                [styles.active]: i + 1 === currentPage,
+              })}
+            >
+              {i + 1}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {!isLast ? (
         <Link to={nextPage} rel="next">
           Next Page →
         </Link>
+      ) : (
+        <span>Next Page →</span>
       )}
-    </ul>
+    </div>
   );
 };
 

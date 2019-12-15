@@ -1,0 +1,40 @@
+.talk {
+  background-color: rgba(#fff5ec, 0.58);
+  padding: 16px;
+  border-radius: 6px;
+  @media (--tablet) {
+    padding: 20px;
+  }
+  @media (--desktop) {
+    padding: 24px;
+  }
+}
+
+.title {
+  margin: 0;
+  & > a {
+    color: var(--color-text-dark);
+  }
+}
+
+.date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0;
+  @media (--tablet) {
+    font-size: 14px;
+  }
+  @media (--desktop) {
+    font-size: 15px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-gap: 16px;
+  align-items: flex-start;
+  @media (--tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

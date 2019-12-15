@@ -1,0 +1,14 @@
+.svg {
+  width: 30px;
+  height: 29px;
+  display: block;
+  fill: var(--color-logo);
+  @media (--tablet) {
+    width: 36px;
+    height: 35px;
+  }
+  @media (--desktop) {
+    width: 44px;
+    height: 43px;
+  }
+}

@@ -1,0 +1,21 @@
+.link {
+  font-size: 15px;
+  color: var(--color-text-base);
+  margin-left: 12px;
+  &:hover {
+    color: var(--color-primary);
+  }
+  @media (--tablet) {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+  @media (--desktop) {
+    font-size: 17px;
+    margin-left: 20px;
+  }
+}
+
+.linkActive {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

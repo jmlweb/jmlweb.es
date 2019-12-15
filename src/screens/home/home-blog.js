@@ -1,25 +1,23 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import style from './home-blog.module.css';
+import { SectionTitle } from '../../components';
+import { Container, PostResume, SectionWrapper } from '../../components';
 
 const HomeBlog = ({ posts }) => (
-  <section>
-    <h2>Posts</h2>
-    {posts.map(({ node }) => (
-      <article key={node.id}>
-        <h3>
-          <Link className={style.blockLink} to={node.fields.slug}>
-            {node.frontmatter.title}
-          </Link>
-        </h3>
-        <p>{node.excerpt}</p>
-        <p>
-          <Link to={node.fields.slug}>Read</Link>
-        </p>
-      </article>
-    ))}
-  </section>
+  <SectionWrapper>
+    <Container>
+      <SectionTitle>Latest posts</SectionTitle>
+      {posts.map(({ node }) => (
+        <PostResume
+          key={node.id}
+          url={node.fields.slug}
+          title={node.frontmatter.title}
+          excerpt={node.excerpt}
+          tags={node.frontmatter.tags}
+        />
+      ))}
+    </Container>
+  </SectionWrapper>
 );
 
 export default HomeBlog;

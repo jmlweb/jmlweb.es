@@ -1,27 +1,59 @@
-@import url('https://use.typekit.net/ocs7ygv.css');
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Regular.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Bold.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-roman.var.woff2') format('woff2');
+}
 
 html {
   font-size: 10px;
 }
 
 body {
-  font-feature-settings: 'smcp';
   font-family: var(--font-default);
-  line-height: 1.52;
-  font-size: 1.7rem;
-  color: var(--color-text-normal);
-  @media (min-width: var(--bp-typo-lg)) {
-    font-size: 1.9rem;
+  line-height: 1.55;
+  font-size: 1.5rem;
+  color: var(--color-text-base);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'salt';
+  @supports (font-variation-settings: normal) {
+    font-family: var(--font-default-var);
+  }
+  @media (--tablet) {
+    font-size: 1.6rem;
+  }
+  @media (--desktop) {
+    font-size: 1.7rem;
   }
 }
 
 a {
-  color: var(--color-link-normal);
-  display: inline-block;
+  color: var(--color-primary);
   transition: color 0.3s;
   text-decoration: none;
+
   &:hover {
-    color: var(--color-link-alternate);
+    color: var(--color-primary-alternate);
   }
 }
 
@@ -31,47 +63,61 @@ h3,
 h4 {
   margin-top: 1.5rem;
   margin-bottom: 0;
-  line-height: 1.1;
+  line-height: 1.25;
   font-weight: 700;
   hyphens: none;
+  /* font-family: var(--font-alternate); */
 }
 
 h1 {
-  font-size: 3.2rem;
-  color: var(--color-text-darkest);
-  margin-top: 3rem;
-  @media (min-width: var(--bp-typo-lg)) {
-    font-size: 4.8rem;
-  }
-}
-
-h2 {
-  font-size: 2.6rem;
   color: var(--color-text-darker);
-  margin-top: 2.8rem;
-  @media (min-width: var(--bp-typo-lg)) {
-    font-size: 4.2rem;
+  font-size: 2.4rem;
+  margin-top: 3rem;
+  &:first-child {
+    margin-top: 0;
+  }
+  @media (--tablet) {
+    font-size: 3rem;
+  }
+  @media (--desktop) {
+    font-size: 3.4rem;
   }
 }
 
-h3 {
-  font-size: 2.1rem;
+h2,
+.h2 {
+  font-size: 2rem;
+  color: var(--color-text-dark);
+  margin-top: 2.8rem;
+  @media (--tablet) {
+    font-size: 2.2rem;
+  }
+  @media (--desktop) {
+    font-size: 2.6rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.7rem;
   margin-top: 2.6rem;
-  color: var(--color-text-light);
-  @media (min-width: var(--bp-typo-lg)) {
-    font-size: 2.8rem;
+  @media (--tablet) {
+    font-size: 1.9rem;
+  }
+  @media (--desktop) {
+    font-size: 2.1rem;
   }
 }
 
 p {
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   margin-bottom: 0;
 }
 
 ul,
 ol {
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 ul ul,
 ol ul,

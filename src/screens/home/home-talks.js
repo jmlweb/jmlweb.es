@@ -1,24 +1,55 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const HomeTalks = ({ posts }) => (
-  <section>
-    <h2>Talks</h2>
-    {posts.map(({ node }) => (
-      <article key={node.id}>
-        <h3>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.title}
-          </a>
-        </h3>
-        <p>{node.excerpt}</p>
-        <p>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.url}
-          </a>
-        </p>
-      </article>
-    ))}
-  </section>
-);
+import {
+  Container,
+  ItemCard,
+  SectionTitle,
+  SectionWrapper,
+} from '../../components';
+
+import styles from './home-talks.module.css';
+
+const HomeTalks = ({ posts }) => {
+  if (!posts.length) {
+    return null;
+  }
+  return (
+    <SectionWrapper>
+      <Container>
+        <SectionTitle>Next talks</SectionTitle>
+        <div className={styles.list}>
+          {posts.map(({ node }) => (
+            <ItemCard
+              key={node.id}
+              type="talk"
+              title={node.frontmatter.title}
+              url={node.frontmatter.url}
+              footerText={node.frontmatter.conference}
+              titleAs="h2"
+            >
+              <p className={styles.date}>{node.frontmatter.date}</p>
+              <p>
+                <strong>Language:</strong>{' '}
+                {node.frontmatter.language === 'en' ? 'English' : 'Spanish'},{' '}
+                <strong>Type:</strong> {node.frontmatter.type}
+              </p>
+            </ItemCard>
+          ))}
+          <ItemCard
+            type="talk"
+            title="Your event"
+            url="mailto:josemanuel@jmlweb.es"
+            footerText="Contact me"
+            titleAs="h2"
+          >
+            <p className={styles.date}>soon</p>
+            <p>I love to talk at conferences and events. Drop me a line!</p>
+          </ItemCard>
+        </div>
+      </Container>
+    </SectionWrapper>
+  );
+};
 
 export default HomeTalks;

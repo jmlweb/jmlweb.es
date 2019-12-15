@@ -1,7 +1,10 @@
 ---
-title: 'React Alicante'
-date: '2017-08-10'
+title: 'A living design system with React Storybook'
+conference: 'React Alicante'
+date: '2020-09-13'
 url: 'http://reactalicante.es'
+type: 'workshop'
+language: 'en'
 ---
 
 This is my first talk.

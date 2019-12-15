@@ -1,13 +1,17 @@
 .wrapper {
+  border-top: 4px solid #3b00aa;
   display: flex;
   width: 100%;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(#fbfcff, var(--color-ground));
-  border-top: 2px solid #c2d1da;
+  background-color: #fff;
+  &::before {
+    content: '';
+    display: block;
+    border-top: 4px solid #1fe8c3;
+  }
 }
 
-.footer {
-  padding: 8px 0;
+.footerPusher {
   margin-top: auto;
 }

@@ -17,13 +17,21 @@ export const query = graphql`
       node {
         id
         frontmatter {
+          date(formatString: "DD MMMM YYYY")
+          rawDate: date(formatString: "DD MMM YY")
           title
-          date(formatString: "DD MMMM, YYYY")
           url
+          conference
+          type
+          language
+          video
+          slides
+          tags
         }
         fields {
           slug
           collection
+          isFuture
         }
         excerpt
       }
@@ -40,14 +48,19 @@ export const query = graphql`
     }
     talksRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "talks" } } }
+      filter: {
+        fields: { isFuture: { eq: true }, collection: { eq: "talks" } }
+      }
       limit: 12
     ) {
       ...RemarkCollection
     }
     projectsRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "projects" } } }
+      filter: {
+        fields: { collection: { eq: "projects" } }
+        frontmatter: { featured: { eq: true } }
+      }
       limit: 12
     ) {
       ...RemarkCollection

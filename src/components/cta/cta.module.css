@@ -1,0 +1,22 @@
+.cta {
+  position: relative;
+  @media (hover: hover) {
+    &::after {
+      display: inline-block;
+      position: absolute;
+      bottom: -3px;
+      margin-left: 2px;
+      transition: transform 0.5s, opacity 0.3s;
+      content: '⌁';
+      transform: scale(0.5);
+      transform-origin: left center;
+      opacity: 0;
+    }
+    &:hover {
+      &::after {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}

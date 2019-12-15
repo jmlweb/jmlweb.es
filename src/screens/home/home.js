@@ -9,8 +9,8 @@ import HomeProjects from './home-projects';
 const Home = ({ blogPosts, talksPosts, projectsPosts }) => (
   <Page title="Home">
     <HomeIntro />
-    <HomeBlog posts={blogPosts} />
     <HomeTalks posts={talksPosts} />
+    <HomeBlog posts={blogPosts} />
     <HomeProjects posts={projectsPosts} />
   </Page>
 );

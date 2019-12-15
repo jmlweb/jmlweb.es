@@ -1,36 +1,22 @@
 import React from 'react';
 
-const Logo = ({ color, size }) => (
-  <svg viewBox="0 0 60 59" width={size} height={size}>
+import style from './logo.module.css';
+
+const Logo = () => (
+  <svg viewBox="0 0 60 59" className={style.svg}>
     <g id="Canvas" transform="translate(-861 -322)">
       <g id="Group">
         <g id="Fill 1">
-          <use
-            xlinkHref="#path0_fill"
-            transform="translate(898.059 363.962)"
-            fill={color}
-          />
+          <use xlinkHref="#path0_fill" transform="translate(898.059 363.962)" />
         </g>
         <g id="Fill 2">
-          <use
-            xlinkHref="#path1_fill"
-            transform="translate(874.235 324.185)"
-            fill={color}
-          />
+          <use xlinkHref="#path1_fill" transform="translate(874.235 324.185)" />
         </g>
         <g id="Fill 4">
-          <use
-            xlinkHref="#path2_fill"
-            transform="translate(902.912 324.185)"
-            fill={color}
-          />
+          <use xlinkHref="#path2_fill" transform="translate(902.912 324.185)" />
         </g>
         <g id="Fill 7">
-          <use
-            xlinkHref="#path3_fill"
-            transform="translate(861 322)"
-            fill={color}
-          />
+          <use xlinkHref="#path3_fill" transform="translate(861 322)" />
         </g>
       </g>
     </g>
@@ -60,7 +46,6 @@ const Logo = ({ color, size }) => (
 );
 
 Logo.defaultProps = {
-  color: '#F26F3F',
   size: '45px',
 };
 

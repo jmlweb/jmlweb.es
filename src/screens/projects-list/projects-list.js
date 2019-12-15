@@ -1,29 +1,32 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import { Page } from '../../components';
+import { Container, ItemCard, Page, Pagination } from '../../components';
+import styles from './projects-list.module.css';
 
-const ProjectsList = ({ posts }) => (
+const ProjectsList = ({ posts, currentPage, numPages }) => (
   <Page title="Projects">
-    <h1>Projects</h1>
-    {posts.map(({ node }) => (
-      <article key={node.frontmatter.url}>
-        <h2>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.title}
-          </a>
-        </h2>
-        <p>{node.excerpt}</p>
-        <p>
-          <a href={node.frontmatter.url} rel="external" target="_blank">
-            {node.frontmatter.url}
-          </a>
-        </p>
-      </article>
-    ))}
-    <div>
-      <Link to="/">Go back to the homepage</Link>
-    </div>
+    <Container>
+      <h1 className={styles.title}>Personal & Open Source projects</h1>
+      <div className={styles.list}>
+        {posts.map(({ node }) => (
+          <ItemCard
+            key={node.id}
+            type="project"
+            title={node.frontmatter.title}
+            titleAs="h2"
+            url={node.frontmatter.url}
+            footerText={node.frontmatter.url}
+          >
+            <p>{node.excerpt}</p>
+          </ItemCard>
+        ))}
+      </div>
+      <Pagination
+        prefix="projects"
+        currentPage={currentPage}
+        numPages={numPages}
+      />
+    </Container>
   </Page>
 );
 
