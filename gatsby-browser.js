@@ -5,8 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-import './src/styles/normalize.css';
-import './src/styles/vars.css';
-import 'typeface-merriweather';
-import './src/styles/global.css';
-import './src/styles/prism.css';
+import './src/css/normalize.css';
+import './src/css/prism.css';
+import 'typeface-fjord-one';
+import './src/css/global.css';

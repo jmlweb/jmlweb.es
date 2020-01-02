@@ -1,48 +1,24 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer'
+import classNames from 'classnames';
 
-import { Container } from '../container';
+import SocialLinks from '../social-links';
 
 import styles from './footer.module.css';
-import twitterIcon from './twitter.svg';
-import githubIcon from './github.svg';
-import linkedInIcon from './linkedin.svg';
 
-const Footer = () => (
-  <footer className={styles.footer}>
-    <Container>
-      <div className={styles.flexGrid}>
-        <div className={styles.author}>
-          José Manuel Lucas, {new Date().getFullYear()}
-        </div>
-        <nav>
-          <a
-            href="https://twitter.com/jmlweb"
-            rel="external"
-            target="_blank"
-            className={styles.socialLink}
-          >
-            <img src={twitterIcon} alt="Twitter" />
-          </a>
-          <a
-            href="https://github.com/jmlweb"
-            rel="external"
-            target="_blank"
-            className={styles.socialLink}
-          >
-            <img src={githubIcon} alt="Github" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/josemanuellucas/"
-            rel="external"
-            target="_blank"
-            className={styles.socialLink}
-          >
-            <img src={linkedInIcon} alt="LinkedIn" />
-          </a>
-        </nav>
-      </div>
-    </Container>
-  </footer>
-);
+const Footer = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+  return (
+    <footer className={classNames({
+      [styles.footer]: true,
+      [styles.invisible]: inView === false,
+    })} ref={ref}>
+      <p className={styles.footerName}>José Manuel Lucas, {new Date().getFullYear()}</p>
+      <SocialLinks />
+    </footer>
+  );
+};
 
 export default Footer;

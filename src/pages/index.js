@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { Home } from '../screens';
+import { Home } from '../components/scenes';
 
 const IndexPage = ({ data }) => (
   <Home
@@ -18,7 +18,7 @@ export const query = graphql`
         id
         frontmatter {
           date(formatString: "DD MMMM YYYY")
-          rawDate: date(formatString: "DD MMM YY")
+          rawDate: date(formatString: "YYYY-MM-DD")
           title
           url
           conference
@@ -34,6 +34,7 @@ export const query = graphql`
           isFuture
         }
         excerpt
+        timeToRead
       }
     }
   }

@@ -1,19 +1,18 @@
-.wrapper {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  --padding: 20px;
-  padding-top: var(--padding);
-  padding-bottom: var(--padding);
-  @media (--tablet) {
-    --padding: 28px;
-  }
-  @media (--desktop) {
-    --padding: 32px;
+  padding: var(--hf-padding);
+  @media (prefers-reduced-motion: no-preference) {
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    &.invisible {
+      opacity: 0.2;
+      transform: translateY(-1rem);
+    }
   }
 }
 

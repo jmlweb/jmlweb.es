@@ -29,7 +29,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "typeface-merriweather": "^0.0.72"
+    "react-intersection-observer": "^8.25.2",
+    "typeface-fjord-one": "^0.0.72"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Light-BETA.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Light-BETA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Regular.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Bold.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-roman.var.woff2') format('woff2');
+}
+
+/**
+* VARS
+*/
+
+@custom-media --tablet (min-width: 768px);
+@custom-media --desktop (min-width: 1100px);
+@custom-media --desktopLG (min-width: 1600px);
+@custom-media --desktopXL (min-width: 2200px);
+
+:root {
+  /* Font */
+  --font-primary: 'Inter', sans-serif;
+  --font-primary-var: 'Inter var', sans-serif;
+  --font-secondary: 'Fjord One', serif;
+  @supports (font-variation-settings: normal) {
+    --font-primary: 'Inter var', sans-serif;
+  }
+  /* Font size */
+  --font-size-h1: 2.4rem;
+  @media (--tablet) {
+    --font-size-h1: 3.2rem;
+  }
+  /* Color */
+  --color-midBlue: #3912a9;
+  --color-darkBlue: #26087c;
+  /* Sizes */
+  --size-outer: 1.5rem;
+  --hf-padding: var(--size-outer);
+  @media (--tablet) {
+    --size-outer: 2rem;
+    --hf-padding: calc(var(--size-outer) - 1.5 * 1vw) var(--size-outer);
+  }
+  @media (--desktop) {
+    --size-outer: 2.5rem;
+  }
+  @media (--desktopLG) {
+    --size-outer: 3rem;
+  }
+  @media (--desktopXL) {
+    --size-outer: 3.5rem;
+  }
+}
+
+html {
+  font-size: calc(18px + (26 - 18) * ((100vw - 480px) / (2600 - 300)));
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-feature-settings: 'salt';
+  line-height: 1.5;
+  background: linear-gradient(
+    122.24deg,
+    #ffffff 0.16%,
+    #f4c44b 0.17%,
+    #db4379 99.82%
+  );
+  background-size: contain;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-weight: 300;
+  color: var(--color-darkBlue);
+}
+
+h1,
+h2 {
+  font-family: var(--font-secondary);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+a {
+  color: var(--color-darkBlue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}

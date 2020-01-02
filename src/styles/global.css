@@ -1,6 +1,15 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../../static/fonts/inter/Inter-Thin-BETA.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Thin-BETA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url('../../static/fonts/inter/Inter-Regular.woff2') format('woff2'),
@@ -34,7 +43,7 @@ body {
   line-height: 1.55;
   font-size: 1.5rem;
   color: var(--color-text-base);
-  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
   font-feature-settings: 'salt';
   @supports (font-variation-settings: normal) {
     font-family: var(--font-default-var);

@@ -1,0 +1,40 @@
+.socialLink {
+  margin-left: 1rem;
+  display: inline-block;
+  opacity: 0.95;
+  transition: transform 0.35s ease-out;
+  @media (--tablet) {
+    margin-left: 1.2rem;
+  }
+  @media (--desktop) {
+    margin-left: 1.4rem;
+  }
+  @media (--desktopLG) {
+    margin-left: 1.6rem;
+  }
+  @media (hover: hover) {
+    &:nth-child(1),
+    &:nth-child(2) {
+      --transform-Y: -0.1rem;
+    }
+    &:nth-child(3) {
+      --transform-Y: 0.1rem;
+    }
+    &:nth-child(1),
+    &:nth-child(3) {
+      --transform-X: 0.4rem;
+    }
+    &:nth-child(2) {
+      --transform-X: -0.4rem;
+    }
+    &:hover {
+      @media (prefers-reduced-motion: no-preference) {
+        transform: translate3d(var(--transform-X), var(--transform-Y), -1.2rem);
+      }
+      opacity: 1;
+    }
+  }
+  & > img {
+    width: 1.4rem;
+  }
+}

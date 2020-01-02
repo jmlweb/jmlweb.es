@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { BlogPost } from '../screens';
+import { BlogPost } from '../components/scenes';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
