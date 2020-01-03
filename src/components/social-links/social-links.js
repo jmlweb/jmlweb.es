@@ -9,7 +9,7 @@ const SocialLinks = () => (
   <nav>
     <a
       href="https://twitter.com/jmlweb"
-      rel="external"
+      rel="external noopener noreferrer"
       target="_blank"
       className={styles.socialLink}
     >
@@ -17,7 +17,7 @@ const SocialLinks = () => (
     </a>
     <a
       href="https://github.com/jmlweb"
-      rel="external"
+      rel="external noopener noreferrer"
       target="_blank"
       className={styles.socialLink}
     >
@@ -25,7 +25,7 @@ const SocialLinks = () => (
     </a>
     <a
       href="https://www.linkedin.com/in/josemanuellucas/"
-      rel="external"
+      rel="external noopener noreferrer"
       target="_blank"
       className={styles.socialLink}
     >

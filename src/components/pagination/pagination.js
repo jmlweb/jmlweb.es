@@ -17,11 +17,11 @@ const Pagination = ({ prefix = '', currentPage, numPages }) => {
   return (
     <div className={styles.wrapper}>
       {!isFirst ? (
-        <Link to={prevPage} rel="prev">
+        <Link to={prevPage} rel="prev" className={styles.prevNext}>
           ← Prev Page
         </Link>
       ) : (
-        <span>← Prev Page</span>
+        <span className={styles.fakePrevNext}>← Prev Page</span>
       )}
       <ul className={styles.pages}>
         {Array.from({ length: numPages }, (_, i) => (
@@ -38,11 +38,11 @@ const Pagination = ({ prefix = '', currentPage, numPages }) => {
         ))}
       </ul>
       {!isLast ? (
-        <Link to={nextPage} rel="next">
+        <Link to={nextPage} rel="next" className={styles.prevNext}>
           Next Page →
         </Link>
       ) : (
-        <span>Next Page →</span>
+        <span className={styles.fakePrevNext}>Next Page →</span>
       )}
     </div>
   );

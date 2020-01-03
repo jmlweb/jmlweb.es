@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { BlogList } from '../screens';
+import { BlogList } from '../components/scenes';
 
 export default ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext;
@@ -32,6 +32,7 @@ export const query = graphql`
             tags
           }
           excerpt
+          timeToRead
         }
       }
     }

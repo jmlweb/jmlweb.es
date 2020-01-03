@@ -3,13 +3,12 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: auto;
   padding: var(--hf-padding);
   & > p {
     margin-top: 0.5rem;
   }
   @media (--tablet) {
-    margin-top: 4rem;
     flex-direction: row;
     justify-content: space-between;
     & > p {
@@ -21,7 +20,7 @@
     transition-duration: 0.5s;
     &.invisible {
       opacity: 0.2;
-      transform: translateY(1rem);
+      transform: translateY(-1rem);
     }
   }
 }

@@ -6,7 +6,7 @@ const COLLECTIONS = [
   },
   {
     name: 'talks',
-    postsPerPage: 6,
+    postsPerPage: 2,
     hasPostPage: false,
   },
   {

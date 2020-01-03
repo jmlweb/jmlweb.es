@@ -3,7 +3,7 @@
 }
 
 .main {
-  max-width: 55rem;
+  max-width: 86ch;
   margin: 0 auto;
   padding: 6rem var(--hf-padding);
 }
@@ -20,13 +20,16 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   & > * {
-    margin-right: 0.4rem;
+    margin-right: 0.8rem;
     &::after {
       content: '⌬';
       display: inline-block;
-      margin-left: 0.4rem;
-      transform: translateY(-0.06rem);
+      margin-left: 0.8rem;
+      transform: translateY(-0.075rem);
     }
     &:last-child {
       &::after {
@@ -43,5 +46,11 @@
   padding: var(--hf-padding);
   & a {
     color: var(--color-midBlue);
+  }
+  & h3 {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: #000;
   }
 }

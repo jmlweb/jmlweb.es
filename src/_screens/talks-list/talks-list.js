@@ -69,7 +69,11 @@ const TalksList = ({ futureTalks, pastTalks, currentPage, numPages }) => (
                   </h3>
                 </td>
                 <td className={styles.td} data-label="Conference">
-                  <a href={node.frontmatter.url} rel="external" target="_blank">
+                  <a
+                    href={node.frontmatter.url}
+                    rel="external noopener noreferrer"
+                    target="_blank"
+                  >
                     {node.frontmatter.conference}
                   </a>
                 </td>

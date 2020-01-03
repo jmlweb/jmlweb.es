@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProjectsList } from '../screens';
+import { ProjectsList } from '../components/scenes';
 
 export default ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext;

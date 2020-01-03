@@ -1,0 +1,54 @@
+/**
+* VARS
+*/
+
+@custom-media --tablet (min-width: 768px);
+@custom-media --desktop (min-width: 1100px);
+@custom-media --desktopLG (min-width: 1600px);
+@custom-media --desktopXL (min-width: 2200px);
+
+:root {
+  /**
+   * FONT
+   */
+  --font-primary: 'Inter', sans-serif;
+  --font-primary-var: 'Inter var', sans-serif;
+  --font-secondary: 'Fjord One', serif;
+  @supports (font-variation-settings: normal) {
+    --font-primary: 'Inter var', sans-serif;
+  }
+  /**
+   * FONT-FAMILY
+   */
+  --font-size-h1: 2.4rem;
+  @media (--tablet) {
+    --font-size-h1: 3.2rem;
+  }
+  --font-size-h2: 1.6rem;
+  @media (--tablet) {
+    --font-size-h2: 2.4rem;
+  }
+  /**
+   * COLOR
+   */
+  --color-midBlue: #3912a9;
+  --color-darkBlue: #26087c;
+  /**
+   * SIZE
+   */
+  --size-outer: 1.5rem;
+  --hf-padding: var(--size-outer);
+  @media (--tablet) {
+    --size-outer: 2rem;
+    --hf-padding: calc(var(--size-outer) - 1.5 * 1vw) var(--size-outer);
+  }
+  @media (--desktop) {
+    --size-outer: 2.5rem;
+  }
+  @media (--desktopLG) {
+    --size-outer: 3rem;
+  }
+  @media (--desktopXL) {
+    --size-outer: 3.5rem;
+  }
+}

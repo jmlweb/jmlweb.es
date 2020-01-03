@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TalksList } from '../screens';
+import { TalksList } from '../components/scenes';
 
 export default ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext;

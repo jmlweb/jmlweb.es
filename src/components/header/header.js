@@ -13,16 +13,16 @@ const Header = () => {
   const [ref, inView, entry] = useInView({
     threshold: 0.1,
   });
-  const hidden = inView === false;
+  const mainHidden = entry && inView === false;
   return (
     <>
       <header
         className={classNames({
           [styles.header]: true,
-          [styles.invisible]: hidden,
+          [styles.invisible]: mainHidden,
         })}
         ref={ref}
-        aria-hidden={hidden}
+        aria-hidden={mainHidden}
       >
         <Link
           to="/"
@@ -31,9 +31,9 @@ const Header = () => {
         >
           <Logo />
         </Link>
-        <TopNav hidden={hidden} />
+        <TopNav hidden={mainHidden} />
       </header>
-      <SecondaryNav visible={entry && inView === false} />
+      <SecondaryNav visible={mainHidden} />
     </>
   );
 };
