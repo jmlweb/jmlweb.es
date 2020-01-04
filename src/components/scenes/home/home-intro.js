@@ -7,11 +7,11 @@ import styles from './home-intro.module.css';
 import SocialLinks from '../../social-links';
 
 const HomeIntro = ({ broken, setBroken }) => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     threshold: 0.05,
   });
   return (
-    <div
+    <section
       className={classNames({
         [styles.homeIntro]: true,
         [styles.broken]: broken,
@@ -65,11 +65,11 @@ const HomeIntro = ({ broken, setBroken }) => {
           about React, JavaScript Functional Programming, Testing, and UI
           Design.
         </p>
-        <div className={styles.socialLinks}>
+        <aside className={styles.socialLinks}>
           <SocialLinks />
-        </div>
+        </aside>
       </div>
-    </div>
+    </section>
   );
 };
 

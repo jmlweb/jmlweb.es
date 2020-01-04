@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  grid-gap: 2.8rem;
+  margin: 2rem 0;
+  align-items: center;
+  @media (--desktop) {
+    grid-template-columns: 1fr 1fr;
+  }
+  & > article {
+    margin-bottom: 3rem;
+  }
+}

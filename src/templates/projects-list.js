@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import { ProjectsList } from '../components/scenes';
 
@@ -20,12 +21,13 @@ export const query = graphql`
         fields: [frontmatter___featured, frontmatter___date]
         order: [DESC, DESC]
       }
-      filter: { fields: { collection: { eq: "projects" } } }
+      filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: {ne: false} } }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
+          id
           fields {
             slug
           }

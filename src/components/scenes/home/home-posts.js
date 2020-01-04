@@ -9,8 +9,19 @@ const HomePosts = ({ posts }) => (
       <ContentItem
         key={node.id}
         title={node.frontmatter.title}
+        subtitle={node.frontmatter.subtitle || node.excerpt}
         link={node.fields.slug}
-        extra={`${node.timeToRead} minutes`}
+        extra={
+          <>
+            <span>{`${node.timeToRead} minutes`}</span>{' '}
+            {node.frontmatter.tags.map(tag => (
+              <span key={tag} style={{ opacity: 0.6 }}>
+                {tag}
+              </span>
+            ))}
+          </>
+        }
+        small
       />
     ))}
   </HomeSection>

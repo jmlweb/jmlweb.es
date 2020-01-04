@@ -1,5 +1,5 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer';
 import classNames from 'classnames';
 
 import styles from './home-section.module.css';
@@ -9,14 +9,17 @@ const HomeSection = ({ title, children }) => {
     threshold: 0.1,
   });
   return (
-    <div className={classNames({
-      [styles.section]: true,
-      [styles.invisible]: inView === false,
-    })} ref={ref}>
+    <section
+      className={classNames({
+        [styles.section]: true,
+        [styles.invisible]: inView === false,
+      })}
+      ref={ref}
+    >
       <h2 className={styles.title}>{title}</h2>
       {children}
-    </div>
+    </section>
   );
-}
+};
 
 export default HomeSection;

@@ -1,53 +1,69 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'gatsby';
 
+import ExternalLink from '../external-link';
 import styles from './content-item.module.css';
 
-const externalProps = {
-  rel: 'external',
-  target: '_blank',
+const ProperLink = ({ link, external, children, hrefLang }) => {
+  if (external) {
+    return (
+      <ExternalLink href={link} hrefLang={hrefLang}>
+        {children}
+      </ExternalLink>
+    );
+  }
+  return <Link to={link}>{children}</Link>;
 };
 
-const Link = ({ link, external, children }) => {
-  const props = external ? externalProps : {};
-  return (
-    <a href={link} {...props}>
-      {children}
-    </a>
-  );
+const ProperHeader = ({ small, children, ...props }) => {
+  if (small) {
+    return <h3 {...props}>{children}</h3>;
+  }
+  return <h2 {...props}>{children}</h2>;
 };
 
-const ContentItem = ({ title, subtitle, extra, link, external }) => (
+const ContentItem = ({
+  title,
+  subtitle,
+  extra,
+  link,
+  external,
+  small,
+  lang,
+}) => (
   <article className={styles.main}>
-    <div className={styles.titleBlock}>
-      <h3
+    <header className={styles.titleBlock}>
+      <ProperHeader
+        small={small}
         className={classNames({
           [styles.title]: true,
           [styles.onlyTitle]: !subtitle,
         })}
+        lang={lang}
       >
-        <Link link={link} external={external}>
+        <ProperLink link={link} external={external} hrefLang={lang}>
           {title}
-        </Link>
-      </h3>
-    </div>
+        </ProperLink>
+      </ProperHeader>
+    </header>
     {subtitle && (
       <div className={styles.subtitleBlock}>
-        <p className={styles.subtitle}>
-          <Link link={link} external={external}>
+        <p className={styles.subtitle} lang={lang}>
+          <ProperLink link={link} external={external} hrefLang={lang}>
             {subtitle}
-          </Link>
+          </ProperLink>
         </p>
       </div>
     )}
-    <div
+    <footer
       className={classNames({
         [styles.extraBlock]: true,
         [styles.onlyTitle]: !subtitle,
       })}
     >
       <p className={styles.extra}>{extra}</p>
-    </div>
+    </footer>
   </article>
 );
 

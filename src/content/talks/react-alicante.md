@@ -6,5 +6,3 @@ url: 'http://reactalicante.es'
 type: 'workshop'
 language: 'en'
 ---
-
-Information about React Alicante

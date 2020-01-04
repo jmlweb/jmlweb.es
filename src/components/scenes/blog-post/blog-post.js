@@ -21,10 +21,10 @@ const BlogPost = ({ post }) => (
           </span>
         </div>
       </header>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      <div className={styles.content}>
+        <h2>{post.frontmatter.subtitle}</h2>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
     </main>
     <Footer />
   </div>

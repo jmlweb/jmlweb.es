@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ContentItem from '../../content-item';
+import ExternalLink from '../../external-link';
 import HomeSection from './home-section';
 
 const HomeProjects = ({ posts }) => (
@@ -12,11 +13,12 @@ const HomeProjects = ({ posts }) => (
         link={node.frontmatter.url}
         subtitle={node.excerpt}
         extra={
-          <a href={node.frontmatter.url} rel="external" target="_blank">
+          <ExternalLink href={node.frontmatter.url}>
             {node.frontmatter.url}
-          </a>
+          </ExternalLink>
         }
         external
+        small
       />
     ))}
   </HomeSection>

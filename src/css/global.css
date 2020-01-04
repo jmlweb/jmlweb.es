@@ -21,10 +21,10 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-display: swap;
-  src: url('../../static/fonts/inter/Inter-Bold.woff2') format('woff2'),
-    url('../../static/fonts/inter/Inter-Bold.woff') format('woff');
+  src: url('../../static/fonts/inter/Inter-Medium.woff2') format('woff2'),
+    url('../../static/fonts/inter/Inter-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -70,6 +70,10 @@ h2 {
 
 a {
   color: var(--color-darkBlue);
+}
+
+b, strong {
+  font-weight: 500;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,17 +1,17 @@
 const COLLECTIONS = [
   {
     name: 'blog',
-    postsPerPage: 2,
+    postsPerPage: 12,
     hasPostPage: true,
   },
   {
     name: 'talks',
-    postsPerPage: 2,
+    postsPerPage: 12,
     hasPostPage: false,
   },
   {
     name: 'projects',
-    postsPerPage: 20,
+    postsPerPage: 12,
     hasPostPage: false,
   },
 ];
@@ -69,6 +69,7 @@ module.exports = async function({ actions, graphql }) {
     query {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { published: { ne: false } } }
         limit: 1000
       ) {
         edges {
@@ -92,8 +93,4 @@ module.exports = async function({ actions, graphql }) {
   });
 
   COLLECTIONS.forEach(pagesCollectionGenerator);
-
-  /**
-   * CREATE LISTS
-   */
 };

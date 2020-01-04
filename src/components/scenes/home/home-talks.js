@@ -21,6 +21,7 @@ const HomeTalks = ({ posts }) => {
             </time>
           }
           external
+          small
         />
       ))}
     </HomeSection>

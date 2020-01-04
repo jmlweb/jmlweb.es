@@ -20,6 +20,7 @@ export const query = graphql`
           date(formatString: "DD MMMM YYYY")
           rawDate: date(formatString: "YYYY-MM-DD")
           title
+          subtitle
           url
           conference
           type
@@ -42,7 +43,7 @@ export const query = graphql`
   query remarkByCollection {
     postsRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "blog" } } }
+      filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: {ne: false} } }
       limit: 12
     ) {
       ...RemarkCollection
@@ -50,7 +51,8 @@ export const query = graphql`
     talksRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        fields: { isFuture: { eq: true }, collection: { eq: "talks" } }
+        fields: { isFuture: { eq: true }, collection: { eq: "talks" } },
+        frontmatter: { published: {ne: false} }
       }
       limit: 12
     ) {
@@ -60,7 +62,7 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { collection: { eq: "projects" } }
-        frontmatter: { featured: { eq: true } }
+        frontmatter: { featured: { eq: true }, published: {ne: false} }
       }
       limit: 12
     ) {

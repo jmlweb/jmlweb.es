@@ -1,0 +1,19 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding: 6rem var(--hf-padding);
+}
+
+.title {
+  margin: 0 0 3.5rem;
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
+  color: rgba(#26087c, 0.8);
+  mix-blend-mode: overlay;
+  --border: 1px dotted rgba(#fff, 0.5);
+  border-bottom: var(--border);
+  padding-bottom: 1rem;
+}

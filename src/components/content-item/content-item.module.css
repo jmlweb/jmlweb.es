@@ -27,7 +27,7 @@
 .subtitleBlock {
   z-index: 1;
   transition: transform 0.1s;
-  margin-top: 0.95rem;
+  margin-top: 0.35rem;
   transform: rotate(0.2deg);
   transform-origin: left center;
   @media (prefers-reduced-motion: no-preference) {
@@ -69,23 +69,16 @@
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 1.1;
-  padding: 0.2rem 0.6rem 0.4rem;
+  padding: 0.6rem;
+  background-color: rgba(#26087c, 0.85);
+  display: inline-block;
+  &:hover {
+    background-color: var(--color-midBlue);
+  }
   & > a {
     text-decoration: none;
     color: #e77e65;
     position: relative;
-    &:hover {
-      color: #c73f1f;
-    }
-  }
-  &.onlyTitle {
-    & > a {
-      text-decoration: none;
-      color: var(--color-midBlue);
-      &:hover {
-        color: var(--color-darkBlue);
-      }
-    }
   }
 }
 
@@ -106,8 +99,15 @@
   color: #000;
   & > * {
     position: relative;
+    margin-right: 0.8rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   & > a {
     color: var(--color-midBlue);
+    &:hover {
+      color: var(--color-lightBlue);
+    }
   }
 }

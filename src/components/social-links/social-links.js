@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ExternalLink from '../external-link';
 import styles from './social-links.module.css';
 import twitterIcon from './twitter.svg';
 import githubIcon from './github.svg';
@@ -7,30 +8,24 @@ import linkedInIcon from './linkedin.svg';
 
 const SocialLinks = () => (
   <nav>
-    <a
+    <ExternalLink
       href="https://twitter.com/jmlweb"
-      rel="external noopener noreferrer"
-      target="_blank"
       className={styles.socialLink}
     >
       <img src={twitterIcon} alt="Twitter" />
-    </a>
-    <a
+    </ExternalLink>
+    <ExternalLink
       href="https://github.com/jmlweb"
-      rel="external noopener noreferrer"
-      target="_blank"
       className={styles.socialLink}
     >
       <img src={githubIcon} alt="Github" />
-    </a>
-    <a
+    </ExternalLink>
+    <ExternalLink
       href="https://www.linkedin.com/in/josemanuellucas/"
-      rel="external noopener noreferrer"
-      target="_blank"
       className={styles.socialLink}
     >
       <img src={linkedInIcon} alt="LinkedIn" />
-    </a>
+    </ExternalLink>
   </nav>
 );
 
