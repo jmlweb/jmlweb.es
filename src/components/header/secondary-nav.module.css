@@ -5,7 +5,7 @@
   transition: opacity 0.4s, background-size 0.6s, transform 0.2s ease-out;
   opacity: 0;
   transform: translateY(-3vh);
-  background: linear-gradient(-45deg, rgba(#26087c, 0.9), rgba(#e77e65, 0.9));
+  background: linear-gradient(-45deg, rgba(#3912a9, 0.9), rgba(#e77e65, 0.9));
   color: #fff;
   border: 0;
   font-family: var(--font-default);

@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
-  color: rgba(#26087c, 0.8);
+  color: rgba(#26087c, 0.9);
   mix-blend-mode: overlay;
   & > span {
     display: block;

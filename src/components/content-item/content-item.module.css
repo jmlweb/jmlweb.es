@@ -70,14 +70,15 @@
   font-weight: 400;
   line-height: 1.1;
   padding: 0.6rem;
-  background-color: rgba(#26087c, 0.85);
+  background: linear-gradient(-45deg, rgba(#3912a9, 0.9), rgba(#3912a9, 0.7));
+  text-shadow: 2px 2px 0 rgba(#000, 0.3);
   display: inline-block;
   &:hover {
     background-color: var(--color-midBlue);
   }
   & > a {
     text-decoration: none;
-    color: #e77e65;
+    color: #ffa18b;
     position: relative;
   }
 }

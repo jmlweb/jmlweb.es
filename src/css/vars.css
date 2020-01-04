@@ -35,6 +35,14 @@
   --color-midBlue: #3912a9;
   --color-darkBlue: #26087c;
   /**
+   * GRADIENTS
+   */
+  --gradient-main: linear-gradient(
+    122.24deg,
+    rgba(#f4c44b, 0.7) 0.17%,
+    rgba(#db4379, 0.7) 99.82%
+  );
+  /**
    * SIZE
    */
   --size-outer: 1.5rem;
