@@ -5430,6 +5430,14 @@ gatsby-plugin-sharp@^2.3.5:
     svgo "1.3.2"
     uuid "^3.3.3"
 
+gatsby-plugin-web-font-loader@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-web-font-loader/-/gatsby-plugin-web-font-loader-1.0.4.tgz#c50bdb0c1980110b3fd213a5be70feb2459514c3"
+  integrity sha512-3c39bX9CcsYJQFhhmTyjuMJSqpld2rX+HsTOxP9k1PKFR4Rvo3lpzBW4d1tVpmUesR8BNL6u9eHT7/XksS1iog==
+  dependencies:
+    babel-runtime "^6.26.0"
+    webfontloader "^1.6.28"
+
 gatsby-react-router-scroll@^2.1.19:
   version "2.1.19"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.19.tgz#4bac8cb5aaba5e2ad6b589a3d289d39257c3b5da"
@@ -12507,11 +12515,6 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-fjord-one@^0.0.72:
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/typeface-fjord-one/-/typeface-fjord-one-0.0.72.tgz#a528db51b9ad3f25bfdee97d9e1e7f3d199c48c7"
-  integrity sha512-6AvsveqopLomrS3m4MEg3DpRflsRPBXg5pUMwfEb9+tGrS2TOJWuPpY1yq4UrK5xXf79wVwaZ4W0MXIYBUyYyw==
-
 ua-parser-js@^0.7.18:
   version "0.7.21"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
@@ -13042,6 +13045,11 @@ web-namespaces@^1.0.0, web-namespaces@^1.1.2:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.3.tgz#9bbf5c99ff0908d2da031f1d732492a96571a83f"
   integrity sha512-r8sAtNmgR0WKOKOxzuSgk09JsHlpKlB+uHi937qypOu3PZ17UxPrierFKDye/uNHjNTTEshu5PId8rojIPj/tA==
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webpack-dev-middleware@^3.7.2:
   version "3.7.2"

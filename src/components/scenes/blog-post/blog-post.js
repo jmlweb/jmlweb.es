@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../../header';
 import Seo from '../../seo';
 import Footer from '../../footer';
+import MainImg from '../../main-img';
 import styles from './blog-post.module.css';
 
 const BlogPost = ({ post }) => (
@@ -27,6 +28,7 @@ const BlogPost = ({ post }) => (
       </div>
     </main>
     <Footer />
+    <MainImg />
   </div>
 );
 

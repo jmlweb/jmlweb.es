@@ -18,7 +18,6 @@ const HomeIntro = ({ broken, setBroken }) => {
       })}
       ref={ref}
     >
-      <div className={styles.picWrapper} />
       <div
         className={classNames({
           [styles.content]: true,

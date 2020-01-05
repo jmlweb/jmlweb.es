@@ -9,8 +9,8 @@
 .title {
   margin: 0;
   padding: 0;
-  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
-  color: rgba(#26087c, 0.9);
+  text-shadow: 0 2px 2px rgba(#fff5c6, 0.99);
+  color: rgba(#3912a9, 0.9);
   mix-blend-mode: overlay;
   & > span {
     display: block;
@@ -84,50 +84,9 @@
   }
 }
 
-.picWrapper {
-  position: absolute;
-  display: block;
-  background: url(../../../images/jmlweb-xs.jpg) center center no-repeat;
-  background-color: red;
-  background-size: cover;
-  mix-blend-mode: difference;
-  background-blend-mode: difference;
-  opacity: 0.4;
-  top: 5rem;
-  right: var(--size-outer);
-  width: 8rem;
-  height: 10rem;
-  z-index: -1;
-  @media (--tablet) {
-    top: 10rem;
-    width: 15rem;
-    height: 20rem;
-    background-image: url(../../../images/jmlweb-sm.jpg);
-  }
-  @media (--desktop) {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    height: 100%;
-    clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
-    width: var(--column-size);
-    background-image: url(../../../images/jmlweb-md.jpg);
-  }
-  @media (--desktopLG) {
-    clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
-    background-image: url(../../../images/jmlweb-lg.jpg);
-  }
-  @media (--desktopXL) {
-    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
-    background-image: url(../../../images/jmlweb-xl.jpg);
-  }
-}
-
 .content {
   align-self: center;
   padding: var(--size-outer);
-  margin-left: var(--column-size);
   transition-property: opacity;
   transition-duration: 0.5s;
   &.invisible {

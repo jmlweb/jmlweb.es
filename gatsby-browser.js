@@ -7,5 +7,4 @@
 // You can delete this file if you're not using it
 import './src/css/normalize.css';
 import './src/css/prism.css';
-import 'typeface-fjord-one';
 import './src/css/global.css';

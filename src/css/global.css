@@ -1,6 +1,6 @@
 @import './vars.css';
 
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
@@ -34,7 +34,7 @@
   font-named-instance: 'Regular';
   font-display: swap;
   src: url('../../static/fonts/inter/Inter-roman.var.woff2') format('woff2');
-}
+} */
 
 html {
   font-size: calc(18px + (26 - 18) * ((100vw - 480px) / (2600 - 300)));

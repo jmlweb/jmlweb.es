@@ -1,14 +1,5 @@
 .section {
-  margin-left: var(--column-size);
   padding: var(--size-outer);
-  @media (prefers-reduced-motion: no-preference) {
-    transition-property: transform, opacity;
-    transition-duration: 0.5s;
-    &.invisible {
-      opacity: 0.2;
-      transform: translateY(1rem);
-    }
-  }
 }
 
 .title {

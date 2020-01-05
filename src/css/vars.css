@@ -34,6 +34,7 @@
   --color-lightBlue: #4204fb;
   --color-midBlue: #3912a9;
   --color-darkBlue: #26087c;
+  --color-title: rgba(#3912a9, 0.9);
   /**
    * GRADIENTS
    */
@@ -60,4 +61,9 @@
   @media (--desktopXL) {
     --size-outer: 3.5rem;
   }
+  /**
+   * EASING
+   */
+  --easing-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }

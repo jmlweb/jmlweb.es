@@ -3,6 +3,16 @@
   &:last-child {
     margin-bottom: 0;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--easing-out-quad);
+    &.invisible {
+      opacity: 0.2;
+      transform: translateY(1rem);
+      transition-timing-function: var(--easing-in-quad);
+    }
+  }
 }
 
 .titleBlock,
@@ -55,13 +65,17 @@
 .title,
 .subtitle,
 .extra {
-  background-color: #fff;
   margin: 0;
+  line-height: 1.5;
+  padding: 0.6rem;
+}
+
+.subtitle,
+.extra {
+  background-color: #fff;
   display: inline;
   white-space: pre-wrap;
   box-decoration-break: clone;
-  line-height: 1.5;
-  padding: 0.6rem;
 }
 
 .title {
@@ -80,6 +94,7 @@
     text-decoration: none;
     color: #ffa18b;
     position: relative;
+    display: block;
   }
 }
 
@@ -87,7 +102,6 @@
   font-size: 1.6rem;
   font-weight: 400;
   & > a {
-    position: relative;
     color: var(--color-darkBlue);
     text-decoration: none;
     &:hover {
