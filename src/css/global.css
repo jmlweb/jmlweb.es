@@ -1,41 +1,5 @@
 @import './vars.css';
 
-/* @font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../../static/fonts/inter/Inter-Light-BETA.woff2') format('woff2'),
-    url('../../static/fonts/inter/Inter-Light-BETA.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../../static/fonts/inter/Inter-Regular.woff2') format('woff2'),
-    url('../../static/fonts/inter/Inter-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../../static/fonts/inter/Inter-Medium.woff2') format('woff2'),
-    url('../../static/fonts/inter/Inter-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  font-display: swap;
-  src: url('../../static/fonts/inter/Inter-roman.var.woff2') format('woff2');
-} */
-
 html {
   font-size: calc(18px + (26 - 18) * ((100vw - 480px) / (2600 - 300)));
   scroll-behavior: smooth;
@@ -44,6 +8,7 @@ html {
 body {
   font-family: var(--font-primary);
   font-size: 1rem;
+  font-optical-sizing: auto;
   /* font-feature-settings: 'salt'; */
   line-height: 1.55;
   background: var(--gradient-main);

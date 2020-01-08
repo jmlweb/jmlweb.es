@@ -11,12 +11,8 @@
   /**
    * FONT
    */
-  --font-primary: 'Inter', sans-serif;
-  --font-primary-var: 'Inter var', sans-serif;
+  --font-primary: 'Inter var', sans-serif;
   --font-secondary: 'Fjord One', serif;
-  @supports (font-variation-settings: normal) {
-    --font-primary: 'Inter var', sans-serif;
-  }
   /**
    * FONT-FAMILY
    */
