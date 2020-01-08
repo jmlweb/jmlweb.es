@@ -1,5 +1,3 @@
-@import './vars.css';
-
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
@@ -15,7 +13,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./fjord-one/fjord-one-v8-latin-regular.woff2') format('woff2'),
+  src: url('/fonts/fjord-one/fjord-one-v8-latin-regular.woff2') format('woff2'),
     url('/fonts/fjord-one/fjord-one-v8-latin-regular.woff') format('woff');
   unicode-range: U+000-5FF;
 }
@@ -28,7 +26,6 @@ html {
 body {
   font-family: var(--font-primary);
   font-size: 1rem;
-  font-optical-sizing: auto;
   /* font-feature-settings: 'salt'; */
   line-height: 1.55;
   background: var(--gradient-main);

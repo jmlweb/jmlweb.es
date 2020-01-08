@@ -6,7 +6,7 @@ import ContentItem from '../../content-item';
 import Pagination from '../../pagination';
 
 const BlogList = ({ posts, currentPage, numPages }) => (
-  <StandardPage title="Blog & recommended">
+  <StandardPage title="Blog & recommended" description="Lists of articles written by José Manuel Lucas">
     <ContentGrid>
       {posts.map(({ node }) => (
         <ContentItem

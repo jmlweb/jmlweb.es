@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 import './src/css/normalize.css';
-import './src/css/prism.css';
+import './src/css/vars.css';
 import './src/css/global.css';

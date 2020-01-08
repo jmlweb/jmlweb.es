@@ -21,7 +21,7 @@ const Home = ({ blogPosts, talksPosts, projectsPosts }) => {
         [styles.broken]: broken,
       })}
     >
-      <Seo title="Home" />
+      <Seo title="Home" description="Personal site of Frontend Engineer José Manuel Lucas. React, Javascript, Testing, Functional Programming, Design, and more" />
       <Header />
       <main className={styles.main}>
         <HomeIntro broken={broken} setBroken={setBroken} />

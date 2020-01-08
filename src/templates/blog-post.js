@@ -16,6 +16,7 @@ export const query = graphql`
         subtitle
         rawDate: date
         date(formatString: "DD MMMM YYYY")
+        tags
       }
       timeToRead
       html

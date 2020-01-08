@@ -12,6 +12,7 @@ const TalksList = ({ futureTalks, pastTalks, currentPage, numPages }) => (
     htmlTitle={
       <>{futureTalks.length ? 'Future &' : <del>Future &</del>} past talks</>
     }
+    description="List of talks by José Manuel Lucas"
   >
     <ContentGrid>
       {futureTalks.map(({ node }) => (

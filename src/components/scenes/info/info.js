@@ -5,7 +5,7 @@ import ExternalLink from '../../external-link';
 import StandardPage from '../../standard-page';
 
 const Info = ({ posts, currentPage, numPages }) => (
-  <StandardPage title="Info">
+  <StandardPage title="Info" description="Info about José Manuel Lucas. Spanish Frontend Engineer specialized in React, Styled Components and GraphQL">
     <div className={styles.bioWrapper}>
       <div className={styles.bio}>
         <h2>I'm José Manuel Lucas</h2>

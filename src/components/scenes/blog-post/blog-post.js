@@ -5,10 +5,11 @@ import Seo from '../../seo';
 import Footer from '../../footer';
 import MainImg from '../../main-img';
 import styles from './blog-post.module.css';
+import '../../../css/prism.css';
 
 const BlogPost = ({ post }) => (
   <div className={styles.blogPost}>
-    <Seo title={post.frontmatter.title} />
+    <Seo title={post.frontmatter.title} description={`Article about ${post.frontmatter.tags.join(', ')} | José Manuel Lucas. Frontend Engineer`} />
     <Header />
     <main className={styles.main}>
       <header className={styles.header}>

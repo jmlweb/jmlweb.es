@@ -6,7 +6,7 @@ import ContentItem from '../../content-item';
 import Pagination from '../../pagination';
 
 const ProjectsList = ({ posts, currentPage, numPages }) => (
-  <StandardPage title="Personal & Open Source Projects">
+  <StandardPage title="Personal & Open Source Projects" description="Projects developed by José Manuel Lucas">
     <ContentGrid>
       {posts.map(({ node }) => (
         <ContentItem
