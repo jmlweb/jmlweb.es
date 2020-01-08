@@ -1,5 +1,25 @@
 @import './vars.css';
 
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  font-display: swap;
+  src: url('/fonts/inter/Inter-roman.var.woff2') format('woff2');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'Fjord One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fjord-one/fjord-one-v8-latin-regular.woff2') format('woff2'),
+    url('/fonts/fjord-one/fjord-one-v8-latin-regular.woff') format('woff');
+  unicode-range: U+000-5FF;
+}
+
 html {
   font-size: calc(18px + (26 - 18) * ((100vw - 480px) / (2600 - 300)));
   scroll-behavior: smooth;

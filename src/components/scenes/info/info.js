@@ -13,8 +13,8 @@ const Info = ({ posts, currentPage, numPages }) => (
           A frontend engineer living in <strong>Murcia (Spain)</strong>
         </p>
         <p>
-          I have a solid experience building <strong>highly optimized</strong>,
-          yet pleasant to see websites.
+          I have ample experience building <strong>performant</strong> yet
+          pleasant to see <strong>websites</strong>.
         </p>
         <p>
           I work for <ExternalLink href="http://sewan.fr">Sewan</ExternalLink>,
@@ -27,7 +27,7 @@ const Info = ({ posts, currentPage, numPages }) => (
           My interests are very eclectic, covering areas like{' '}
           <strong>Functional Programming</strong>,{' '}
           <strong>Design Systems</strong>, <strong>UI Design</strong>,{' '}
-          <strong>Mountain Biking</strong> and <strong>Hip Hop Music</strong>.
+          <strong>Mountain Biking</strong>, and <strong>Hip Hop Music</strong>.
         </p>
       </div>
       <div className={styles.bio}>
@@ -36,7 +36,7 @@ const Info = ({ posts, currentPage, numPages }) => (
           <dt>HTML</dt>
           <dd>
             My Markup is <strong>semantic</strong> and{' '}
-            <strong>accesible</strong>.
+            <strong>accessible</strong>.
           </dd>
           <dt>CSS</dt>
           <dd>
@@ -46,11 +46,11 @@ const Info = ({ posts, currentPage, numPages }) => (
           </dd>
           <dt>JS</dt>
           <dd>
-            My favorite language, with its draws and cons. My code is based in
+            My favorite language, with its draws and cons. My code implements
             the best conventions like <strong>TDD</strong>,{' '}
-            <strong>Solid</strong>, etc. I'm specialized in building highly{' '}
-            <strong>optimized</strong>, <strong>testable</strong> and{' '}
-            <strong>modular</strong> components in <strong>React</strong>. My
+            <strong>Solid</strong>... I'm specialized in building highly{' '}
+            <strong>optimized</strong>, <strong>testable</strong>, and{' '}
+            <strong>modular</strong> components using <strong>React</strong>. My
             style components usually follow the <strong>System UI</strong>{' '}
             standard.
           </dd>
