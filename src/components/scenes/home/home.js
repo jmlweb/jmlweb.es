@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import classNames from 'classnames';
 
 import Header from '../../header';
@@ -8,7 +8,7 @@ import HomeIntro from './home-intro';
 import HomeTalks from './home-talks';
 import HomePosts from './home-posts';
 import HomeProjects from './home-projects';
-import MainImg from '../../main-img';
+const MainImg = lazy(() => import('../../main-img'));
 
 import styles from './home.module.css';
 
@@ -30,7 +30,9 @@ const Home = ({ blogPosts, talksPosts, projectsPosts }) => {
         <HomeProjects posts={projectsPosts} />
       </main>
       <Footer />
-      <MainImg />
+      <Suspense fallback={null}>
+        <MainImg />
+      </Suspense>
     </div>
   );
 };

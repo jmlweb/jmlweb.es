@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import Header from '../../header';
 import Seo from '../../seo';
 import Footer from '../../footer';
-import MainImg from '../../main-img';
+const MainImg = lazy(() => import('../../main-img'));
 import styles from './blog-post.module.css';
 import '../../../css/prism.css';
 
@@ -29,7 +29,9 @@ const BlogPost = ({ post }) => (
       </div>
     </main>
     <Footer />
-    <MainImg />
+    <Suspense fallback={null}>
+      <MainImg />
+    </Suspense>
   </div>
 );
 
