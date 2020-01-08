@@ -4,7 +4,7 @@ import Header from '../header';
 import Seo from '../seo';
 import Footer from '../footer';
 import styles from './standard-page.module.css';
-const MainImg = lazy(() => import('../../main-img'));
+const MainImg = lazy(() => import('../main-img'));
 
 const StandardPage = ({ title, htmlTitle, omitTitle = false, description, children }) => (
   <div className={styles.wrapper}>
