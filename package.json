@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "José Manuel Lucas <josemanuel@jmlweb.es>",
   "dependencies": {
     "bluebird": "^3.7.2",
     "classnames": "^2.2.6",
@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-postcss": "^2.1.16",
+    "gatsby-plugin-preload-fonts": "^1.0.22",
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-web-font-loader": "^1.0.4",
@@ -44,6 +45,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "preload-fonts": "gatsby-preload-fonts",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
