@@ -6,7 +6,10 @@
   font-size: 1rem;
   max-width: 85ch;
   margin: 0 auto;
-  padding: 6rem var(--hf-padding);
+  padding: 5rem var(--hf-padding);
+  @media (--tablet) {
+    padding: 6rem var(--hf-padding);
+  }
 }
 
 .title {
@@ -18,7 +21,11 @@
 
 .headerExtra {
   margin-top: 1rem;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem var(--hf-padding);
+  font-size: 0.8rem;
+  @media (--tablet) {
+    padding: 0.8rem 1.2rem;
+  }
   display: flex;
   justify-content: flex-start;
   align-items: center;

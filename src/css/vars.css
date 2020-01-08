@@ -47,7 +47,7 @@
    * SIZE
    */
   --size-outer: 1.5rem;
-  --hf-padding: var(--size-outer);
+  --hf-padding: 1rem;
   @media (--tablet) {
     --size-outer: 2rem;
     --hf-padding: calc(var(--size-outer) - 1.5 * 1vw) var(--size-outer);

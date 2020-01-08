@@ -6,12 +6,12 @@ import Footer from '../footer';
 import styles from './standard-page.module.css';
 import MainImg from '../main-img';
 
-const StandardPage = ({ title, htmlTitle, children }) => (
+const StandardPage = ({ title, htmlTitle, omitTitle = false, children }) => (
   <div className={styles.wrapper}>
     <Seo title={title} />
     <Header />
     <main className={styles.main}>
-      <h1 className={styles.title}>{htmlTitle || title}</h1>
+      {!omitTitle && <h1 className={styles.title}>{htmlTitle || title}</h1>}
       {children}
     </main>
     <Footer />

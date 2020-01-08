@@ -44,8 +44,8 @@ html {
 body {
   font-family: var(--font-primary);
   font-size: 1rem;
-  font-feature-settings: 'salt';
-  line-height: 1.5;
+  /* font-feature-settings: 'salt'; */
+  line-height: 1.55;
   background: var(--gradient-main);
   background-size: contain;
   background-attachment: fixed;
