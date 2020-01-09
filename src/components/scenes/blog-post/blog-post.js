@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
 import Header from '../../header';
 import Seo from '../../seo';
@@ -7,7 +7,7 @@ import styles from './blog-post.module.css';
 
 import MainImg from '../../main-img';
 
-import('../../../css/prism.css');
+lazy(() => import('../../../css/prism.css'));
 
 const BlogPost = ({ post }) => (
   <div className={styles.blogPost}>

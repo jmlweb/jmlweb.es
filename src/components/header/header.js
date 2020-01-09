@@ -7,7 +7,7 @@ import { Logo } from '../logo';
 import styles from './header.module.css';
 
 import TopNav from './top-nav';
-import SecondaryNav from './secondary-nav';
+import SecondaryNav from './secondary-nav-loader';
 
 const Header = () => {
   const [ref, inView, entry] = useInView({
