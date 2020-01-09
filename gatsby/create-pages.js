@@ -1,17 +1,19 @@
+const siteConfig = require('../siteConfig');
+
 const COLLECTIONS = [
   {
     name: 'blog',
-    postsPerPage: 12,
+    postsPerPage: siteConfig.perPage.blog || siteConfig.perPage.default,
     hasPostPage: true,
   },
   {
     name: 'talks',
-    postsPerPage: 12,
+    postsPerPage: siteConfig.perPage.talks || siteConfig.perPage.default,
     hasPostPage: false,
   },
   {
     name: 'projects',
-    postsPerPage: 12,
+    postsPerPage: siteConfig.perPage.projects || siteConfig.perPage.default,
     hasPostPage: false,
   },
 ];

@@ -1,8 +1,12 @@
+const siteConfig = require('./siteConfig');
+
 module.exports = {
   siteMetadata: {
-    title: `José Manuel Lucas`,
-    description: `Frontend Engineer`,
-    author: `@jmlweb`,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    author: siteConfig.author,
+    verificationID: siteConfig.verificationID,
+    siteUrl: siteConfig.siteUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,15 +21,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `José Manuel Lucas`,
-        short_name: 'jmlweb',
-        start_url: `/`,
-        background_color: `#3912a9`,
-        theme_color: `#3912a9`,
-        display: `minimal-ui`,
-        icon: `src/images/jmlweb-icon.png`, // This path is relative to the root of the site.
-      },
+      options: siteConfig.manifest,
     },
     {
       resolve: `gatsby-plugin-postcss`,
@@ -70,13 +66,27 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1024,
+              maxWidth: siteConfig.imgMaxWidth,
             },
           },
+          'gatsby-remark-smartypants',
         ],
       },
     },
     `gatsby-plugin-preload-fonts`,
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingID: siteConfig.analyticsID,
+      },
+    },
+    'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: siteConfig.progressColor,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
