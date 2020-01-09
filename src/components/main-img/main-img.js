@@ -1,14 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import styles from './main-img.module.css';
 
-const MainImg = ({ fake }) => (
+const MainImg = () => (
   <div
-    className={classNames({
-      [styles.wrapper]: true,
-      [styles.fake]: fake,
-    })}
+    className={styles.wrapper}
     role="img"
     aria-label="Picture of José Manuel Lucas"
   />

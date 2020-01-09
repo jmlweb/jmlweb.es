@@ -2,7 +2,7 @@
 
 ![jmlweb icon](/src/images/jmlweb-icon.png)
 
-Features:
+## Features:
 
 - Separated content with archive and detail pages generated from Markdown files
 - Fonts preloading

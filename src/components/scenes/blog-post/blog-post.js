@@ -4,9 +4,10 @@ import Header from '../../header';
 import Seo from '../../seo';
 import Footer from '../../footer';
 import styles from './blog-post.module.css';
-import '../../../css/prism.css';
 
 import MainImg from '../../main-img';
+
+import('../../../css/prism.css');
 
 const BlogPost = ({ post }) => (
   <div className={styles.blogPost}>

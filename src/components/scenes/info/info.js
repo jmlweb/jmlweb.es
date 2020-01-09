@@ -18,7 +18,7 @@ const Info = ({ posts, currentPage, numPages }) => (
         </p>
         <p>
           I work for <ExternalLink href="http://sewan.fr">Sewan</ExternalLink>,
-          a French telecommunications company, building interfaces using the
+          a French telecommunications company, developing interfaces using the
           latest technologies, like <strong>React</strong>,{' '}
           <strong>Styled Components</strong>, <strong>GraphQL</strong> and{' '}
           <strong>Node</strong>.

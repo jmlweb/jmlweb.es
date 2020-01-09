@@ -93,17 +93,17 @@
   & > a {
     text-decoration: none;
     color: #ffa18b;
-    position: relative;
     display: block;
   }
 }
 
 .subtitle {
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
   & > a {
-    color: var(--color-darkBlue);
+    color: rgba(#241f33, 0.9);
     text-decoration: none;
+    position: relative;
     &:hover {
       color: var(--color-midBlue);
     }
@@ -111,7 +111,7 @@
 }
 
 .extra {
-  color: #000;
+  color: var(--color-darkBlue);
   & > * {
     position: relative;
     margin-right: 0.8rem;

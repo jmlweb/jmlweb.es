@@ -1,12 +1,11 @@
 .wrapper {
   position: fixed;
   display: block;
-  background: url(../../images/jmlweb-xs.jpg) center center no-repeat;
-  background-color: red;
+  background-color: rgba(#ff0000, 0.9);
+  opacity: 0.5;
   background-size: cover;
   mix-blend-mode: difference;
   background-blend-mode: difference;
-  opacity: 0.4;
   top: 6rem;
   right: var(--size-outer);
   width: 8rem;
@@ -26,7 +25,6 @@
     top: 10rem;
     width: 15rem;
     height: 20rem;
-    background-image: url(../../images/jmlweb-sm.jpg);
   }
   @media (--desktop) {
     top: 0;
@@ -35,14 +33,18 @@
     height: 100%;
     clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
     width: var(--column-size);
-    background-image: url(../../images/jmlweb-md.jpg);
   }
   @media (--desktopLG) {
     clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
-    background-image: url(../../images/jmlweb-lg.jpg);
   }
   @media (--desktopXL) {
     clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
-    background-image: url(../../images/jmlweb-xl.jpg);
+  }
+  & > div {
+    height: 100%;
+  }
+  & img {
+    mix-blend-mode: difference;
+    opacity: 0.4;
   }
 }
