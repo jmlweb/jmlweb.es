@@ -1,0 +1,10 @@
+.fakeWrapper {
+  height: 1.8rem;
+  border-top: 1px solid rgba(#26087c, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  &:first-of-type {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(#26087c, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  &:first-of-type {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  & button {
+    margin-right: 0.4rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+.text {
+  margin-top: -0.2rem;
+  margin-right: 0.6rem;
+  font-size: 0.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(#26087c, 0.6);
+}
