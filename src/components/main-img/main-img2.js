@@ -20,15 +20,19 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "jmlweb-lg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 960) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 768) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
     }
   `);
 
-  return <div className={styles.wrapper}><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>;
+  return (
+    <div className={styles.wrapper}>
+      <Img fluid={data.placeholderImage.childImageSharp.fixed} />
+    </div>
+  );
 };
 
 export default Image;
