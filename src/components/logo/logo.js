@@ -3,7 +3,7 @@ import React from 'react';
 import style from './logo.module.css';
 
 const Logo = () => (
-  <svg viewBox="0 0 60 59" className={style.svg}>
+  <svg viewBox="0 0 60 59" className={style.svg} aria-label="Logo">
     <g id="Canvas" transform="translate(-861 -322)">
       <g id="Group">
         <g id="fill-1">

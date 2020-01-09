@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import Header from '../../header';
@@ -8,7 +8,7 @@ import HomeIntro from './home-intro';
 import HomeTalks from './home-talks';
 import HomePosts from './home-posts';
 import HomeProjects from './home-projects';
-const MainImg = lazy(() => import('../../main-img'));
+import MainImg from '../../main-img';
 
 import styles from './home.module.css';
 
@@ -21,7 +21,10 @@ const Home = ({ blogPosts, talksPosts, projectsPosts }) => {
         [styles.broken]: broken,
       })}
     >
-      <Seo title="Home" description="Personal site of Frontend Engineer José Manuel Lucas. React, Javascript, Testing, Functional Programming, Design, and more" />
+      <Seo
+        title="Home"
+        description="Personal site of Frontend Engineer José Manuel Lucas. React, Javascript, Testing, Functional Programming, Design, and more"
+      />
       <Header />
       <main className={styles.main}>
         <HomeIntro broken={broken} setBroken={setBroken} />
@@ -30,9 +33,7 @@ const Home = ({ blogPosts, talksPosts, projectsPosts }) => {
         <HomeProjects posts={projectsPosts} />
       </main>
       <Footer />
-      <Suspense fallback={null}>
-        <MainImg />
-      </Suspense>
+      <MainImg />
     </div>
   );
 };

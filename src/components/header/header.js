@@ -28,6 +28,7 @@ const Header = () => {
           to="/"
           className={styles.logoLink}
           tabIndex={inView === false ? '-1' : undefined}
+          aria-label="Go to home"
         >
           <Logo />
         </Link>

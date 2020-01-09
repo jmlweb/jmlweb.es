@@ -1,12 +1,18 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 
 import Header from '../header';
 import Seo from '../seo';
 import Footer from '../footer';
 import styles from './standard-page.module.css';
-const MainImg = lazy(() => import('../main-img'));
+import MainImg from '../main-img';
 
-const StandardPage = ({ title, htmlTitle, omitTitle = false, description, children }) => (
+const StandardPage = ({
+  title,
+  htmlTitle,
+  omitTitle = false,
+  description,
+  children,
+}) => (
   <div className={styles.wrapper}>
     <Seo title={title} description={description} />
     <Header />
@@ -15,9 +21,7 @@ const StandardPage = ({ title, htmlTitle, omitTitle = false, description, childr
       {children}
     </main>
     <Footer />
-    <Suspense fallback={null}>
-      <MainImg />
-    </Suspense>
+    <MainImg />
   </div>
 );
 

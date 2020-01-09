@@ -1,15 +1,21 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 
 import Header from '../../header';
 import Seo from '../../seo';
 import Footer from '../../footer';
-const MainImg = lazy(() => import('../../main-img'));
 import styles from './blog-post.module.css';
 import '../../../css/prism.css';
 
+import MainImg from '../../main-img';
+
 const BlogPost = ({ post }) => (
   <div className={styles.blogPost}>
-    <Seo title={post.frontmatter.title} description={`Article about ${post.frontmatter.tags.join(', ')} | José Manuel Lucas. Frontend Engineer`} />
+    <Seo
+      title={post.frontmatter.title}
+      description={`Article about ${post.frontmatter.tags.join(
+        ', ',
+      )} | José Manuel Lucas. Frontend Engineer`}
+    />
     <Header />
     <main className={styles.main}>
       <header className={styles.header}>
@@ -29,9 +35,7 @@ const BlogPost = ({ post }) => (
       </div>
     </main>
     <Footer />
-    <Suspense fallback={null}>
-      <MainImg />
-    </Suspense>
+    <MainImg />
   </div>
 );
 
