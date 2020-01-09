@@ -1,0 +1,128 @@
+.main {
+  margin-bottom: 5rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--easing-out-quad);
+    &.invisible {
+      opacity: 0.2;
+      transform: translateY(1rem);
+      transition-timing-function: var(--easing-in-quad);
+    }
+  }
+}
+
+.titleBlock,
+.subtitleBlock,
+.extraBlock {
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  position: relative;
+}
+
+.titleBlock {
+  z-index: 2;
+  transition: transform 0.1s;
+  transform: rotate(-0.9deg);
+  transform-origin: left center;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      transform: rotate(-0.7deg) scale(1.01);
+    }
+  }
+}
+
+.subtitleBlock {
+  z-index: 1;
+  transition: transform 0.1s;
+  margin-top: 0.35rem;
+  transform: rotate(0.2deg);
+  transform-origin: left center;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      transform: rotate(0.5deg) scale(1.01);
+    }
+  }
+}
+
+.extraBlock {
+  --base-margin: 1.3rem;
+  margin-top: var(--base-margin);
+  transform: rotate(2.2deg);
+  @media (--tablet) {
+    --base-margin: 1.5rem;
+  }
+  @media (--desktopLG) {
+    --base-margin: 1.7rem;
+  }
+  &.onlyTitle {
+    margin-top: calc(var(--base-margin) + 0.2rem);
+  }
+}
+
+.title,
+.subtitle,
+.extra {
+  margin: 0;
+  line-height: 1.5;
+  padding: 0.6rem;
+}
+
+.subtitle,
+.extra {
+  background-color: #fff;
+  display: inline;
+  white-space: pre-wrap;
+  box-decoration-break: clone;
+}
+
+.title {
+  font-family: var(--font-secondary);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  padding: 0.6rem;
+  background: linear-gradient(-45deg, rgba(#3912a9, 0.9), rgba(#3912a9, 0.7));
+  text-shadow: 2px 2px 0 rgba(#000, 0.3);
+  display: inline-block;
+  &:hover {
+    background-color: var(--color-midBlue);
+  }
+  & > a {
+    text-decoration: none;
+    color: #ffa18b;
+    position: relative;
+    display: block;
+  }
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  & > a {
+    color: var(--color-darkBlue);
+    text-decoration: none;
+    &:hover {
+      color: var(--color-midBlue);
+    }
+  }
+}
+
+.extra {
+  color: #000;
+  & > * {
+    position: relative;
+    margin-right: 0.8rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  & > a {
+    color: var(--color-midBlue);
+    &:hover {
+      color: var(--color-lightBlue);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
-import { TalksList } from '../screens';
+import { TalksList } from '../components/scenes';
 
 export default ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext;
@@ -18,6 +19,7 @@ export const query = graphql`
   fragment Edges on MarkdownRemarkConnection {
     edges {
       node {
+        id
         fields {
           slug
         }
@@ -31,6 +33,7 @@ export const query = graphql`
           language
           video
           slides
+          demo
         }
         html
         excerpt
@@ -41,7 +44,7 @@ export const query = graphql`
     futureTalks: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        fields: { isFuture: { eq: true }, collection: { eq: "talks" } }
+        fields: { isFuture: { eq: true }, collection: { eq: "talks" } }, frontmatter: { published: {ne: false} }
       }
       limit: $limit
       skip: $skip
@@ -51,7 +54,7 @@ export const query = graphql`
     pastTalks: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        fields: { isFuture: { eq: false }, collection: { eq: "talks" } }
+        fields: { isFuture: { eq: false }, collection: { eq: "talks" } }, frontmatter: { published: {ne: false} }
       }
       limit: $limit
       skip: $skip

@@ -7,7 +7,6 @@ module.exports = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const collection = getNode(node.parent).sourceInstanceName;
     const slug = createFilePath({ node, getNode, basePath: `pages` });
-    console.log(node.frontmatter.date);
     createNodeField({
       node,
       name: 'collection',

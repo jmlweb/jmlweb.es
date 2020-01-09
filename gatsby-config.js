@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `José Manuel Lucas`,
+        short_name: 'jmlweb',
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#3912a9`,
+        theme_color: `#3912a9`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/jmlweb-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -67,11 +67,18 @@ module.exports = {
           },
           'gatsby-remark-external-links',
           'gatsby-remark-responsive-iframe',
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1024,
+            },
+          },
         ],
       },
     },
+    `gatsby-plugin-preload-fonts`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

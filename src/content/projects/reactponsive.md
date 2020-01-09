@@ -5,4 +5,4 @@ url: 'https://github.com/jmlweb/reactponsive'
 featured: true
 ---
 
-Responsive components and Hooks ⚒ for your favorite framework ⚛️
+Responsive components and Hooks 🛠 for your favorite framework ⚛️

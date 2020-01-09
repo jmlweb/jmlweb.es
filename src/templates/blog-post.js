@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { BlogPost } from '../screens';
+import { BlogPost } from '../components/scenes';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -13,8 +13,10 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        subtitle
         rawDate: date
         date(formatString: "DD MMMM YYYY")
+        tags
       }
       timeToRead
       html

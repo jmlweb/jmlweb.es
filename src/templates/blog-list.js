@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { BlogList } from '../screens';
+import { BlogList } from '../components/scenes';
 
 export default ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext;
@@ -17,21 +17,24 @@ export default ({ data, pageContext }) => {
 export const query = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fields: { collection: { eq: "blog" } } }
+      filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: {ne: false} } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
+          id
           fields {
             slug
           }
           frontmatter {
             title
+            subtitle
             tags
           }
           excerpt
+          timeToRead
         }
       }
     }

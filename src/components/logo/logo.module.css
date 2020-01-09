@@ -1,14 +1,13 @@
 .svg {
-  width: 30px;
-  height: 29px;
+  --logo-size: 2rem;
+  width: var(--logo-size);
+  height: var(--logo-size);
   display: block;
-  fill: var(--color-logo);
+  fill: #fff;
   @media (--tablet) {
-    width: 36px;
-    height: 35px;
+    --logo-size: 2.2rem;
   }
   @media (--desktop) {
-    width: 44px;
-    height: 43px;
+    --logo-size: 2.4rem;
   }
 }

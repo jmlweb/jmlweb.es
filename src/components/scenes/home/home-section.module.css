@@ -1,0 +1,10 @@
+.section {
+  padding: var(--size-outer);
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: #000;
+}
