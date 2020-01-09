@@ -1,13 +1,27 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import styles from './main-img.module.css';
 
-const MainImg = () => (
-  <div
-    className={styles.wrapper}
-    role="img"
-    aria-label="Picture of José Manuel Lucas"
-  />
-);
+const Image = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "jmlweb-md.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 768) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
 
-export default MainImg;
+  return (
+    <div className={styles.wrapper}>
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+    </div>
+  );
+};
+
+export default Image;
