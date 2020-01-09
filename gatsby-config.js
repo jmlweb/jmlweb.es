@@ -67,6 +67,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: siteConfig.imgMaxWidth,
+              withWebp: true,
             },
           },
           'gatsby-remark-smartypants',
