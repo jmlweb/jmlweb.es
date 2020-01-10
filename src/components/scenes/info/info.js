@@ -5,7 +5,10 @@ import ExternalLink from '../../external-link';
 import StandardPage from '../../standard-page';
 
 const Info = ({ posts, currentPage, numPages }) => (
-  <StandardPage title="Info" description="Info about José Manuel Lucas. Spanish Frontend Engineer specialized in React, Styled Components and GraphQL">
+  <StandardPage
+    title="Info"
+    description="Info about José Manuel Lucas. Spanish Frontend Engineer specialized in React, Styled Components and GraphQL"
+  >
     <div className={styles.bioWrapper}>
       <div className={styles.bio}>
         <h2>I'm José Manuel Lucas</h2>
@@ -51,7 +54,8 @@ const Info = ({ posts, currentPage, numPages }) => (
             <strong>Solid</strong>... I'm specialized in building highly{' '}
             <strong>optimized</strong>, <strong>testable</strong>, and{' '}
             <strong>modular</strong> components using <strong>React</strong>. My
-            style components usually follow the <strong>System UI</strong>{' '}
+            style components usually follow the{' '}
+            <ExternalLink href="https://theme-ui.com/">Theme UI</ExternalLink>{' '}
             standard.
           </dd>
           <dt>Other</dt>
