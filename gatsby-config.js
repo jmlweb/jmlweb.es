@@ -74,7 +74,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-preload-fonts`,
+    // `gatsby-plugin-preload-fonts`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
