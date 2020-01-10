@@ -1,40 +1,74 @@
+import React from 'react';
+import { graphql } from 'gatsby';
+
+import { Home } from '../components/scenes';
+
+const IndexPage = ({ data }) => (
+  <Home
+    blogPosts={data.postsRemark.edges}
+    talksPosts={data.talksRemark.edges}
+    projectsPosts={data.projectsRemark.edges}
+  />
+);
+
 export const query = graphql`
-  query IndexPage {
-    image: imageSharp(id: { regex: "/jmlweb.jpg/" }) {
-      sizes(maxWidth: 533) {
-        ...GatsbyImageSharpSizes
+  fragment RemarkCollection on MarkdownRemarkConnection {
+    edges {
+      node {
+        id
+        frontmatter {
+          date(formatString: "DD MMMM YYYY")
+          rawDate: date(formatString: "YYYY-MM-DD")
+          title
+          subtitle
+          url
+          conference
+          type
+          language
+          video
+          slides
+          tags
+        }
+        fields {
+          slug
+          collection
+          isFuture
+        }
+        excerpt
+        timeToRead
       }
     }
-    homeArticles: allContentfulArticle(
-      filter: { hideInHomepage: { ne: true } }
-      limit: 3
-      sort: { fields: [createdAt], order: DESC }
+  }
+
+  query remarkByCollection {
+    postsRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: {ne: false} } }
+      limit: 12
     ) {
-      edges {
-        node {
-          id
-          title
-          entryImage {
-            sizes(maxWidth: 939) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          entry {
-            childMarkdownRemark {
-              excerpt(pruneLength: 220)
-              html
-            }
-          }
-        }
+      ...RemarkCollection
+    }
+    talksRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fields: { isFuture: { eq: true }, collection: { eq: "talks" } },
+        frontmatter: { published: {ne: false} }
       }
+      limit: 12
+    ) {
+      ...RemarkCollection
+    }
+    projectsRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fields: { collection: { eq: "projects" } }
+        frontmatter: { featured: { eq: true }, published: {ne: false} }
+      }
+      limit: 12
+    ) {
+      ...RemarkCollection
     }
   }
 `;
 
-export default from '../components/HomePage';
+export default IndexPage;

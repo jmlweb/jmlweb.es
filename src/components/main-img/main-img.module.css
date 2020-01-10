@@ -1,0 +1,50 @@
+.wrapper {
+  position: fixed;
+  display: block;
+  background-color: rgba(#ff0000, 0.9);
+  opacity: 0.5;
+  background-size: cover;
+  mix-blend-mode: difference;
+  background-blend-mode: difference;
+  top: 6rem;
+  right: var(--size-outer);
+  width: 8rem;
+  height: 10rem;
+  z-index: -1;
+  --column-size: 0;
+  @media (--desktop) {
+    --column-size: calc(8rem + 10 * 2vw);
+  }
+  @media (--desktopLG) {
+    --column-size: calc(12rem + 12 * 2vw);
+  }
+  @media (--desktopXL) {
+    --column-size: calc(16rem + 14 * 2vw);
+  }
+  @media (--tablet) {
+    top: 10rem;
+    width: 15rem;
+    height: 20rem;
+  }
+  @media (--desktop) {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
+    width: var(--column-size);
+  }
+  @media (--desktopLG) {
+    clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
+  }
+  @media (--desktopXL) {
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+  }
+  & > div {
+    height: 100%;
+  }
+  & img {
+    mix-blend-mode: difference;
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  font-display: swap;
+  src: url('/fonts/inter/Inter-roman.var.woff2') format('woff2');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'Fjord One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fjord-one/fjord-one-v8-latin-regular.woff2') format('woff2'),
+    url('/fonts/fjord-one/fjord-one-v8-latin-regular.woff') format('woff');
+  unicode-range: U+000-5FF;
+}
+
+html {
+  font-size: calc(18px + (26 - 18) * ((100vw - 480px) / (2600 - 300)));
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  /* font-feature-settings: 'salt'; */
+  line-height: 1.55;
+  background: var(--gradient-main);
+  background-size: contain;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-weight: 350;
+  color: var(--color-darkBlue);
+}
+
+h1,
+h2 {
+  font-family: var(--font-secondary);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+a {
+  color: var(--color-darkBlue);
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}

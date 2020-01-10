@@ -1,0 +1,130 @@
+.homeIntro {
+  display: flex;
+  min-height: 100vh;
+  &.broken {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 2px 2px rgba(#fff5c6, 0.99);
+  color: rgba(#3912a9, 0.9);
+  mix-blend-mode: overlay;
+  & > span {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 200;
+  }
+  &.broken {
+    clip-path: polygon(
+      10% 25%,
+      35% 25%,
+      35% 0%,
+      65% 0%,
+      65% 25%,
+      90% 25%,
+      90% 50%,
+      65% 50%,
+      65% 100%,
+      35% 100%,
+      35% 50%,
+      10% 50%
+    );
+  }
+}
+
+.subtitle {
+  --border: 1px dotted rgba(#fff, 0.5);
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 1.2rem 0;
+  font-family: var(--font-secondary);
+  padding: 0.8rem 0;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  @media (--tablet) {
+    font-size: 1.6rem;
+  }
+  & > button {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    cursor: pointer;
+    appearance: none;
+    outline: 0;
+  }
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
+  & a {
+    transition-property: color;
+    transition-duration: 0.1s;
+    &:hover {
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &.broken {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 75%,
+      75% 100%,
+      50% 75%,
+      0% 75%
+    );
+  }
+}
+
+.content {
+  align-self: center;
+  padding: var(--size-outer);
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  &.invisible {
+    opacity: 0.2;
+  }
+}
+
+.socialLinks {
+  position: absolute;
+  right: var(--size-outer);
+  bottom: var(--size-outer);
+  @media (--tablet) {
+    bottom: 1rem;
+  }
+}
+
+.anim {
+  animation: anim 3s infinite normal;
+}
+
+@keyframes anim {
+  40% {
+    transform: translateX(0%);
+  }
+  45% {
+    transform: translateX(0%) scale(0.99);
+  }
+  54% {
+    transform: translateX(2%) rotateY(-12deg);
+    filter: blur(0.1px);
+  }
+  56% {
+    transform: translateX(-1%) rotateY(-12deg);
+    filter: blur(0.5px);
+    opacity: 0.6;
+  }
+  60% {
+    transform: translateX(0%);
+  }
+}

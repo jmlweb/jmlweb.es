@@ -1,80 +1,95 @@
-require('dotenv').config();
+const siteConfig = require('./siteConfig');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://jmlweb.es',
-    title: 'José Manuel Lucas / Frontend Developer',
-    keywords: 'José Manuel Lucas, Frontend, Development',
-    googleVerification: 'C_zrk0we724IL2r6BSTEf2U9ZVaIIYVsFR16eHuk-Nk',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    author: siteConfig.author,
+    verificationID: siteConfig.verificationID,
+    siteUrl: siteConfig.siteUrl,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-54381071-6',
-      },
+      resolve: `gatsby-plugin-manifest`,
+      options: siteConfig.manifest,
     },
     {
-      resolve: 'gatsby-plugin-nprogress',
+      resolve: `gatsby-plugin-postcss`,
       options: {
-        color: '#ffffff',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'img',
-      },
-    },
-    'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-remark-external-links',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'José Manuel Lucas',
-        short_name: 'jmlweb',
-        lang: 'es-ES',
-        start_url: '/',
-        background_color: '#e4e3f5',
-        theme_color: '#362bdb',
-        display: 'minimal-ui',
-        orientation: 'portrait-primary',
-        icons: [
-          {
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/favicons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          require('postcss-hexrgba'),
         ],
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/blog`,
+        name: 'blog',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/projects`,
+        name: 'projects',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/talks`,
+        name: 'talks',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: { classPrefix: 'language-' },
+          },
+          'gatsby-remark-external-links',
+          'gatsby-remark-responsive-iframe',
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: siteConfig.imgMaxWidth,
+              withWebp: true,
+            },
+          },
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    `gatsby-plugin-preload-fonts`,
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingID: siteConfig.analyticsID,
+      },
+    },
+    'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: siteConfig.progressColor,
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
   ],
 };

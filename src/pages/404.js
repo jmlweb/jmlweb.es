@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { StandardPage } from '../components';
+
 const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
+  <StandardPage title="404: Not found">
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
+  </StandardPage>
 );
 
 export default NotFoundPage;
