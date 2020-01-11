@@ -17,6 +17,7 @@
     "gatsby-plugin-postcss": "^2.1.19",
     "gatsby-plugin-preload-fonts": "^1.0.25",
     "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-remove-generator": "^1.0.4",
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.1.42",
