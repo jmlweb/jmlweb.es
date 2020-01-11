@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/articulo/random-walk-con-p5js"
+  to = "/blog/2018/p5js-random-walk"
+
+[[redirects]]
+  from = "/articulo/como-compartir-las-opciones-de-configuracion-y-extensiones-de-vs-code"
+  to = "/blog/2018/sharing-vscode-settings"
+
+[[redirects]]
+  from = "/articulo/creacion-de-sitios-estaticos-con-gatsbyjs-contentful-y-netlify-parte-1"
+  to = "/blog/2019/markdown-multicontent-site-with-gatsby"
+
+[[redirects]]
+  from = "/articulo/creacion-de-sitios-estaticos-con-gatsbyjs-contentful-y-netlify-parte-2"
+  to = "/blog/2019/markdown-multicontent-site-with-gatsby"
