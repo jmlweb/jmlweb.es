@@ -65,7 +65,7 @@ const Info = ({ posts, currentPage, numPages }) => (
           </dd>
           <dt>Other</dt>
           <dd>
-            Mongo, MySQL, Node, PHP, Shell Scripting, Firebase, WordPress, p5.js
+            Mongo, MySQL, Node, PHP, Shell Scripting, Firebase, WordPress, P5.js
           </dd>
         </dl>
       </div>
