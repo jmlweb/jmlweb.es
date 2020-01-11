@@ -22,7 +22,7 @@ const Home = ({ blogPosts, talksPosts, projectsPosts }) => {
       })}
     >
       <Seo
-        title="Home"
+        title="jmlweb | Frontend Engineer"
         description="Personal site of Frontend Engineer José Manuel Lucas. React, Javascript, Testing, Functional Programming, Design, and more"
       />
       <Header />
