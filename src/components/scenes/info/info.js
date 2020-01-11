@@ -32,6 +32,11 @@ const Info = ({ posts, currentPage, numPages }) => (
           <strong>Design Systems</strong>, <strong>UI Design</strong>,{' '}
           <strong>Mountain Biking</strong>, and <strong>Hip Hop Music</strong>.
         </p>
+        <p>
+          <a href="/resume.pdf" download>
+            Download resume
+          </a>
+        </p>
       </div>
       <div className={styles.bio}>
         <h2>Technologies</h2>
