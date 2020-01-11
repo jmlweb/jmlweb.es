@@ -5,13 +5,33 @@
 }
 
 .bio {
+  position: relative;
   background-color: #fff;
   color: rgba(#241f33, 0.9);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: var(--hf-padding);
   margin-top: 3rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   &:first-child {
     margin-top: 0;
+  }
+  &::before,
+  &::after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: calc(100% - 30px);
+    max-width: 300px;
+    background: rgba(#241f33, 0.25);
+    box-shadow: 0 15px 10px rgba(#241f33, 0.4);
+    transform: rotate(-3deg);
+  }
+  &::after {
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
   }
   & a {
     color: var(--color-midBlue);
