@@ -43,18 +43,21 @@ export const query = graphql`
   query remarkByCollection {
     postsRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: {ne: false} } }
-      limit: 12
+      filter: {
+        fields: { collection: { eq: "blog" } }
+        frontmatter: { published: { ne: false } }
+      }
+      limit: 4
     ) {
       ...RemarkCollection
     }
     talksRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        fields: { isFuture: { eq: true }, collection: { eq: "talks" } },
-        frontmatter: { published: {ne: false} }
+        fields: { isFuture: { eq: true }, collection: { eq: "talks" } }
+        frontmatter: { published: { ne: false } }
       }
-      limit: 12
+      limit: 4
     ) {
       ...RemarkCollection
     }
@@ -62,9 +65,9 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { collection: { eq: "projects" } }
-        frontmatter: { featured: { eq: true }, published: {ne: false} }
+        frontmatter: { featured: { eq: true }, published: { ne: false } }
       }
-      limit: 12
+      limit: 4
     ) {
       ...RemarkCollection
     }
