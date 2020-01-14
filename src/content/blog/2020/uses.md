@@ -10,7 +10,7 @@ Following the trend of many colleagues of the profession and guided by recent We
 
 ### 💻 Hardware
 
-- **Computer**: 2019 16-inch Macbook Pro (i7 2.6GHz, 16GB ram, 512SSD)
+- **Computer**: 2019 16-inch Macbook Pro (i7 2.6GHz, 16GB ram, 512GBSSD)
 - **Keyboard**: Apple Wired A1243 - discontinued
 - **Mouse**: Patuoxun Zelotes 9200dpi
 - **External Display**: Benq PD2500Q Led IPS
