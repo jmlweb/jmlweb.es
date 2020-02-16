@@ -1,8 +1,8 @@
 ---
-title: 'emojinfo-json'
-date: '2020-01-17'
-url: 'https://github.com/jmlweb/emojinfo-json'
+title: 'emojinfo'
+date: '2020-02-16'
+url: 'https://emojinfo.now.sh/'
 featured: true
 ---
 
-Complete set of emojis with many flavors
+Emoji finder with complete info access based on Svelte and Emojibase
