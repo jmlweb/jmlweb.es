@@ -78,7 +78,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingID: siteConfig.analyticsID,
+        trackingId: siteConfig.analyticsID,
       },
     },
     'gatsby-plugin-advanced-sitemap',
