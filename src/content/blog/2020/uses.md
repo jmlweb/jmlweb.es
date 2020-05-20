@@ -36,10 +36,11 @@ Following the trend of many colleagues of the profession and guided by recent We
 - **Speakers**: Yamaha HS7
 - **Interface**: Focusrite Saffire Pro 24
 - **Master keyboard**: M-Audio Keystation 61
-- **Synth**: Korg Minikorg
-- **Sampler/Looper**: Roland SP404-SP
+- **Synth**: Korg MicroKORG
+- **Sampler/Looper**: Roland SP404-SX
 - **Microphone**: sE Electronics X1
 - **Headphones**: Audio Technica ATH-M50
+- **Turntable**: Reloop RP-6000 MK5 S
 - **Sequencer**: Logic X
 
 ### 🕹 Personal
@@ -52,3 +53,4 @@ Following the trend of many colleagues of the profession and guided by recent We
 - **Mock Paper**: Rodia dotPad A4
 - **Mechanical pencils**: Pro Use 03 Platinum, Faber-Castell TK 4600
 - **Eraser**: Pentel Ain Black
+- **Backpack**: Eastpak Floid Black Denim
