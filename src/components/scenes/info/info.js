@@ -20,10 +20,11 @@ const Info = ({ posts, currentPage, numPages }) => (
           pleasant to see <strong>websites</strong>.
         </p>
         <p>
-          I work for <ExternalLink href="http://sewan.fr">Sewan</ExternalLink>,
-          a French telecommunications company, developing interfaces using the
+          I work for{' '}
+          <ExternalLink href="http://bob.io">BoB (bagonboard)</ExternalLink>, a
+          Spanish luggage-transport startup, developing interfaces using the
           latest technologies, like <strong>React</strong>,{' '}
-          <strong>Styled Components</strong>, <strong>GraphQL</strong> and{' '}
+          <strong>Styled Components</strong>, <strong>WordPress</strong> and{' '}
           <strong>Node</strong>.
         </p>
         <p>
