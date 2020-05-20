@@ -11,10 +11,12 @@ Following the trend of many colleagues of the profession and guided by recent We
 ### 💻 Hardware
 
 - **Computer**: 2019 16-inch Macbook Pro (i7 2.6GHz, 16GB ram, 512GB SSD)
-- **Keyboard**: Apple Wired A1243 - discontinued
+- **Keyboard**: ~~Apple Wired A1243 - discontinued~~ Matias Wired Aluminium Keyboard
 - **Mouse**: Patuoxun Zelotes 9200dpi
 - **External Display**: Benq PD2500Q Led IPS
-- **Chair**: NewSkill Takamikura Carbon
+- **Desktop**: Ikea Karlby Countertop + Alex Drawers "Desktop Hack"
+- **Chair**: ~~NewSkill Takamikura Carbon~~ ThunderX3 Yama3
+- **Other**: Ikea Skadis pegboard, Ikea Nordmärke Qi charger, Pothos + Sansevieria cylindrica plants
 
 ### 👨🏼‍💻 Software
 

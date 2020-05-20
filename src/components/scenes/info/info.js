@@ -22,8 +22,8 @@ const Info = ({ posts, currentPage, numPages }) => (
         <p>
           I work for{' '}
           <ExternalLink href="http://bob.io">BoB (bagonboard)</ExternalLink>, a
-          Spanish luggage-transport startup, developing interfaces using the
-          latest technologies, like <strong>React</strong>,{' '}
+          Spanish luggage-transportation startup, developing interfaces using
+          the latest technologies, like <strong>React</strong>,{' '}
           <strong>Styled Components</strong>, <strong>WordPress</strong> and{' '}
           <strong>Node</strong>.
         </p>
