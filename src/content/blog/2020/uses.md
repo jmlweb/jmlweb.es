@@ -12,7 +12,7 @@ Following the trend of many colleagues of the profession and guided by recent We
 
 - **Computer**: 2019 16-inch Macbook Pro (i7 2.6GHz, 16GB ram, 512GB SSD)
 - **Keyboard**: ~~Apple Wired A1243 - discontinued~~ Matias Wired Aluminium Keyboard
-- **Mouse**: Patuoxun Zelotes 9200dpi
+- **Mouse**: ~~Patuoxun Zelotes 9200dpi~~ Logitech MX Master 3
 - **External Display**: Benq PD2500Q Led IPS
 - **Desktop**: Ikea Karlby Countertop + Alex Drawers "Desktop Hack"
 - **Chair**: ~~NewSkill Takamikura Carbon~~ ThunderX3 Yama3
@@ -22,7 +22,7 @@ Following the trend of many colleagues of the profession and guided by recent We
 
 - **Editor**: VS Code powered by [some extensions](https://github.com/jmlweb/dotfiles/blob/master/vscode-extensions.sh) and Palenight Theme
 - **Terminal**: iTerm, zsh with spaceship prompt
-- **Font**: Fira Code font
+- **Font**: ~~Fira Code font~~ [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/)
 - **Visual Editor**: Figma
 - **Browser**: Google Chrome
 - **git GUI**: Sourcetree
@@ -37,7 +37,7 @@ Following the trend of many colleagues of the profession and guided by recent We
 - **Interface**: Focusrite Saffire Pro 24
 - **Master keyboard**: M-Audio Keystation 61
 - **Synth**: Korg MicroKORG
-- **Sampler/Looper**: Roland SP404-SX
+- **Sampler/Looper**: ~~Roland SP404-SX~~ Akai MPC Live 2
 - **Microphone**: sE Electronics X1
 - **Headphones**: Audio Technica ATH-M50
 - **Turntable**: Reloop RP-6000 MK5 S
@@ -46,7 +46,7 @@ Following the trend of many colleagues of the profession and guided by recent We
 ### 🕹 Personal
 
 - **Phone**: Xiaomi Mi Mix 2S
-- **Smartwatch**: Amazfit Stratos
+- **Smartwatch**: ~~Amazfit Stratos~~ Garmin Venu
 - **Bike**: Orbea Alma H20 Eagle 2020
 - **Video game console**: Super Nintendo mini
 - **Home Asistant**: Amazon Echo
