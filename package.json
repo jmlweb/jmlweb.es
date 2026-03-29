@@ -27,7 +27,7 @@
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-remark": "^2.8.40",
     "gatsby-transformer-sharp": "^2.5.17",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "postcss-hexrgba": "^2.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^9.0.0",
